@@ -1,0 +1,30 @@
+{
+  "name": "jsonresume-theme-geeky",
+  "version": "0.0.3",
+  "description": "Geeky theme for jsonresume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mudassir0909/jsonresume-theme-geeky.git"
+  },
+  "keywords": [
+    "jsonresume",
+    "theme",
+    "geeky"
+  ],
+  "author": "Mudassir Ali <mudassir.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mudassir0909/jsonresume-theme-geeky/issues"
+  },
+  "homepage": "https://github.com/mudassir0909/jsonresume-theme-geeky",
+  "dependencies": {
+    "resume-schema": "0.0.11",
+    "gravatar": "^1.0.6",
+    "mustache": "^0.8.2",
+    "tarball-extract": "0.0.3"
+  }
+}
