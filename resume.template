@@ -5,14 +5,43 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{{bio.firstName}} {{bio.lastName}}</title>
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<style>
+			body {
+				font-family: 'Lato';
+			}
+			.name {
+				text-transform: uppercase;
+			}
+		</style>
 	</head>
 	
 	<body>
-		<div class="alert alert-warning"><span class="glyphicon glyphicon-warning-sign"></span>Work in progress</div>
-        <img class="media-object img-circle pull-right" data-src="holder.js/64x64" alt="64x64" src="{{bio.gravatar}}" style="width: 100px; height: 100px; margin-top: 20px;">
+		<div class="container">
+			<div class="alert alert-warning">
+				<span class="glyphicon glyphicon-warning-sign"></span>
+				Work in progress
+			</div>			
+			<div class="col-md-10 col-md-offset-1">
 
-		<h1>{{bio.firstName}} {{bio.lastName}}</h1>
+				<div class="col-md-2">
+        				<img class="media-object img-circle pull-right" 
+							data-src="holder.js/64x64" alt="64x64" src="{{bio.gravatar}}"
+							style="width: 100px; height: 100px; margin-top: 20px;">
+				</div>
+				<div class="col-md-8">
+					<h1 class="name">{{bio.firstName}} {{bio.lastName}}</h1>
+					<hr>
+					<p class="location text-center">
+						<span class="fa fa-location-arrow"></span>
+						{{bio.location.city}},{{bio.location.state}},{{bio.location.countryCode}}
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	</body>
 </html>

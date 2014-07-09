@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-geeky",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Geeky theme for jsonresume",
   "main": "index.js",
   "scripts": {
