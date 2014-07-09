@@ -1,4 +1,4 @@
-jsonresume-theme-flat
+jsonresume-theme-geeky
 =====================
 
-Flat theme for jsonresume
+Geeky theme for jsonresume
