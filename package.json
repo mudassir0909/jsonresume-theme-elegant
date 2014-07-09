@@ -1,26 +1,26 @@
 {
-  "name": "jsonresume-theme-geeky",
-  "version": "0.0.7",
-  "description": "Geeky theme for jsonresume",
+  "name": "jsonresume-theme-elegant",
+  "version": "0.0.0",
+  "description": "Elegant theme for jsonresume",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mudassir0909/jsonresume-theme-geeky.git"
+    "url": "https://github.com/mudassir0909/jsonresume-theme-elegant.git"
   },
   "keywords": [
     "jsonresume",
     "theme",
-    "geeky"
+    "elegant"
   ],
   "author": "Mudassir Ali <mudassir.dev@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mudassir0909/jsonresume-theme-geeky/issues"
+    "url": "https://github.com/mudassir0909/jsonresume-theme-elegant/issues"
   },
-  "homepage": "https://github.com/mudassir0909/jsonresume-theme-geeky",
+  "homepage": "https://github.com/mudassir0909/jsonresume-theme-elegant",
   "dependencies": {
     "resume-schema": "0.0.11",
     "gravatar": "^1.0.6",

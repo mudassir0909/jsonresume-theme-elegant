@@ -1,4 +1,4 @@
-jsonresume-theme-geeky
+jsonresume-theme-elegant
 =====================
 
-Geeky theme for jsonresume
+Elegant theme for jsonresume
