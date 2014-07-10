@@ -64,7 +64,7 @@
 				right: 0;
 			}
 			
-			.company h3 {
+			.item-detail h3 {
 				margin-top: 0;
 			}
 		</style>
@@ -119,9 +119,9 @@
 				<div class="col-md-12">
 					<h2 class="oswald-font"><span class="fa fa-building-o"></span>&nbsp; Work Experience</h3>
 					<hr>
-					<div class="col-md-10 col-md-offset-1">
+					<div class="col-md-10">
 						{{#work}}
-							<div class="company">
+							<div class="item-detail">
 								<h3>
 									<span>{{position}}</span> 
 									<span class="pull-right">( {{startDate}} - {{endDate}} )</span>
@@ -140,6 +140,19 @@
 							</ul>
 							<hr>
 						{{/work}}
+					</div>
+				</div>
+				<div class="col-md-12">
+					<h2 class="oswald-font"><span class="fa fa-mortar-board"></span>&nbsp; Education</h2>
+					<hr>
+					<div class="col-md-10">			
+						{{#education}}
+							<div class="item-detail">
+								<h3>{{institution}}</h3>
+								<h4>{{area}}, {{studyType}}</h4>
+								<h5>{{startDate}} - {{endDate}}</h5>
+							</div>
+						{{/education}}
 					</div>
 				</div>
 			</div>
