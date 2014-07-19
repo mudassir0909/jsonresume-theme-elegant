@@ -10,156 +10,238 @@
 		<style>
 			body {
 				font-family: 'Lato';
-				background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/snow.png");
-			}
-
-			.oswald-font {
-				font-family: 'oswald';
-				vertical-align: bottom;
-			}
-
-			.name {
-				text-transform: uppercase;
+				background: #F0F0F0;
+				color: #333;
 			}
 			
-			a:hover {
+			.main {
+				padding: 5px;
+			}
+
+			.card {
+				background: white;
+				border: 1px solid #E6E6E6;
+				border-radius: 3px;
+				min-height: 300px;
+				padding: 10px;
+			}
+			
+			.background-card {
+				padding: 10px 20px;
+			}
+			
+			.card-wrapper {
+				padding: 5px;
+			}
+			
+			.profile-pic {
+				padding: 20px 0;
+			}
+			
+			.text-bolder {
+				font-weight: bold;
+			}
+			
+			.contact-details .detail {
+				display: table;
+				padding: 10px 0;
+			}
+			
+			.contact-details .detail .icon {
+				padding: 0 10px;
+				color: #707070;
+			}
+			
+			.contact-details .detail .icon, .contact-details .detail .info {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			.contact-details .detail .info{
+				font-size: 0.8em;
+			}
+			
+			.social-link {
+				margin-left: 5px;
+			}
+
+			.social-link:first-child {
+				margin-left: 0;
+			}
+			
+			.social-link:hover {
 				text-decoration: none;
 			}
 			
 			.link-github {
 				color: #454545;
 			}
-			
+
 			.link-github:hover {
 				color: black;
 			}
-			
+
 			.link-twitter {
 				color: #33CCFF;
-			}
-			
-			.social-link {
-				margin-left: 5px;
-			}
-			
-			.social-link:first-child {
-				margin-left: 0;
 			}
 			
 			.link-blog {
 				color: rgb(243, 111, 36);
 			}
-			
+
 			.link-blog:hover {
 				color: rgb(211, 97, 32);
 			}
 			
-			.summary {
-				font-family: "Pt mono";
-				font-size: 1.2em;
+			.background-details .detail {
+				display: table;
+				padding: 10px 0;
 			}
 			
-			.wip {
-				position: absolute;
-				right: 0;
+			.background-details .detail .icon {
+				min-width: 45px;
+				max-width: 45px;
+				text-align: center;
 			}
 			
-			.item-detail h3 {
-				margin-top: 0;
+			.background-details .detail .title, .background-details .detail .icon {
+				color: #707070;
 			}
+			
+			.background-details .detail .icon, .background-details .detail .info {
+				display: table-cell;
+				padding: 0 10px;
+			}
+			
 		</style>
 	</head>
 	
 	<body>
-		<div class="container">
+		<script>
+			window.onload = function () {
+				$(".background-card").css( "min-height", window.screen.availHeight + "px" );
+			}
+		</script>
+		<div class="container-fluid">
+			<div class="row main clearfix">
+				<section class="col-md-3 card-wrapper affix">
+					<div class="card profile-card">
+						<div class="profile-pic">
+							<img class="media-object img-circle center-block"  data-src="holder.js/64x64"
+								alt="64x64" src="{{bio.gravatar}}" style="width: 100px; height: 100px;">
+						</div>
+						<h3 class="text-center text-bolder"> {{bio.firstName}} {{bio.lastName}}</h3>
+						<h5 class="text-muted text-center">Job Title</h5>
+						<hr>
+						
+						<div class="contact-details clearfix">
+							<div class="detail">
+								<span class="icon">
+									<i class="fa fa-lg fa-location-arrow"></i>
+								</span>
+	
+								<span class="info">
+									{{bio.location.city}}, {{bio.location.state}},
+									{{bio.location.countryCode}}
+								</span>
+							</div>
 
-			<div class="col-md-10 col-md-offset-1">
+							<div class="detail">
+								<span class="icon">
+									<i class="fa fa-lg fa-phone"></i>
+								</span>
+	
+								<span class="info">
+									{{bio.phone.personal}}
+								</span>
+							</div>
 
-				<div class="col-md-2">
-        				<img class="media-object img-circle pull-right" 
-							data-src="holder.js/64x64" alt="64x64" src="{{bio.gravatar}}"
-							style="width: 150px; height: 150px;">
-				</div>
-				<div class="col-md-10">
-					<a class="btn btn-warning wip" href="https://github.com/mudassir0909/jsonresume-theme-elegant" target="_blank">
-						<span class="fa fa-github fa-lg"></span>
-						Work in progress
-					</a>			
-					<h1 class="name oswald-font">{{bio.firstName}} {{bio.lastName}}</h1>
-					<hr>
-					<p class="location text col-md-6">
-						<span class="fa fa-location-arrow"></span>
-						{{bio.location.city}}, {{bio.location.state}}, {{bio.location.countryCode}}
-						<br>
-						<span class="social-links-wrapper">
+							<div class="detail">
+								<span class="icon">
+									<i class="fa fa-lg fa-envelope"></i>
+								</span>
+	
+								<span class="info">
+									{{bio.email.personal}}
+								</span>
+							</div>
+						</div>
+						
+						<hr>
+						
+						<div class="social-links text-center">
 							<a class="fa fa-github fa-2x social-link link-github" 
-								href="http://www.github.com/{{bio.profiles.github}}" target="_blank"></a>
+							   href="http://www.github.com/{{bio.profiles.github}}" target="_blank"></a>
 							<a class="fa fa-twitter fa-2x social-link link-twitter" 
-								href="http://www.twitter.com/{{bio.profiles.twitter}}" target="_blank"></a>
+							   href="http://www.twitter.com/{{bio.profiles.twitter}}" target="_blank"></a>
 							<a class="fa fa-rss fa-2x social-link link-blog" 
-								href="{{bio.websites.blog}}" target="_blank"></a>
-						</span>
-					</p>
-					<p class="location text-right col-md-6">
-						<span class="fa fa-envelope"></span>
-						{{bio.email.personal}}
-						<br>
-						<span class="fa fa-phone"></span>
-						{{bio.phone.personal}}
-					</p>
-				</div>
-				<div class="col-md-12">
-					<hr>
-					<p class="summary">
-						<sup class="fa fa-quote-left"></sup>
-						{{bio.summary}}
-						<sup class="fa fa-quote-right"></sup>
-					</p>
-				</div>
-				<div class="col-md-12">
-					<h2 class="oswald-font"><span class="fa fa-building-o"></span>&nbsp; Work Experience</h3>
-					<hr>
-					<div class="col-md-10">
-						{{#work}}
-							<div class="item-detail">
-								<h3>
-									<span>{{position}}</span> 
-									<span class="pull-right">( {{startDate}} - {{endDate}} )</span>
-								</h3>
-								<h4>
-									<a target="_blank" href="{{website}}">
-										@{{company}} 
-									</a>
-								</h4>
-								<p class="text-muted">{{summary}}</p>
-							</div>
-							<ul>
-            					{{#highlights}}
-								<li>{{.}}</li>
-              					{{/highlights}}
-							</ul>
-							<hr>
-						{{/work}}
+							   href="{{bio.websites.blog}}" target="_blank"></a>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-12">
-					<h2 class="oswald-font"><span class="fa fa-mortar-board"></span>&nbsp; Education</h2>
-					<hr>
-					<div class="col-md-10">			
-						{{#education}}
-							<div class="item-detail">
-								<h3>{{institution}}</h3>
-								<h4>{{area}}, {{studyType}}</h4>
-								<h5>{{startDate}} - {{endDate}}</h5>
+				</section>
+
+				<section class="col-md-9 card-wrapper pull-right">
+					<div class="card background-card">
+						<h4 class="text-uppercase text-bolder">Background</h4>
+						<hr>
+						
+						<div class="background-details">
+							<div class="detail">
+								<div class="icon">
+									<i class="fa fa-lg fa-user"></i>
+								</div>
+								<div class="info">
+									<h4 class="title text-uppercase">
+										About
+									</h4>
+									
+									<div class="content">
+										{{bio.summary}}
+									</div>
+								</div>
 							</div>
-						{{/education}}
+							
+							<div class="detail">
+								<div class="icon">
+									<i class="fa fa-lg fa-building"></i>
+								</div>
+								<div class="info">
+									<h4 class="title text-uppercase">
+										Work Experience
+									</h4>
+									
+									<div class="content">
+										{{#work}}
+											<h5>{{position}}</h5>
+											<a target="_blank" href="{{website}}" class="text-uppercase"> {{company}} </a>
+										{{/work}}
+									</div>
+								</div>
+							</div>
+							
+							<div class="detail">
+								<div class="icon">
+									<i class="fa fa-lg fa-mortar-board"></i>
+								</div>
+								<div class="info">
+									<h4 class="title text-uppercase">
+										Education
+									</h4>
+									
+									<div class="content">
+										{{#education}}
+											<h5>{{institution}}</h5>
+											<h5>{{area}}, {{studyType}}</h5>
+										{{/education}}
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
+				</section>
 			</div>
 		</div>
 
-		<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>		
-		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	</body>
