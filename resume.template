@@ -113,6 +113,13 @@
 				padding: 0 10px;
 			}
 			
+			.skillset {
+				margin-bottom: 20px;
+			}
+			
+			.skillset:last-child {
+				margin-botton: 0;
+			}
 		</style>
 	</head>
 	
@@ -221,6 +228,29 @@
 							
 							<div class="detail">
 								<div class="icon">
+									<i class="fa fa-lg fa-code"></i>
+								</div>
+								<div class="info">
+									<h4 class="title text-uppercase">
+										Skills
+									</h4>
+									
+									<div class="content">
+										{{#skills}}
+											<div class="skillset">
+												<h5>{{name}}</h5>
+											
+												{{#keywords}}
+													<span class="label label-primary">{{.}}</span>
+												{{/keywords}}
+											</div>
+										{{/skills}}
+									</div>
+								</div>
+							</div>
+							
+							<div class="detail">
+								<div class="icon">
 									<i class="fa fa-lg fa-mortar-board"></i>
 								</div>
 								<div class="info">
@@ -233,6 +263,24 @@
 											<h5>{{institution}}</h5>
 											<h5>{{area}}, {{studyType}}</h5>
 										{{/education}}
+									</div>
+								</div>
+							</div>
+							
+							<div class="detail">
+								<div class="icon">
+									<i class="fa fa-lg fa-trophy"></i>
+								</div>
+								<div class="info">
+									<h4 class="title text-uppercase">
+										Awards
+									</h4>
+									
+									<div class="content">
+										{{#awards}}
+											<h5>{{title}}</h5>
+											<h5>{{awarder}}</h5>
+										{{/awards}}
 									</div>
 								</div>
 							</div>
