@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/mudassir0909/jsonresume-theme-elegant",
   "dependencies": {
-    "resume-schema": "0.0.11",
+    "resume-schema": "0.0.15",
     "gravatar": "^1.0.6",
-    "mustache": "^0.8.2",
+	"handlebars": "^2.0.0-alpha.4",
     "tarball-extract": "0.0.3",
     "underscore": "^1.6.0"
   }

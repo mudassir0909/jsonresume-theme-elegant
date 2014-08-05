@@ -1,31 +1,47 @@
 var fs = require('fs');
+var Handlebars = require('handlebars');
 var gravatar = require('gravatar');
-var Mustache = require('mustache');
 var _ = require('underscore');
 
-function hasPersonalEmail(resumeObject) {
-	return (resumeObject.bio && resumeObject.bio.email && resumeObject.bio.email.personal);
+// Utity Methods ( need be moved to a separate file)
+function hasEmail( resume ) {
+	return !!resume.basics && !!resume.basics.email;
 }
 
-function render (resumeObject) {
-	if (hasPersonalEmail(resumeObject)) {
-		resumeObject.bio.gravatar = gravatar.url(resumeObject.bio.email.personal, {
-			s: '100',
-			r: 'pg',
-			d: 'mm'
-		});
-	}
+function getNetwork( profiles, network_name ) {
+	return _.find( profiles, function ( profile ) {
+		return profile.network.toLowerCase() === network_name;
+	});	
+}
 
-	var theme = fs.readFileSync(__dirname + '/resume.template', 'utf8');
-	var resumeHTML = Mustache.render(theme, resumeObject);
+function render ( resume ) {
+	var css = fs.readFileSync(__dirname + '/style.css', 'utf-8'),
+		template = fs.readFileSync(__dirname + '/resume.template', 'utf-8'),
+		profiles = resume.basics.profiles,
+		twitter_account = getNetwork( profiles, 'twitter' ),
+		github_account = getNetwork( profiles, 'github' );
 	
-	_.each(resumeObject.work, function (work_experience) {
-		if (! work_experience.endDate) {
-			work_experience.endDate = 'Present';
-		}
+	if( hasEmail( resume ) ) {
+		resume.basics.gravatar = gravatar.url( resume.basics.email, {
+	    	s: '100',
+	        r: 'pg',
+	        d: 'mm'
+	    });
+	}
+	
+	twitter_account && _.extend( resume.basics, {
+		twitterHandle: twitter_account.username
+	});	
+	github_account && _.extend( resume.basics, {
+		githubUsername: github_account.username
 	});
 	
-	return resumeHTML;
+	return Handlebars.compile( template )({
+		css: css,
+		resume: resume
+	});
 }
 
-module.exports = { render: render };
+module.exports = {
+	render: render
+};

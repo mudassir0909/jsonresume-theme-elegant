@@ -4,122 +4,11 @@
 		<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>{{bio.firstName}} {{bio.lastName}}</title>
+		<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<style>
-			body {
-				font-family: 'Lato';
-				background: #F0F0F0;
-				color: #333;
-			}
-			
-			.main {
-				padding: 5px;
-			}
-
-			.card {
-				background: white;
-				border: 1px solid #E6E6E6;
-				border-radius: 3px;
-				min-height: 300px;
-				padding: 10px;
-			}
-			
-			.background-card {
-				padding: 10px 20px;
-			}
-			
-			.card-wrapper {
-				padding: 5px;
-			}
-			
-			.profile-pic {
-				padding: 20px 0;
-			}
-			
-			.text-bolder {
-				font-weight: bold;
-			}
-			
-			.contact-details .detail {
-				display: table;
-				padding: 10px 0;
-			}
-			
-			.contact-details .detail .icon {
-				padding: 0 10px;
-				color: #707070;
-			}
-			
-			.contact-details .detail .icon, .contact-details .detail .info {
-				display: table-cell;
-				vertical-align: middle;
-			}
-			
-			.contact-details .detail .info{
-				font-size: 0.8em;
-			}
-			
-			.social-link {
-				margin-left: 5px;
-			}
-
-			.social-link:first-child {
-				margin-left: 0;
-			}
-			
-			.social-link:hover {
-				text-decoration: none;
-			}
-			
-			.link-github {
-				color: #454545;
-			}
-
-			.link-github:hover {
-				color: black;
-			}
-
-			.link-twitter {
-				color: #33CCFF;
-			}
-			
-			.link-blog {
-				color: rgb(243, 111, 36);
-			}
-
-			.link-blog:hover {
-				color: rgb(211, 97, 32);
-			}
-			
-			.background-details .detail {
-				display: table;
-				padding: 10px 0;
-			}
-			
-			.background-details .detail .icon {
-				min-width: 45px;
-				max-width: 45px;
-				text-align: center;
-			}
-			
-			.background-details .detail .title, .background-details .detail .icon {
-				color: #707070;
-			}
-			
-			.background-details .detail .icon, .background-details .detail .info {
-				display: table-cell;
-				padding: 0 10px;
-			}
-			
-			.skillset {
-				margin-bottom: 20px;
-			}
-			
-			.skillset:last-child {
-				margin-botton: 0;
-			}
+			{{{css}}}
 		</style>
 	</head>
 	
@@ -135,55 +24,65 @@
 					<div class="card profile-card">
 						<div class="profile-pic">
 							<img class="media-object img-circle center-block"  data-src="holder.js/64x64"
-								alt="64x64" src="{{bio.gravatar}}" style="width: 100px; height: 100px;">
+								alt="64x64" src="{{resume.basics.gravatar}}" style="width: 100px; height: 100px;">
 						</div>
-						<h3 class="text-center text-bolder"> {{bio.firstName}} {{bio.lastName}}</h3>
-						<h5 class="text-muted text-center">Job Title</h5>
-						<hr>
+						{{#resume.basics}}
+							<h3 class="text-center text-bolder"> {{name}}</h3>
+							<h5 class="text-muted text-center">{{label}}</h5>
+							<hr>
 						
-						<div class="contact-details clearfix">
-							<div class="detail">
-								<span class="icon">
-									<i class="fa fa-lg fa-location-arrow"></i>
-								</span>
-	
-								<span class="info">
-									{{bio.location.city}}, {{bio.location.state}},
-									{{bio.location.countryCode}}
-								</span>
-							</div>
+							<div class="contact-details clearfix">
+								<div class="detail">
+									<span class="icon">
+										<i class="fa fa-lg fa-location-arrow"></i>
+									</span>
+								
+									{{#location}}
+										<span class="info">
+											{{city}}, {{region}},
+											{{countryCode}}
+										</span>
+									{{/location}}
+								</div>
 
-							<div class="detail">
-								<span class="icon">
-									<i class="fa fa-lg fa-phone"></i>
-								</span>
+								<div class="detail">
+									<span class="icon">
+										<i class="fa fa-lg fa-phone"></i>
+									</span>
 	
-								<span class="info">
-									{{bio.phone.personal}}
-								</span>
-							</div>
+									<span class="info">
+										{{phone}}
+									</span>
+								</div>
 
-							<div class="detail">
-								<span class="icon">
-									<i class="fa fa-lg fa-envelope"></i>
-								</span>
+								<div class="detail">
+									<span class="icon">
+										<i class="fa fa-lg fa-envelope"></i>
+									</span>
 	
-								<span class="info">
-									{{bio.email.personal}}
-								</span>
+									<span class="info">
+										{{email}}
+									</span>
+								</div>
 							</div>
-						</div>
 						
-						<hr>
+							<hr>
 						
-						<div class="social-links text-center">
-							<a class="fa fa-github fa-2x social-link link-github" 
-							   href="http://www.github.com/{{bio.profiles.github}}" target="_blank"></a>
-							<a class="fa fa-twitter fa-2x social-link link-twitter" 
-							   href="http://www.twitter.com/{{bio.profiles.twitter}}" target="_blank"></a>
-							<a class="fa fa-rss fa-2x social-link link-blog" 
-							   href="{{bio.websites.blog}}" target="_blank"></a>
-						</div>
+							<div class="social-links text-center">
+								{{#if githubUsername}}
+									<a class="fa fa-github fa-2x social-link link-github" 
+							   			href="http://www.github.com/{{githubUsername}}" target="_blank"></a>
+								{{/if}}
+								{{#if twitterHandle}}
+									<a class="fa fa-twitter fa-2x social-link link-twitter" 
+							   			href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
+								{{/if}}
+								{{#if website}}
+									<a class="fa fa-rss fa-2x social-link link-blog" 
+							   			href="{{website}}" target="_blank"></a>
+								{{/if}}
+							</div>
+						{{/resume.basics}}
 					</div>
 				</section>
 
@@ -203,7 +102,7 @@
 									</h4>
 									
 									<div class="content">
-										{{bio.summary}}
+										{{resume.basics.summary}}
 									</div>
 								</div>
 							</div>
@@ -217,12 +116,15 @@
 										Work Experience
 									</h4>
 									
-									<div class="content">
-										{{#work}}
-											<h5>{{position}}</h5>
-											<a target="_blank" href="{{website}}" class="text-uppercase"> {{company}} </a>
-										{{/work}}
-									</div>
+									<ul class="content list-unstyled">
+										{{#each resume.work}}
+											<li>
+												<small class="text-muted text-uppercase ">{{startDate}} - {{endDate}}</small>
+												<h5>{{position}}</h5>
+												<a target="_blank" href="{{website}}" class="text-uppercase"> {{company}} </a>
+											</li>
+										{{/each}}
+									</ul>
 								</div>
 							</div>
 							
@@ -236,7 +138,7 @@
 									</h4>
 									
 									<div class="content">
-										{{#skills}}
+										{{#each resume.skills}}
 											<div class="skillset">
 												<h5>{{name}}</h5>
 											
@@ -244,7 +146,7 @@
 													<span class="label label-primary">{{.}}</span>
 												{{/keywords}}
 											</div>
-										{{/skills}}
+										{{/each}}
 									</div>
 								</div>
 							</div>
@@ -259,31 +161,33 @@
 									</h4>
 									
 									<div class="content">
-										{{#education}}
-											<h5>{{institution}}</h5>
+										{{#each resume.education}}
+											<h4>{{institution}}</h4>
 											<h5>{{area}}, {{studyType}}</h5>
-										{{/education}}
+										{{/each}}
 									</div>
 								</div>
 							</div>
 							
-							<div class="detail">
-								<div class="icon">
-									<i class="fa fa-lg fa-trophy"></i>
-								</div>
-								<div class="info">
-									<h4 class="title text-uppercase">
-										Awards
-									</h4>
+							{{#if resume.awards}}
+								<div class="detail">
+									<div class="icon">
+										<i class="fa fa-lg fa-trophy"></i>
+									</div>
+									<div class="info">
+										<h4 class="title text-uppercase">
+											Awards
+										</h4>
 									
-									<div class="content">
-										{{#awards}}
-											<h5>{{title}}</h5>
-											<h5>{{awarder}}</h5>
-										{{/awards}}
+										<div class="content">
+											{{#each resume.awards}}
+												<h5>{{title}}</h5>
+												<h5>{{awarder}}</h5>
+												{{/each}}
+										</div>
 									</div>
 								</div>
-							</div>
+							{{/if}}
 						</div>
 					</div>
 				</section>
