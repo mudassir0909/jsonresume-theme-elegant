@@ -32,38 +32,45 @@
 							<hr>
 						
 							<div class="contact-details clearfix">
-								<div class="detail">
-									<span class="icon">
-										<i class="fa fa-lg fa-location-arrow"></i>
-									</span>
 								
-									{{#location}}
-										<span class="info">
-											{{city}}, {{region}},
-											{{countryCode}}
+								{{#if location}}
+									<div class="detail">
+										<span class="icon">
+											<i class="fa fa-lg fa-location-arrow"></i>
 										</span>
-									{{/location}}
-								</div>
+								
+										{{#location}}
+											<span class="info">
+												{{city}}, {{region}},
+												{{countryCode}}
+											</span>
+										{{/location}}
+									</div>
+								{{/if}}
 
-								<div class="detail">
-									<span class="icon">
-										<i class="fa fa-lg fa-phone"></i>
-									</span>
-	
-									<span class="info">
-										{{phone}}
-									</span>
-								</div>
+								{{#if phone}}
+									<div class="detail">
+										<span class="icon">
+											<i class="fa fa-lg fa-phone"></i>
+										</span>
+									
+										<span class="info">
+											{{phone}}
+										</span>
+									</div>
+								{{/if}}
 
-								<div class="detail">
-									<span class="icon">
-										<i class="fa fa-lg fa-envelope"></i>
-									</span>
+								{{#if email}}
+									<div class="detail">
+										<span class="icon">
+											<i class="fa fa-lg fa-envelope"></i>
+										</span>
 	
-									<span class="info">
-										{{email}}
-									</span>
-								</div>
+										<span class="info">
+											{{email}}
+										</span>
+									</div>
+								{{/if}}
 							</div>
 						
 							<hr>
