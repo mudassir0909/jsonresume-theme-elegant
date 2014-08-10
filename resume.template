@@ -125,9 +125,13 @@
 									
 									<ul class="content list-unstyled">
 										{{#each resume.work}}
-											<li>
-												<small class="text-muted text-uppercase ">{{startDate}} - {{endDate}}</small>
-												<p><strong>{{position}}</strong>, {{company}} </p>
+											<li class="card card-work-experience">
+												<p>
+													<strong>{{position}}</strong>, {{company}}
+													<small class="text-muted pull-right">
+														{{startDate}} - {{endDate}}
+													</small>
+												</p>
 												{{#if highlights}}
 													<ul>
 														{{#each highlights}}
@@ -135,8 +139,7 @@
 														{{/each}}
 													</ul>
 												{{/if}}
-											</li>
-											
+											</li>											
 										{{/each}}
 									</ul>
 								</div>

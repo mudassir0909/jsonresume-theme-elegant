@@ -16,6 +16,15 @@ body {
 	padding: 10px;
 }
 
+.card-work-experience {
+	min-height: 0;
+	margin-bottom: 10px;
+}
+
+.card-work-experience:last-child {
+	margin-bottom: 0;
+}
+
 .background-card {
 	padding: 10px 20px;
 }
@@ -101,6 +110,10 @@ body {
 .background-details .detail .icon, .background-details .detail .info {
 	display: table-cell;
 	padding: 0 10px;
+}
+
+.background-details .detail .info {
+	width: 100%;
 }
 
 .timeline-circle {

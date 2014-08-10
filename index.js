@@ -29,6 +29,10 @@ function render ( resume ) {
 	    });
 	}
 	
+	_.each(resume.work, function ( work_experience ) {
+		work_experience.endDate = work_experience.endDate || "Present";
+	});
+	
 	twitter_account && _.extend( resume.basics, {
 		twitterHandle: twitter_account.username
 	});	
