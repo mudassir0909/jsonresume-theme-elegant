@@ -176,8 +176,12 @@
 									
 									<div class="content">
 										{{#each resume.education}}
+											<small class="text-muted text-uppercase ">{{startDate}} - {{endDate}}</small>
 											<h4>{{institution}}</h4>
 											<h5>{{area}}, {{studyType}}</h5>
+											{{#courses}}
+												<span class="label label-primary">{{.}}</span>
+											{{/courses}}
 										{{/each}}
 									</div>
 								</div>
