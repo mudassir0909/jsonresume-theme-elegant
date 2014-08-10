@@ -29,7 +29,10 @@ function render(resume) {
             d: 'mm'
         });
     }
-
+    
+    if ( resume.languages ) {
+        resume.basics.languages = _.pluck( resume.languages, 'language' ).join( ', ' );
+    }
     _.each(resume.work, function(work_experience) {
         work_experience.endDate = work_experience.endDate || "Present";
     });

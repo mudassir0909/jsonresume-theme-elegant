@@ -71,6 +71,18 @@
                                         </span>
                                     </div>
                                 {{/if}}
+                                
+                                {{#if languages}}
+                                    <div class="detail">
+                                        <span class="icon" title="Languages I speak">
+                                            <i class="fa fa-lg fa-language"></i>
+                                        </span>
+                                        
+                                        <span class="info">
+                                            {{languages}}
+                                        </span>
+                                    </div>
+                                {{/if}}
                             </div>
                         
                             <hr>
@@ -125,13 +137,14 @@
                                     
                                     <ul class="content list-unstyled">
                                         {{#each resume.work}}
-                                            <li class="card card-work-experience">
+                                            <li class="card card-nested">
                                                 <p>
-                                                    <strong>{{position}}</strong>, {{company}}
+                                                    <strong>{{position}}</strong>,&nbsp;{{company}}
                                                     <small class="text-muted pull-right">
                                                         {{startDate}} - {{endDate}}
                                                     </small>
                                                 </p>
+                                                <p> {{summary}} </p>
                                                 {{#if highlights}}
                                                     <ul>
                                                         {{#each highlights}}
@@ -155,15 +168,19 @@
                                     </h4>
                                     
                                     <div class="content">
-                                        {{#each resume.skills}}
-                                            <div class="skillset">
-                                                <h5>{{name}}</h5>
-                                            
-                                                {{#keywords}}
-                                                    <span class="label label-primary">{{.}}</span>
-                                                {{/keywords}}
-                                            </div>
-                                        {{/each}}
+                                        <ul class="list-unstyled">
+                                            {{#each resume.skills}}
+                                                <li class="card card-nested">
+                                                    <strong>{{name}}</strong>
+                                                    
+                                                    <div class="space-top">
+                                                        {{#keywords}}
+                                                            <span class="label label-primary">{{.}}</span>
+                                                        {{/keywords}}
+                                                    </div>
+                                                </li>
+                                            {{/each}}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -178,14 +195,23 @@
                                     </h4>
                                     
                                     <div class="content">
-                                        {{#each resume.education}}
-                                            <small class="text-muted text-uppercase ">{{startDate}} - {{endDate}}</small>
-                                            <h4>{{institution}}</h4>
-                                            <h5>{{area}}, {{studyType}}</h5>
-                                            {{#courses}}
-                                                <span class="label label-primary">{{.}}</span>
-                                            {{/courses}}
-                                        {{/each}}
+                                        <ul class="list-unstyled">
+                                            {{#each resume.education}}
+                                                <li class="card card-nested">
+                                                    <p>
+                                                        <strong>{{area}}, {{studyType}}</strong>,&nbsp;
+                                                        {{institution}}
+                                                        <small class="text-muted pull-right">
+                                                            {{startDate}} - {{endDate}}
+                                                        </small>
+                                                    </p>
+                                                    <div class="space-top">
+                                                        {{#courses}}
+                                                            <span class="label label-primary">{{.}}</span>
+                                                        {{/courses}}
+                                                    </div>
+                                            {{/each}}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -201,14 +227,145 @@
                                         </h4>
                                     
                                         <div class="content">
-                                            {{#each resume.awards}}
-                                                <h5>{{title}}</h5>
-                                                <h5>{{awarder}}</h5>
+                                            <ul class="list-unstyled">
+                                                {{#each resume.awards}}
+                                                    <li class="card card-nested">
+                                                        <p>
+                                                            <strong>{{title}}</strong>,&nbsp;
+                                                            {{awarder}}
+                                                            <small class="pull-right text-muted">{{date}}</small>
+                                                        </p>
+                                                        <p class="clear-margin"> {{summary}} </p>
+                                                    </li>
                                                 {{/each}}
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             {{/if}}
+                            
+                            {{#if resume.volunteer}}
+                                <div class="detail">
+                                    <div class="icon">
+                                        <i class="fa fa-lg fa-child"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h4 class="title text-uppercase">
+                                            Volunteer Work
+                                        </h4>
+                                    
+                                        <div class="content">
+                                            <ul class="list-unstyled">
+                                                {{#each resume.volunteer}}
+                                                    <li class="card card-nested">
+                                                        <p>
+                                                            <strong>{{position}}</strong>,&nbsp;
+                                                            {{organization}}
+                                                            <small class="pull-right text-muted">
+                                                                {{startDate}} - {{endDate}}
+                                                            </small>
+                                                        </p>
+                                                        <p>{{summary}}</p>
+                                                        <ul>
+                                                            {{#each highlights}}
+                                                                <li> {{.}} </li>
+                                                            {{/each}}
+                                                        </ul>
+                                                    </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                            
+                            {{#if resume.publications}}
+                                <div class="detail">
+                                    <div class="icon">
+                                        <i class="fa fa-lg fa-book"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h4 class="title text-uppercase">
+                                            Publications
+                                        </h4>
+                                    
+                                        <div class="content">
+                                            <ul class="list-unstyled">
+                                                {{#each resume.publications}}
+                                                    <li class="card card-nested">
+                                                        <p>
+                                                            <strong>{{name}}</strong>,&nbsp;
+                                                            {{publisher}}
+                                                            <small class="pull-right text-muted">
+                                                                {{releaseDate}}
+                                                            </small>
+                                                        </p>
+                                                        <p class="clear-margin">{{summary}}</p>
+                                                    </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                            
+                            {{#if resume.interests}}
+                                <div class="detail">
+                                    <div class="icon">
+                                        <i class="fa fa-lg fa-heart"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h4 class="title text-uppercase">
+                                            Interests
+                                        </h4>
+                                    
+                                        <div class="content">
+                                            <ul class="list-unstyled">
+                                                {{#each resume.interests}}
+                                                    <li class="card card-nested">
+                                                        <p>
+                                                            <strong>{{name}}</strong>
+                                                        </p>
+                                                        
+                                                        <div class="space-top">
+                                                            {{#keywords}}
+                                                                <span class="label label-primary">{{.}}</span>
+                                                            {{/keywords}}
+                                                        </div>
+                                                    </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                            
+                            {{#if resume.references}}
+                                <div class="detail">
+                                    <div class="icon">
+                                        <i class="fa fa-lg fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h4 class="title text-uppercase">
+                                            References
+                                        </h4>
+                                    
+                                        <div class="content">
+                                            <ul class="list-unstyled">
+                                                {{#each resume.references}}
+                                                    <li class="card card-nested">
+                                                        <p>
+                                                            <strong>{{name}}</strong>
+                                                        </p>
+                                                        <p class="clear-margin">{{reference}}</p>
+                                                    </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                            
                         </div>
                     </div>
                 </section>

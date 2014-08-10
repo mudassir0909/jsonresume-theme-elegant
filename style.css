@@ -16,9 +16,10 @@ body {
 	padding: 10px;
 }
 
-.card-work-experience {
+.card-nested {
 	min-height: 0;
 	margin-bottom: 10px;
+    padding: 20px;
 }
 
 .card-work-experience:last-child {
@@ -130,10 +131,10 @@ body {
 	margin-left: 20px;
 }
 
-.skillset {
-	margin-bottom: 20px;
+.clear-margin {
+    margin: 0;
 }
 
-.skillset:last-child {
-	margin-botton: 0;
+.space-top {
+    margin-top: 10px;
 }
