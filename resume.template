@@ -127,9 +127,16 @@
 										{{#each resume.work}}
 											<li>
 												<small class="text-muted text-uppercase ">{{startDate}} - {{endDate}}</small>
-												<h5>{{position}}</h5>
-												<a target="_blank" href="{{website}}" class="text-uppercase"> {{company}} </a>
+												<p><strong>{{position}}</strong>, {{company}} </p>
+												{{#if highlights}}
+													<ul>
+														{{#each highlights}}
+															<li> {{.}} </li>
+														{{/each}}
+													</ul>
+												{{/if}}
 											</li>
+											
 										{{/each}}
 									</ul>
 								</div>
