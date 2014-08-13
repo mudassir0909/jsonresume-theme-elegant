@@ -70,9 +70,6 @@ function render(resume) {
 
         end_date = end_date || new Date();
         work_info.duration = humanizeDuration( moment.duration( end_date.getTime() - start_date.getTime() ) )
-        // work_info.duration = humanizedDuration(
-        //     ( end_date ? end_date.getTime() / 1000 : humanize.time() ),
-        //     start_date.getTime() / 1000 );
     });
 
     twitter_account && _.extend(resume.basics, {
