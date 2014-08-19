@@ -11,7 +11,7 @@
             {{{css}}}
         </style>
     </head>
-    
+
     <body>
         <script>
             window.onload = function () {
@@ -30,15 +30,15 @@
                             <h3 class="text-center text-bolder"> {{name}}</h3>
                             <h5 class="text-muted text-center">{{label}}</h5>
                             <hr>
-                        
+
                             <div class="contact-details clearfix">
-                                
+
                                 {{#if location}}
                                     <div class="detail">
                                         <span class="icon">
                                             <i class="fa fa-lg fa-location-arrow"></i>
                                         </span>
-                                
+
                                         {{#location}}
                                             <span class="info">
                                                 {{city}}, {{region}},
@@ -53,7 +53,7 @@
                                         <span class="icon">
                                             <i class="fa fa-lg fa-phone"></i>
                                         </span>
-                                    
+
                                         <span class="info">
                                             {{phone}}
                                         </span>
@@ -65,39 +65,39 @@
                                         <span class="icon">
                                             <i class="fa fa-lg fa-envelope"></i>
                                         </span>
-    
+
                                         <span class="info">
                                             {{email}}
                                         </span>
                                     </div>
                                 {{/if}}
-                                
+
                                 {{#if languages}}
                                     <div class="detail">
                                         <span class="icon" title="Languages I speak">
                                             <i class="fa fa-lg fa-language"></i>
                                         </span>
-                                        
+
                                         <span class="info">
                                             {{languages}}
                                         </span>
                                     </div>
                                 {{/if}}
                             </div>
-                        
+
                             <hr>
-                        
+
                             <div class="social-links text-center">
                                 {{#if githubUsername}}
-                                    <a class="fa fa-github fa-2x social-link link-github" 
+                                    <a class="fa fa-github fa-2x social-link link-github"
                                            href="http://www.github.com/{{githubUsername}}" target="_blank"></a>
                                 {{/if}}
                                 {{#if twitterHandle}}
-                                    <a class="fa fa-twitter fa-2x social-link link-twitter" 
+                                    <a class="fa fa-twitter fa-2x social-link link-twitter"
                                            href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
                                 {{/if}}
                                 {{#if website}}
-                                    <a class="fa fa-rss fa-2x social-link link-blog" 
+                                    <a class="fa fa-rss fa-2x social-link link-blog"
                                            href="{{website}}" target="_blank"></a>
                                 {{/if}}
                             </div>
@@ -109,7 +109,7 @@
                     <div class="card background-card">
                         <h4 class="text-uppercase text-bolder">Background</h4>
                         <hr>
-                        
+
                         <div class="background-details">
                             <div class="detail">
                                 <div class="icon">
@@ -119,13 +119,13 @@
                                     <h4 class="title text-uppercase">
                                         About
                                     </h4>
-                                    
+
                                     <div class="content">
                                         {{resume.basics.summary}}
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="detail">
                                 <div class="icon">
                                     <i class="fa fa-lg fa-building"></i>
@@ -134,30 +134,47 @@
                                     <h4 class="title text-uppercase">
                                         Work Experience
                                     </h4>
-                                    
-                                    <ul class="content list-unstyled">
+
+                                    <ul class="list-unstyled">
                                         {{#each resume.work}}
-                                            <li class="card card-nested">
-                                                <p>
-                                                    <strong>{{position}}</strong>,&nbsp;{{company}}
-                                                    <small class="text-muted pull-right">
-                                                        {{startDate}} - {{endDate}}
-                                                    </small>
-                                                </p>
-                                                <p> {{summary}} </p>
-                                                {{#if highlights}}
-                                                    <ul>
-                                                        {{#each highlights}}
-                                                            <li> {{.}} </li>
-                                                        {{/each}}
-                                                    </ul>
-                                                {{/if}}
-                                            </li>                                            
+                                            <li class="card card-nested clearfix">
+                                                <div class="content has-sidebar">
+                                                    <p><strong>{{position}}</strong>,&nbsp;{{company}}</p>
+                                                    <p>{{summary}}</p>
+                                                    {{#if highlights}}
+                                                        <ul>
+                                                            {{#each highlights}}
+                                                                <li> {{.}} </li>
+                                                            {{/each}}
+                                                        </ul>
+                                                    {{/if}}
+                                                </div>
+
+                                                <div class="sidebar text-muted text-center">
+                                                    <p>
+                                                        <strong>Joined:</strong>&nbsp;
+                                                        {{startDate}}
+                                                    </p>
+                                                    <p>
+                                                        {{#if endDate}}
+                                                            <strong>Left:</strong>&nbsp;
+                                                            {{endDate}}
+                                                        {{else}}
+                                                            <span class="label label-success">
+                                                                Currently Working
+                                                            </span>
+                                                        {{/if}}
+                                                    </p>
+                                                    <p>
+                                                        ({{duration}})
+                                                    </p>
+                                                </div>
+                                            </li>
                                         {{/each}}
                                     </ul>
                                 </div>
                             </div>
-                            
+
                             <div class="detail">
                                 <div class="icon">
                                     <i class="fa fa-lg fa-code"></i>
@@ -166,13 +183,13 @@
                                     <h4 class="title text-uppercase">
                                         Skills
                                     </h4>
-                                    
+
                                     <div class="content">
                                         <ul class="list-unstyled">
                                             {{#each resume.skills}}
                                                 <li class="card card-nested">
                                                     <strong>{{name}}</strong>
-                                                    
+
                                                     <div class="space-top">
                                                         {{#keywords}}
                                                             <span class="label label-primary">{{.}}</span>
@@ -184,7 +201,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="detail">
                                 <div class="icon">
                                     <i class="fa fa-lg fa-mortar-board"></i>
@@ -193,7 +210,7 @@
                                     <h4 class="title text-uppercase">
                                         Education
                                     </h4>
-                                    
+
                                     <div class="content">
                                         <ul class="list-unstyled">
                                             {{#each resume.education}}
@@ -215,7 +232,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             {{#if resume.awards}}
                                 <div class="detail">
                                     <div class="icon">
@@ -225,7 +242,7 @@
                                         <h4 class="title text-uppercase">
                                             Awards
                                         </h4>
-                                    
+
                                         <div class="content">
                                             <ul class="list-unstyled">
                                                 {{#each resume.awards}}
@@ -243,7 +260,7 @@
                                     </div>
                                 </div>
                             {{/if}}
-                            
+
                             {{#if resume.volunteer}}
                                 <div class="detail">
                                     <div class="icon">
@@ -253,7 +270,7 @@
                                         <h4 class="title text-uppercase">
                                             Volunteer Work
                                         </h4>
-                                    
+
                                         <div class="content">
                                             <ul class="list-unstyled">
                                                 {{#each resume.volunteer}}
@@ -278,7 +295,7 @@
                                     </div>
                                 </div>
                             {{/if}}
-                            
+
                             {{#if resume.publications}}
                                 <div class="detail">
                                     <div class="icon">
@@ -288,7 +305,7 @@
                                         <h4 class="title text-uppercase">
                                             Publications
                                         </h4>
-                                    
+
                                         <div class="content">
                                             <ul class="list-unstyled">
                                                 {{#each resume.publications}}
@@ -308,7 +325,7 @@
                                     </div>
                                 </div>
                             {{/if}}
-                            
+
                             {{#if resume.interests}}
                                 <div class="detail">
                                     <div class="icon">
@@ -318,7 +335,7 @@
                                         <h4 class="title text-uppercase">
                                             Interests
                                         </h4>
-                                    
+
                                         <div class="content">
                                             <ul class="list-unstyled">
                                                 {{#each resume.interests}}
@@ -326,7 +343,7 @@
                                                         <p>
                                                             <strong>{{name}}</strong>
                                                         </p>
-                                                        
+
                                                         <div class="space-top">
                                                             {{#keywords}}
                                                                 <span class="label label-primary">{{.}}</span>
@@ -339,7 +356,7 @@
                                     </div>
                                 </div>
                             {{/if}}
-                            
+
                             {{#if resume.references}}
                                 <div class="detail">
                                     <div class="icon">
@@ -349,7 +366,7 @@
                                         <h4 class="title text-uppercase">
                                             References
                                         </h4>
-                                    
+
                                         <div class="content">
                                             <ul class="list-unstyled">
                                                 {{#each resume.references}}
@@ -365,7 +382,7 @@
                                     </div>
                                 </div>
                             {{/if}}
-                            
+
                         </div>
                     </div>
                 </section>
