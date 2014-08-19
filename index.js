@@ -16,8 +16,9 @@ function getNetwork(profiles, network_name) {
     });
 }
 
-function humanizeDuration ( moment_obj ) {
-    var months = moment_obj.months(),
+function humanizeDuration ( moment_obj, did_leave_company ) {
+    var days,
+        months = moment_obj.months(),
         years = moment_obj.years(),
         month_str = months > 1 ? 'months' : 'month',
         year_str = years > 1 ? 'years' : 'year';
@@ -34,7 +35,13 @@ function humanizeDuration ( moment_obj ) {
         return years + ' ' + year_str;
     }
 
-    return 'Recently joined';
+    if ( did_leave_company ) {
+        days = moment_obj.days();
+
+        return ( days > 1 ? days + ' days' : days + ' day' );
+    } else {
+        return 'Recently joined';
+    }
 }
 
 function render(resume) {
@@ -56,7 +63,8 @@ function render(resume) {
         resume.basics.languages = _.pluck( resume.languages, 'language' ).join( ', ' );
     }
     _.each( resume.work, function( work_info ) {
-        var start_date = work_info.startDate && new Date( work_info.startDate ),
+        var did_leave_company,
+            start_date = work_info.startDate && new Date( work_info.startDate ),
             end_date = work_info.endDate && new Date( work_info.endDate ),
             date_format = 'MMM, YYYY';
 
@@ -68,8 +76,11 @@ function render(resume) {
             work_info.endDate = moment( end_date ).format( date_format );
         }
 
+        did_leave_company = !! end_date;
         end_date = end_date || new Date();
-        work_info.duration = humanizeDuration( moment.duration( end_date.getTime() - start_date.getTime() ) )
+        work_info.duration = humanizeDuration(
+            moment.duration( end_date.getTime() - start_date.getTime() ),
+            did_leave_company )
     });
 
     twitter_account && _.extend(resume.basics, {

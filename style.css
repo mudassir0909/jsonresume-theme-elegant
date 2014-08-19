@@ -144,6 +144,7 @@ body {
     width: 80% ;
     box-sizing: border-box;
     float: left;
+    padding: 0 10px;
 }
 
 .info .sidebar {
