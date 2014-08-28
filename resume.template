@@ -97,11 +97,11 @@
                                            href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
                                 {{/if}}
                                 {{#if linkedInUsername}}
-                                    <a class="fa fa-twitter fa-2x social-link link-twitter"
+                                    <a class="fa fa-linkedinsquare fa-2x social-link link-linkedinsquare"
                                            href="http://www.twitter.com/{{linkedInUsername}}" target="_blank"></a>
                                 {{/if}}
                                 {{#if skypeHandle}}
-                                    <a class="fa fa-twitter fa-2x social-link link-twitter"
+                                    <a class="fa fa-skype fa-2x social-link link-skype"
                                            href="http://www.twitter.com/{{skypeHandle}}" target="_blank"></a>
                                 {{/if}}
 
