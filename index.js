@@ -89,6 +89,12 @@ function render(resume) {
     github_account && _.extend(resume.basics, {
         githubUsername: github_account.username
     });
+    skype_account && _.extend(resume.basics,{
+        skypeHandle: skype_account.username
+    });
+    linkedIn_account && _.extend(resume.basics,{
+        linkedInUsername: linkedIn.username
+    });
 
     return Handlebars.compile(template)({
         css: css,

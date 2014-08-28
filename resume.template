@@ -96,6 +96,15 @@
                                     <a class="fa fa-twitter fa-2x social-link link-twitter"
                                            href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
                                 {{/if}}
+                                {{#if linkedInUsername}}
+                                    <a class="fa fa-twitter fa-2x social-link link-twitter"
+                                           href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
+                                {{/if}}
+                                {{#if skypeHandle}}
+                                    <a class="fa fa-twitter fa-2x social-link link-twitter"
+                                           href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
+                                {{/if}}
+
                                 {{#if website}}
                                     <a class="fa fa-rss fa-2x social-link link-blog"
                                            href="{{website}}" target="_blank"></a>
