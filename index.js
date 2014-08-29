@@ -50,6 +50,8 @@ function render(resume) {
         profiles = resume.basics.profiles,
         twitter_account = getNetwork(profiles, 'twitter'),
         github_account = getNetwork(profiles, 'github');
+        skype_account = getNetwork(profiles, 'skype');
+        linkedIn_account = getNetwork(profiles, 'linkedIn');
 
     if (hasEmail(resume)) {
         resume.basics.gravatar = gravatar.url(resume.basics.email, {
