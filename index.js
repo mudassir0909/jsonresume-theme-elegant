@@ -50,6 +50,8 @@ function render(resume) {
         profiles = resume.basics.profiles,
         twitter_account = getNetwork(profiles, 'twitter'),
         github_account = getNetwork(profiles, 'github');
+        skype_account = getNetwork(profiles, 'skype');
+        linkedIn_account = getNetwork(profiles, 'linkedIn');
 
     if (hasEmail(resume)) {
         resume.basics.gravatar = gravatar.url(resume.basics.email.replace('(at)', '@'), {
@@ -88,6 +90,12 @@ function render(resume) {
     });
     github_account && _.extend(resume.basics, {
         githubUsername: github_account.username
+    });
+    skype_account && _.extend(resume.basics,{
+        skypeHandle: skype_account.username
+    });
+    linkedIn_account && _.extend(resume.basics,{
+        linkedInUsername: linkedIn.username
     });
 
     return Handlebars.compile(template)({
