@@ -222,6 +222,9 @@
                                                             {{startDate}} - {{endDate}}
                                                         </small>
                                                     </p>
+                                                    <p class="italics">
+                                                        {{gpa}}
+                                                    </p>
                                                     <div class="space-top">
                                                         {{#courses}}
                                                             <span class="label label-primary">{{.}}</span>

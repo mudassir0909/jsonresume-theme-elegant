@@ -153,3 +153,7 @@ body {
     padding: 10px;
     border-left: 1px solid #ccc;
 }
+
+.italics {
+    font-style: italic;
+}
