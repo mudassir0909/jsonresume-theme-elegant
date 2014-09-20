@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-elegant",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Elegant theme for jsonresume",
   "main": "index.js",
   "scripts": {
@@ -28,5 +28,13 @@
     "resume-schema": "0.0.15",
     "tarball-extract": "0.0.3",
     "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.6",
+    "less": "^1.7.5",
+    "underscore.string": "^2.3.3"
   }
 }

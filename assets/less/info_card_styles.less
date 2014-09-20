@@ -1,0 +1,48 @@
+.profile-pic {
+    padding: 20px 0;
+}
+
+.contact-details {
+    .detail {
+        display: table;
+        padding: 10px 0;
+
+        .icon {
+            padding: 0 10px;
+            color: @icon-color;
+        }
+
+        .info {
+            font-size: 0.8em;
+        }
+
+        .icon, .info {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+
+.social-link {
+    margin-left: 5px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.link-github {
+    .make-social-link(@github-color);
+}
+
+.link-twitter {
+    .make-social-link(@twitter-color);
+}
+
+.link-blog {
+    .make-social-link(@rss-feed-color);
+}
