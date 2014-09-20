@@ -225,18 +225,34 @@
                                         <ul class="list-unstyled">
                                             {{#each resume.education}}
                                                 <li class="card card-nested">
-                                                    <p>
-                                                        <strong>{{area}}, {{studyType}}</strong>,&nbsp;
-                                                        {{institution}}
-                                                        <small class="text-muted pull-right">
-                                                            {{startDate}} - {{endDate}}
-                                                        </small>
-                                                    </p>
-                                                    <div class="space-top labels">
-                                                        {{#courses}}
-                                                            <span class="label label-keyword">{{.}}</span>
-                                                        {{/courses}}
+                                                    <div class="content has-sidebar">
+                                                        <p>
+                                                            <strong>{{area}}, {{studyType}}</strong>,&nbsp;
+                                                            {{institution}}
+                                                        </p>
+                                                        <div class="space-top labels">
+                                                            {{#courses}}
+                                                                <span class="label label-keyword">{{.}}</span>
+                                                            {{/courses}}
+                                                        </div>
                                                     </div>
+                                                    <div class="sidebar text-muted text-center">
+                                                        <p>
+                                                            <strong>Started:</strong>&nbsp;
+                                                            {{startDate}}
+                                                        </p>
+                                                        <p>
+                                                            {{#if endDate}}
+                                                                <strong>Completion:</strong>&nbsp;
+                                                                {{endDate}}
+                                                            {{else}}
+                                                                <span class="label label-success">
+                                                                    Currently Pursuing
+                                                                </span>
+                                                            {{/if}}
+                                                        </p>
+                                                    </div>
+                                                </li>
                                             {{/each}}
                                         </ul>
                                     </div>
@@ -257,12 +273,19 @@
                                             <ul class="list-unstyled">
                                                 {{#each resume.awards}}
                                                     <li class="card card-nested">
-                                                        <p>
-                                                            <strong>{{title}}</strong>,&nbsp;
-                                                            {{awarder}}
-                                                            <small class="pull-right text-muted">{{date}}</small>
-                                                        </p>
-                                                        <p class="clear-margin"> {{summary}} </p>
+                                                        <div class="content has-sidebar">
+                                                            <p>
+                                                                <strong>{{title}}</strong>,&nbsp;
+                                                                {{awarder}}
+                                                            </p>
+                                                            <p class="clear-margin"> {{summary}} </p>
+                                                        </div>
+                                                        <div class="sidebar text-muted text-center">
+                                                            <p>
+                                                                <strong>Awarded on:</strong>&nbsp;
+                                                                {{date}}
+                                                            </p>
+                                                        </div>
                                                     </li>
                                                 {{/each}}
                                             </ul>
@@ -285,19 +308,34 @@
                                             <ul class="list-unstyled">
                                                 {{#each resume.volunteer}}
                                                     <li class="card card-nested">
-                                                        <p>
-                                                            <strong>{{position}}</strong>,&nbsp;
-                                                            {{organization}}
-                                                            <small class="pull-right text-muted">
-                                                                {{startDate}} - {{endDate}}
-                                                            </small>
-                                                        </p>
-                                                        <p>{{summary}}</p>
-                                                        <ul>
-                                                            {{#each highlights}}
-                                                                <li> {{.}} </li>
-                                                            {{/each}}
-                                                        </ul>
+                                                        <div class="content has-sidebar">
+                                                            <p>
+                                                                <strong>{{position}}</strong>,&nbsp;
+                                                                {{organization}}
+                                                            </p>
+                                                            <p>{{summary}}</p>
+                                                            <ul>
+                                                                {{#each highlights}}
+                                                                    <li> {{.}} </li>
+                                                                {{/each}}
+                                                            </ul>
+                                                        </div>
+                                                        <div class="sidebar text-muted text-center">
+                                                            <p>
+                                                                <strong>Since:</strong>&nbsp;
+                                                                {{startDate}}
+                                                            </p>
+                                                            <p>
+                                                                {{#if endDate}}
+                                                                    <strong>Until:</strong>&nbsp;
+                                                                    {{endDate}}
+                                                                {{else}}
+                                                                    <span class="label label-success">
+                                                                        Currently Volunteering
+                                                                    </span>
+                                                                {{/if}}
+                                                            </p>
+                                                        </div>
                                                     </li>
                                                 {{/each}}
                                             </ul>
@@ -320,14 +358,19 @@
                                             <ul class="list-unstyled">
                                                 {{#each resume.publications}}
                                                     <li class="card card-nested">
-                                                        <p>
-                                                            <strong>{{name}}</strong>,&nbsp;
-                                                            {{publisher}}
-                                                            <small class="pull-right text-muted">
+                                                        <div class="content has-sidebar">
+                                                            <p>
+                                                                <strong>{{name}}</strong>,&nbsp;
+                                                                {{publisher}}
+                                                            </p>
+                                                            <p class="clear-margin">{{summary}}</p>
+                                                        </div>
+                                                        <div class="sidebar text-muted text-center">
+                                                            <p>
+                                                                <strong>Published on:</strong>&nbsp;
                                                                 {{releaseDate}}
-                                                            </small>
-                                                        </p>
-                                                        <p class="clear-margin">{{summary}}</p>
+                                                            </p>
+                                                        </div>
                                                     </li>
                                                 {{/each}}
                                             </ul>
