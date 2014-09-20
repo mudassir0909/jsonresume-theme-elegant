@@ -362,7 +362,7 @@
                                                             <p>
                                                                 <strong>
                                                                     {{#if website}}
-                                                                        <a href="{{website}}">{{name}}</a>
+                                                                        <a href="{{website}}"  target="_blank">{{name}}</a>
                                                                     {{else}}
                                                                         {{name}}
                                                                     {{/if}}
