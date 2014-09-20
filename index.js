@@ -53,7 +53,7 @@ function render(resume) {
         github_account = getNetwork(profiles, 'github');
 
     if (hasEmail(resume)) {
-        resume.basics.gravatar = gravatar.url(resume.basics.email, {
+        resume.basics.gravatar = gravatar.url(resume.basics.email.replace('(at)', '@'), {
             s: '100',
             r: 'pg',
             d: 'mm'
