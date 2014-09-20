@@ -1,0 +1,79 @@
+@import "variables";
+@import "mixins";
+
+body {
+    font-family: 'Lato';
+    background: @theme-bg;
+    color: @theme-font-color;
+}
+
+.main {
+    padding: 5px;
+}
+
+.card {
+    background: @card-bg;
+    border: 1px solid @card-border-color;
+    border-radius: @card-border-radius;
+    min-height: 300px;
+    padding: 10px;
+}
+
+.card-nested {
+    min-height: 0;
+    margin-bottom: 10px;
+    border-width: 1px 0 0 0;
+}
+
+.background-card {
+    padding: 10px 20px;
+}
+
+.card-wrapper {
+    padding: 5px;
+}
+
+.text-bolder {
+    font-weight: bold;
+}
+
+.background-details {
+    .detail {
+        display: table;
+        padding: 10px 0;
+
+        .icon {
+            min-width: 45px;
+            max-width: 45px;
+            text-align: center;
+        }
+
+        .info {
+            width: 100%;
+        }
+
+        .title, .icon {
+            color: @icon-color;
+        }
+
+        .icon, .info {
+            display: table-cell;
+            padding: 0 10px;
+        }
+    }
+}
+
+.info {
+    .content.has-sidebar {
+        width: 80%;
+        box-sizing: border-box;
+        float: left;
+        padding: 0 10px;
+        border-right: 1px solid darken(@card-border-color, 10%);
+    }
+    .sidebar {
+        margin-left: 80%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+}

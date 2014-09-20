@@ -15,7 +15,8 @@
     <body>
         <script>
             window.onload = function () {
-                $(".background-card").css( "min-height", window.screen.availHeight + "px" );
+                $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
+                $( ".js-tooltip" ).tooltip();
             }
         </script>
         <div class="container-fluid">
@@ -166,7 +167,8 @@
                                                         {{/if}}
                                                     </p>
                                                     <p>
-                                                        ({{duration}})
+                                                        <i class="fa fa-clock-o icon-left"></i>
+                                                        {{duration}}
                                                     </p>
                                                 </div>
                                             </li>
@@ -187,13 +189,21 @@
                                     <div class="content">
                                         <ul class="list-unstyled">
                                             {{#each resume.skills}}
-                                                <li class="card card-nested">
-                                                    <strong>{{name}}</strong>
+                                                <li class="card card-nested card-skills">
+                                                    {{#if display_progress_bar}}
+                                                        <div class="skill-level js-tooltip" title="{{level}}" data-placement="left">
+                                                            <div class="skill-progress {{skill_class}}">
+                                                            </div>
+                                                        </div>
+                                                    {{/if}}
+                                                    <div class="skill-info">
+                                                        <strong>{{name}}</strong>
 
-                                                    <div class="space-top">
-                                                        {{#keywords}}
-                                                            <span class="label label-primary">{{.}}</span>
-                                                        {{/keywords}}
+                                                        <div class="space-top labels">
+                                                            {{#keywords}}
+                                                                <span class="label label-keyword">{{.}}</span>
+                                                            {{/keywords}}
+                                                        </div>
                                                     </div>
                                                 </li>
                                             {{/each}}
@@ -222,9 +232,9 @@
                                                             {{startDate}} - {{endDate}}
                                                         </small>
                                                     </p>
-                                                    <div class="space-top">
+                                                    <div class="space-top labels">
                                                         {{#courses}}
-                                                            <span class="label label-primary">{{.}}</span>
+                                                            <span class="label label-keyword">{{.}}</span>
                                                         {{/courses}}
                                                     </div>
                                             {{/each}}
@@ -344,9 +354,9 @@
                                                             <strong>{{name}}</strong>
                                                         </p>
 
-                                                        <div class="space-top">
+                                                        <div class="space-top labels">
                                                             {{#keywords}}
-                                                                <span class="label label-primary">{{.}}</span>
+                                                                <span class="label label-keyword">{{.}}</span>
                                                             {{/keywords}}
                                                         </div>
                                                     </li>
@@ -391,5 +401,6 @@
 
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
     </body>
 </html>

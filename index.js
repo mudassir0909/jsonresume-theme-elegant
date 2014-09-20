@@ -2,6 +2,7 @@ var fs = require('fs');
 var Handlebars = require('handlebars');
 var gravatar = require('gravatar');
 var _ = require('underscore');
+var _s = require('underscore.string');
 var moment = require('moment');
 
 // Utity Methods ( need be moved to a separate file)
@@ -45,7 +46,7 @@ function humanizeDuration ( moment_obj, did_leave_company ) {
 }
 
 function render(resume) {
-    var css = fs.readFileSync(__dirname + '/style.css', 'utf-8'),
+    var css = fs.readFileSync(__dirname + '/assets/css/theme.css', 'utf-8'),
         template = fs.readFileSync(__dirname + '/resume.template', 'utf-8'),
         profiles = resume.basics.profiles,
         twitter_account = getNetwork(profiles, 'twitter'),
@@ -82,6 +83,16 @@ function render(resume) {
             moment.duration( end_date.getTime() - start_date.getTime() ),
             did_leave_company )
     });
+
+    _.each( resume.skills, function( skill_info ) {
+        var levels = [ 'Beginner', 'Intermediate', 'Advanced', 'Master' ];
+
+        if ( skill_info.level ) {
+            skill_info.skill_class = skill_info.level.toLowerCase();
+            skill_info.level = _s.capitalize( skill_info.level.trim() );
+            skill_info.display_progress_bar = _.contains( levels, skill_info.level );
+        }
+    })
 
     twitter_account && _.extend(resume.basics, {
         twitterHandle: twitter_account.username
