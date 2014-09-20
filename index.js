@@ -51,6 +51,7 @@ function render(resume) {
         profiles = resume.basics.profiles,
         twitter_account = getNetwork(profiles, 'twitter'),
         github_account = getNetwork(profiles, 'github'),
+        linkedin_account = getNetwork(profiles, 'linkedin'),
         date_format = 'MMM, YYYY';
 
 
@@ -132,6 +133,9 @@ function render(resume) {
     });
     github_account && _.extend(resume.basics, {
         githubUsername: github_account.username
+    });
+    linkedin_account && _.extend(resume.basics, {
+        linkedinUrl: linkedin_account.url
     });
 
     return Handlebars.compile(template)({
