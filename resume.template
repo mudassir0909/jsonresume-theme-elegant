@@ -230,6 +230,7 @@
                                                             <strong>{{area}}, {{studyType}}</strong>,&nbsp;
                                                             {{institution}}
                                                         </p>
+                                                        <i>{{gpa}}</i>
                                                         <div class="space-top labels">
                                                             {{#courses}}
                                                                 <span class="label label-keyword">{{.}}</span>
