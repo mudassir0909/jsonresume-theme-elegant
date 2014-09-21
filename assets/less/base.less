@@ -65,14 +65,13 @@ body {
 
 .info {
     .content.has-sidebar {
-        width: 80%;
         box-sizing: border-box;
-        float: left;
         padding: 0 10px;
-        border-right: 1px solid darken(@card-border-color, 10%);
+        @media only screen and (min-width : @bootstrap-md-cutoff) {
+            border-right: 1px solid darken(@card-border-color, 10%);
+        }
     }
     .sidebar {
-        margin-left: 80%;
         box-sizing: border-box;
         padding: 10px;
     }

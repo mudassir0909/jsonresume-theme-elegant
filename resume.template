@@ -138,8 +138,8 @@
 
                                     <ul class="list-unstyled">
                                         {{#each resume.work}}
-                                            <li class="card card-nested clearfix">
-                                                <div class="content has-sidebar">
+                                            <li class="row card card-nested clearfix">
+                                                <div class="content has-sidebar col-md-10">
                                                     <p><strong>{{position}}</strong>,&nbsp;{{company}}</p>
                                                     <p>{{summary}}</p>
                                                     {{#if highlights}}
@@ -151,7 +151,7 @@
                                                     {{/if}}
                                                 </div>
 
-                                                <div class="sidebar text-muted text-center">
+                                                <div class="sidebar text-muted text-center col-md-2">
                                                     <p>
                                                         <strong>Joined:</strong>&nbsp;
                                                         {{startDate}}
@@ -224,8 +224,8 @@
                                     <div class="content">
                                         <ul class="list-unstyled">
                                             {{#each resume.education}}
-                                                <li class="card card-nested">
-                                                    <div class="content has-sidebar">
+                                                <li class="row card card-nested">
+                                                    <div class="content has-sidebar col-md-10">
                                                         <p>
                                                             <strong>{{area}}, {{studyType}}</strong>,&nbsp;
                                                             {{institution}}
@@ -237,7 +237,7 @@
                                                             {{/courses}}
                                                         </div>
                                                     </div>
-                                                    <div class="sidebar text-muted text-center">
+                                                    <div class="sidebar text-muted text-center col-md-2">
                                                         <p>
                                                             <strong>Started:</strong>&nbsp;
                                                             {{startDate}}
@@ -273,15 +273,15 @@
                                         <div class="content">
                                             <ul class="list-unstyled">
                                                 {{#each resume.awards}}
-                                                    <li class="card card-nested">
-                                                        <div class="content has-sidebar">
+                                                    <li class="row card card-nested">
+                                                        <div class="content has-sidebar col-md-10">
                                                             <p>
                                                                 <strong>{{title}}</strong>,&nbsp;
                                                                 {{awarder}}
                                                             </p>
                                                             <p class="clear-margin"> {{summary}} </p>
                                                         </div>
-                                                        <div class="sidebar text-muted text-center">
+                                                        <div class="sidebar text-muted text-center col-md-2">
                                                             <p>
                                                                 <strong>Awarded on:</strong>&nbsp;
                                                                 {{date}}
@@ -308,8 +308,8 @@
                                         <div class="content">
                                             <ul class="list-unstyled">
                                                 {{#each resume.volunteer}}
-                                                    <li class="card card-nested">
-                                                        <div class="content has-sidebar">
+                                                    <li class="row card card-nested">
+                                                        <div class="content has-sidebar col-md-10">
                                                             <p>
                                                                 <strong>{{position}}</strong>,&nbsp;
                                                                 {{organization}}
@@ -321,7 +321,7 @@
                                                                 {{/each}}
                                                             </ul>
                                                         </div>
-                                                        <div class="sidebar text-muted text-center">
+                                                        <div class="sidebar text-muted text-center col-md-2">
                                                             <p>
                                                                 <strong>Since:</strong>&nbsp;
                                                                 {{startDate}}
@@ -358,8 +358,8 @@
                                         <div class="content">
                                             <ul class="list-unstyled">
                                                 {{#each resume.publications}}
-                                                    <li class="card card-nested">
-                                                        <div class="content has-sidebar">
+                                                    <li class="row card card-nested">
+                                                        <div class="content has-sidebar col-md-10">
                                                             <p>
                                                                 <strong>
                                                                     {{#if website}}
@@ -372,7 +372,7 @@
                                                             </p>
                                                             <p class="clear-margin">{{summary}}</p>
                                                         </div>
-                                                        <div class="sidebar text-muted text-center">
+                                                        <div class="sidebar text-muted text-center col-md-2">
                                                             <p>
                                                                 <strong>Published on:</strong>&nbsp;
                                                                 {{releaseDate}}
