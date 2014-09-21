@@ -21,7 +21,7 @@
         </script>
         <div class="container-fluid">
             <div class="row main clearfix">
-                <section class="col-md-3 card-wrapper affix">
+                <section class="col-md-3 card-wrapper">
                     <div class="card profile-card">
                         <div class="profile-pic">
                             <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
@@ -106,7 +106,7 @@
                     </div>
                 </section>
 
-                <section class="col-md-9 card-wrapper pull-right">
+                <section class="col-md-9 card-wrapper">
                     <div class="card background-card">
                         <h4 class="text-uppercase text-bolder">Background</h4>
                         <hr>
