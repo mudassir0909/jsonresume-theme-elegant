@@ -361,7 +361,13 @@
                                                     <li class="card card-nested">
                                                         <div class="content has-sidebar">
                                                             <p>
-                                                                <strong>{{name}}</strong>,&nbsp;
+                                                                <strong>
+                                                                    {{#if website}}
+                                                                        <a href="{{website}}"  target="_blank">{{name}}</a>
+                                                                    {{else}}
+                                                                        {{name}}
+                                                                    {{/if}}
+                                                                </strong>,&nbsp;
                                                                 {{publisher}}
                                                             </p>
                                                             <p class="clear-margin">{{summary}}</p>
