@@ -89,6 +89,10 @@
                             <hr>
 
                             <div class="social-links text-center">
+                                {{#if linkedinUrl}}
+                                    <a class="fa fa-linkedin fa-2x social-link"
+                                           href="{{linkedinUrl}}" target="_blank"></a>
+                                {{/if}}
                                 {{#if githubUsername}}
                                     <a class="fa fa-github fa-2x social-link link-github"
                                            href="http://www.github.com/{{githubUsername}}" target="_blank"></a>

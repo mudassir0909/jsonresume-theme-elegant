@@ -4,6 +4,7 @@ Responsive theme for jsonresume inspired by card layouts.
 ```
 $ git clone https://github.com/mudassir0909/jsonresume-theme-elegant.git
 $ cd jsonresume-theme-elegant
+$ npm install
 $ grunt watch // watches for less file changes
 $ grunt exec:run_server // Do this in a new terminal tab to run node server
 ```
