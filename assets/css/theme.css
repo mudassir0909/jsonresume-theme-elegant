@@ -129,6 +129,18 @@ body {
 .link-blog:hover {
   color: #d8560c;
 }
+.link-linkedin {
+  color: #007bb6;
+}
+.link-linkedin:hover {
+  color: #005983;
+}
+.link-skype {
+  color: #12a5f4;
+}
+.link-skype:hover {
+  color: #0986ca;
+}
 .card-skills {
   position: relative;
 }

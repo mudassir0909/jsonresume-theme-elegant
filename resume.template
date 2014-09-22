@@ -90,12 +90,16 @@
 
                             <div class="social-links text-center">
                                 {{#if linkedinUrl}}
-                                    <a class="fa fa-linkedin fa-2x social-link"
+                                    <a class="fa fa-linkedin fa-2x social-link link-linkedin"
                                            href="{{linkedinUrl}}" target="_blank"></a>
                                 {{/if}}
                                 {{#if githubUsername}}
                                     <a class="fa fa-github fa-2x social-link link-github"
                                            href="http://www.github.com/{{githubUsername}}" target="_blank"></a>
+                                {{/if}}
+                                {{#if skypeHandle}}
+                                    <a class="fa fa-skype fa-2x social-link link-skype"
+                                           href="skype:{{skypeHandle}}?call" target="_blank"></a>
                                 {{/if}}
                                 {{#if twitterHandle}}
                                     <a class="fa fa-twitter fa-2x social-link link-twitter"
