@@ -21,7 +21,7 @@
         </script>
         <div class="container-fluid">
             <div class="row main clearfix">
-                <section class="col-md-3 card-wrapper">
+                <section class="col-md-3 card-wrapper affix">
                     <div class="card profile-card">
                         <div class="profile-pic">
                             <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
@@ -32,10 +32,10 @@
                             <h5 class="text-muted text-center">{{label}}</h5>
                             <hr>
 
-                            <div class="contact-details clearfix">
+                            <div class="contact-details clearfix row">
 
                                 {{#if location}}
-                                    <div class="detail">
+                                    <div class="detail col-md-12 col-sm-3">
                                         <span class="icon">
                                             <i class="fa fa-lg fa-location-arrow"></i>
                                         </span>
@@ -50,7 +50,7 @@
                                 {{/if}}
 
                                 {{#if phone}}
-                                    <div class="detail">
+                                    <div class="detail col-md-12 col-sm-3">
                                         <span class="icon">
                                             <i class="fa fa-lg fa-phone"></i>
                                         </span>
@@ -62,7 +62,7 @@
                                 {{/if}}
 
                                 {{#if email}}
-                                    <div class="detail">
+                                    <div class="detail col-md-12 col-sm-3">
                                         <span class="icon">
                                             <i class="fa fa-lg fa-envelope"></i>
                                         </span>
@@ -74,7 +74,7 @@
                                 {{/if}}
 
                                 {{#if languages}}
-                                    <div class="detail">
+                                    <div class="detail col-md-12 col-sm-3">
                                         <span class="icon" title="Languages I speak">
                                             <i class="fa fa-lg fa-language"></i>
                                         </span>
@@ -110,7 +110,7 @@
                     </div>
                 </section>
 
-                <section class="col-md-9 card-wrapper">
+                <section class="col-md-9 card-wrapper pull-right">
                     <div class="card background-card">
                         <h4 class="text-uppercase text-bolder">Background</h4>
                         <hr>

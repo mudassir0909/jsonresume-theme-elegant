@@ -4,7 +4,10 @@
 
 .contact-details {
     .detail {
-        display: table;
+        @media only screen and (max-width : @bootstrap-sm-cutoff) {
+            display: table;
+            .center-block();
+        }
         padding: 10px 0;
 
         .icon {
@@ -19,10 +22,6 @@
         .icon, .info {
             display: table-cell;
             vertical-align: middle;
-        }
-
-        @media only screen and (max-width : @bootstrap-md-cutoff) {
-            .center-block();
         }
     }
 }
