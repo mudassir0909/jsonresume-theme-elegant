@@ -55,9 +55,8 @@ function render(resume) {
         skype_account = getNetwork(profiles, 'skype'),
         date_format = 'MMM, YYYY';
 
-
-    if (hasEmail(resume)) {
-        resume.basics.gravatar = gravatar.url(resume.basics.email.replace('(at)', '@'), {
+    if (!resume.basics.picture && hasEmail(resume)) {
+        resume.basics.picture = gravatar.url(resume.basics.email.replace('(at)', '@'), {
             s: '100',
             r: 'pg',
             d: 'mm'
