@@ -3,8 +3,13 @@
 }
 
 .contact-details {
+    padding: 0 15px;
+
     .detail {
-        display: table;
+        @media only screen and (max-width : @bootstrap-sm-cutoff) {
+            display: table;
+            .center-block();
+        }
         padding: 10px 0;
 
         .icon {
