@@ -1,464 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <style>
-            {{{css}}}
-        </style>
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+      {{{css}}}
+    </style>
+  </head>
 
-    <body>
-        <script>
-            window.onload = function () {
-                $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
-                $( ".js-tooltip" ).tooltip();
-            }
-        </script>
-        <div class="container-fluid">
-            <div class="row main clearfix">
-                <section class="col-md-3 card-wrapper affix">
-                    <div class="card profile-card">
-                        {{#resume.basics}}
-                            <div class="profile-pic">
-                                <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
-                                    alt="64x64" src="{{picture}}" style="width: 100px; height: 100px;">
-                            </div>
-                            <h3 class="text-center text-bolder"> {{name}}</h3>
-                            <h5 class="text-muted text-center">{{label}}</h5>
-                            <hr>
+  <body>
+    <script>
+      window.onload = function () {
+        $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
+        $( ".js-tooltip" ).tooltip();
+      }
+    </script>
+    <div class="container-fluid">
+      <div class="row main clearfix">
+        <section class="col-md-3 card-wrapper affix">
+          <div class="card profile-card">
+            {{#resume.basics}}
+              <div class="profile-pic">
+                <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
+                  alt="64x64" src="{{picture}}" style="width: 100px; height: 100px;">
+              </div>
+              <h3 class="text-center text-bolder"> {{name}}</h3>
+              <h5 class="text-muted text-center">{{label}}</h5>
+              <hr>
 
-                            <div class="contact-details clearfix">
+              <div class="contact-details clearfix">
 
-                                {{#if location}}
-                                    <div class="detail">
-                                        <span class="icon">
-                                            <i class="fa fa-lg fa-location-arrow"></i>
-                                        </span>
+                {{#if location}}
+                  <div class="detail">
+                    <span class="icon">
+                      <i class="fa fa-lg fa-location-arrow"></i>
+                    </span>
 
-                                        {{#location}}
-                                            <span class="info">
-                                                {{city}}, {{region}},
-                                                {{countryCode}}
-                                            </span>
-                                        {{/location}}
-                                    </div>
-                                {{/if}}
+                    {{#location}}
+                      <span class="info">
+                        {{city}}, {{region}},
+                        {{countryCode}}
+                      </span>
+                    {{/location}}
+                  </div>
+                {{/if}}
 
-                                {{#if phone}}
-                                    <div class="detail">
-                                        <span class="icon">
-                                            <i class="fa fa-lg fa-phone"></i>
-                                        </span>
+                {{#if phone}}
+                  <div class="detail">
+                    <span class="icon">
+                      <i class="fa fa-lg fa-phone"></i>
+                    </span>
 
-                                        <span class="info">
-                                            {{phone}}
-                                        </span>
-                                    </div>
-                                {{/if}}
+                    <span class="info">
+                      {{phone}}
+                    </span>
+                  </div>
+                {{/if}}
 
-                                {{#if email}}
-                                    <div class="detail">
-                                        <span class="icon">
-                                            <i class="fa fa-lg fa-envelope"></i>
-                                        </span>
+                {{#if email}}
+                  <div class="detail">
+                    <span class="icon">
+                      <i class="fa fa-lg fa-envelope"></i>
+                    </span>
 
-                                        <span class="info">
-                                            {{email}}
-                                        </span>
-                                    </div>
-                                {{/if}}
+                    <span class="info">
+                      {{email}}
+                    </span>
+                  </div>
+                {{/if}}
 
-                                {{#if languages}}
-                                    <div class="detail">
-                                        <span class="icon" title="Languages I speak">
-                                            <i class="fa fa-lg fa-language"></i>
-                                        </span>
+                {{#if languages}}
+                  <div class="detail">
+                    <span class="icon" title="Languages I speak">
+                      <i class="fa fa-lg fa-language"></i>
+                    </span>
 
-                                        <span class="info">
-                                            {{languages}}
-                                        </span>
-                                    </div>
-                                {{/if}}
-                            </div>
+                    <span class="info">
+                      {{languages}}
+                    </span>
+                  </div>
+                {{/if}}
+              </div>
 
-                            <hr>
+              <hr>
 
-                            <div class="social-links text-center">
-                                {{#if linkedinUrl}}
-                                    <a class="fa fa-linkedin fa-2x social-link link-linkedin"
-                                           href="{{linkedinUrl}}" target="_blank"></a>
-                                {{/if}}
-                                {{#if githubUsername}}
-                                    <a class="fa fa-github fa-2x social-link link-github"
-                                           href="http://www.github.com/{{githubUsername}}" target="_blank"></a>
-                                {{/if}}
-                                {{#if skypeHandle}}
-                                    <a class="fa fa-skype fa-2x social-link link-skype"
-                                           href="skype:{{skypeHandle}}?call" target="_blank"></a>
-                                {{/if}}
-                                {{#if twitterHandle}}
-                                    <a class="fa fa-twitter fa-2x social-link link-twitter"
-                                           href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
-                                {{/if}}
-                                {{#if website}}
-                                    <a class="fa fa-rss fa-2x social-link link-blog"
-                                           href="{{website}}" target="_blank"></a>
-                                {{/if}}
-                            </div>
-                        {{/resume.basics}}
-                    </div>
-                </section>
+              <div class="social-links text-center">
+                {{#if linkedinUrl}}
+                  <a class="fa fa-linkedin fa-2x social-link link-linkedin"
+                       href="{{linkedinUrl}}" target="_blank"></a>
+                {{/if}}
+                {{#if githubUsername}}
+                  <a class="fa fa-github fa-2x social-link link-github"
+                       href="http://www.github.com/{{githubUsername}}" target="_blank"></a>
+                {{/if}}
+                {{#if skypeHandle}}
+                  <a class="fa fa-skype fa-2x social-link link-skype"
+                       href="skype:{{skypeHandle}}?call" target="_blank"></a>
+                {{/if}}
+                {{#if twitterHandle}}
+                  <a class="fa fa-twitter fa-2x social-link link-twitter"
+                       href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
+                {{/if}}
+                {{#if website}}
+                  <a class="fa fa-rss fa-2x social-link link-blog"
+                       href="{{website}}" target="_blank"></a>
+                {{/if}}
+              </div>
+            {{/resume.basics}}
+          </div>
+        </section>
 
-                <section class="col-md-9 card-wrapper pull-right">
-                    <div class="card background-card">
-                        <h4 class="text-uppercase text-bolder">Background</h4>
-                        <hr>
+        <section class="col-md-9 card-wrapper pull-right">
+          <div class="card background-card">
+            <h4 class="text-uppercase text-bolder">Background</h4>
+            <hr>
 
-                        <div class="background-details">
-                            <div class="detail">
-                                <div class="icon">
-                                    <i class="fa fa-lg fa-user"></i>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title text-uppercase">
-                                        About
-                                    </h4>
+            <div class="background-details">
+              <div class="detail">
+                <div class="icon">
+                  <i class="fa fa-lg fa-user"></i>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    About
+                  </h4>
 
-                                    <div class="content">
-                                        {{resume.basics.summary}}
-                                    </div>
-                                </div>
-                            </div>
+                  <div class="content">
+                    {{resume.basics.summary}}
+                  </div>
+                </div>
+              </div>
 
-                            <div class="detail">
-                                <div class="icon">
-                                    <i class="fa fa-lg fa-building"></i>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title text-uppercase">
-                                        Work Experience
-                                    </h4>
+              <div class="detail">
+                <div class="icon">
+                  <i class="fa fa-lg fa-building"></i>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Work Experience
+                  </h4>
 
-                                    <ul class="list-unstyled">
-                                        {{#each resume.work}}
-                                            <li class="card card-nested clearfix">
-                                                <div class="content has-sidebar">
-                                                    <p><strong>{{position}}</strong>,&nbsp;{{company}}</p>
-                                                    <p>{{summary}}</p>
-                                                    {{#if highlights}}
-                                                        <ul>
-                                                            {{#each highlights}}
-                                                                <li> {{.}} </li>
-                                                            {{/each}}
-                                                        </ul>
-                                                    {{/if}}
-                                                </div>
-
-                                                <div class="sidebar text-muted text-center">
-                                                    <p>
-                                                        <strong>Joined:</strong>&nbsp;
-                                                        {{startDate}}
-                                                    </p>
-                                                    <p>
-                                                        {{#if endDate}}
-                                                            <strong>Left:</strong>&nbsp;
-                                                            {{endDate}}
-                                                        {{else}}
-                                                            <span class="label label-success">
-                                                                Currently Working
-                                                            </span>
-                                                        {{/if}}
-                                                    </p>
-                                                    <p>
-                                                        <i class="fa fa-clock-o icon-left"></i>
-                                                        {{duration}}
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="detail">
-                                <div class="icon">
-                                    <i class="fa fa-lg fa-code"></i>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title text-uppercase">
-                                        Skills
-                                    </h4>
-
-                                    <div class="content">
-                                        <ul class="list-unstyled">
-                                            {{#each resume.skills}}
-                                                <li class="card card-nested card-skills">
-                                                    {{#if display_progress_bar}}
-                                                        <div class="skill-level js-tooltip" title="{{level}}" data-placement="left">
-                                                            <div class="skill-progress {{skill_class}}">
-                                                            </div>
-                                                        </div>
-                                                    {{/if}}
-                                                    <div class="skill-info">
-                                                        <strong>{{name}}</strong>
-
-                                                        <div class="space-top labels">
-                                                            {{#keywords}}
-                                                                <span class="label label-keyword">{{.}}</span>
-                                                            {{/keywords}}
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            {{/each}}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="detail">
-                                <div class="icon">
-                                    <i class="fa fa-lg fa-mortar-board"></i>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title text-uppercase">
-                                        Education
-                                    </h4>
-
-                                    <div class="content">
-                                        <ul class="list-unstyled">
-                                            {{#each resume.education}}
-                                                <li class="card card-nested">
-                                                    <div class="content has-sidebar">
-                                                        <p>
-                                                            <strong>{{area}}, {{studyType}}</strong>,&nbsp;
-                                                            {{institution}}
-                                                        </p>
-                                                        <i>{{gpa}}</i>
-                                                        <div class="space-top labels">
-                                                            {{#courses}}
-                                                                <span class="label label-keyword">{{.}}</span>
-                                                            {{/courses}}
-                                                        </div>
-                                                    </div>
-                                                    <div class="sidebar text-muted text-center">
-                                                        <p>
-                                                            <strong>Started:</strong>&nbsp;
-                                                            {{startDate}}
-                                                        </p>
-                                                        <p>
-                                                            {{#if endDate}}
-                                                                <strong>Completion:</strong>&nbsp;
-                                                                {{endDate}}
-                                                            {{else}}
-                                                                <span class="label label-success">
-                                                                    Currently Pursuing
-                                                                </span>
-                                                            {{/if}}
-                                                        </p>
-                                                    </div>
-                                                </li>
-                                            {{/each}}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{#if resume.awards}}
-                                <div class="detail">
-                                    <div class="icon">
-                                        <i class="fa fa-lg fa-trophy"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h4 class="title text-uppercase">
-                                            Awards
-                                        </h4>
-
-                                        <div class="content">
-                                            <ul class="list-unstyled">
-                                                {{#each resume.awards}}
-                                                    <li class="card card-nested">
-                                                        <div class="content has-sidebar">
-                                                            <p>
-                                                                <strong>{{title}}</strong>,&nbsp;
-                                                                {{awarder}}
-                                                            </p>
-                                                            <p class="clear-margin"> {{summary}} </p>
-                                                        </div>
-                                                        <div class="sidebar text-muted text-center">
-                                                            <p>
-                                                                <strong>Awarded on:</strong>&nbsp;
-                                                                {{date}}
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                {{/each}}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            {{/if}}
-
-                            {{#if resume.volunteer}}
-                                <div class="detail">
-                                    <div class="icon">
-                                        <i class="fa fa-lg fa-child"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h4 class="title text-uppercase">
-                                            Volunteer Work
-                                        </h4>
-
-                                        <div class="content">
-                                            <ul class="list-unstyled">
-                                                {{#each resume.volunteer}}
-                                                    <li class="card card-nested">
-                                                        <div class="content has-sidebar">
-                                                            <p>
-                                                                <strong>{{position}}</strong>,&nbsp;
-                                                                {{organization}}
-                                                            </p>
-                                                            <p>{{summary}}</p>
-                                                            <ul>
-                                                                {{#each highlights}}
-                                                                    <li> {{.}} </li>
-                                                                {{/each}}
-                                                            </ul>
-                                                        </div>
-                                                        <div class="sidebar text-muted text-center">
-                                                            <p>
-                                                                <strong>Since:</strong>&nbsp;
-                                                                {{startDate}}
-                                                            </p>
-                                                            <p>
-                                                                {{#if endDate}}
-                                                                    <strong>Until:</strong>&nbsp;
-                                                                    {{endDate}}
-                                                                {{else}}
-                                                                    <span class="label label-success">
-                                                                        Currently Volunteering
-                                                                    </span>
-                                                                {{/if}}
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                {{/each}}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            {{/if}}
-
-                            {{#if resume.publications}}
-                                <div class="detail">
-                                    <div class="icon">
-                                        <i class="fa fa-lg fa-book"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h4 class="title text-uppercase">
-                                            Publications
-                                        </h4>
-
-                                        <div class="content">
-                                            <ul class="list-unstyled">
-                                                {{#each resume.publications}}
-                                                    <li class="card card-nested">
-                                                        <div class="content has-sidebar">
-                                                            <p>
-                                                                <strong>
-                                                                    {{#if website}}
-                                                                        <a href="{{website}}"  target="_blank">{{name}}</a>
-                                                                    {{else}}
-                                                                        {{name}}
-                                                                    {{/if}}
-                                                                </strong>,&nbsp;
-                                                                {{publisher}}
-                                                            </p>
-                                                            <p class="clear-margin">{{summary}}</p>
-                                                        </div>
-                                                        <div class="sidebar text-muted text-center">
-                                                            <p>
-                                                                <strong>Published on:</strong>&nbsp;
-                                                                {{releaseDate}}
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                {{/each}}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            {{/if}}
-
-                            {{#if resume.interests}}
-                                <div class="detail">
-                                    <div class="icon">
-                                        <i class="fa fa-lg fa-heart"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h4 class="title text-uppercase">
-                                            Interests
-                                        </h4>
-
-                                        <div class="content">
-                                            <ul class="list-unstyled">
-                                                {{#each resume.interests}}
-                                                    <li class="card card-nested">
-                                                        <p>
-                                                            <strong>{{name}}</strong>
-                                                        </p>
-
-                                                        <div class="space-top labels">
-                                                            {{#keywords}}
-                                                                <span class="label label-keyword">{{.}}</span>
-                                                            {{/keywords}}
-                                                        </div>
-                                                    </li>
-                                                {{/each}}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            {{/if}}
-
-                            {{#if resume.references}}
-                                <div class="detail">
-                                    <div class="icon">
-                                        <i class="fa fa-lg fa-thumbs-up"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h4 class="title text-uppercase">
-                                            References
-                                        </h4>
-
-                                        <div class="content">
-                                            <ul class="list-unstyled">
-                                                {{#each resume.references}}
-                                                    <li class="card card-nested">
-                                                        <p>
-                                                            <strong>{{name}}</strong>
-                                                        </p>
-                                                        <p class="clear-margin">{{reference}}</p>
-                                                    </li>
-                                                {{/each}}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            {{/if}}
-
+                  <ul class="list-unstyled">
+                    {{#each resume.work}}
+                      <li class="card card-nested clearfix">
+                        <div class="content has-sidebar">
+                          <p><strong>{{position}}</strong>,&nbsp;{{company}}</p>
+                          <p>{{summary}}</p>
+                          {{#if highlights}}
+                            <ul>
+                              {{#each highlights}}
+                                <li> {{.}} </li>
+                              {{/each}}
+                            </ul>
+                          {{/if}}
                         </div>
-                    </div>
-                </section>
-            </div>
-        </div>
 
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
-    </body>
+                        <div class="sidebar text-muted text-center">
+                          <p>
+                            <strong>Joined:</strong>&nbsp;
+                            {{startDate}}
+                          </p>
+                          <p>
+                            {{#if endDate}}
+                              <strong>Left:</strong>&nbsp;
+                              {{endDate}}
+                            {{else}}
+                              <span class="label label-success">
+                                Currently Working
+                              </span>
+                            {{/if}}
+                          </p>
+                          <p>
+                            <i class="fa fa-clock-o icon-left"></i>
+                            {{duration}}
+                          </p>
+                        </div>
+                      </li>
+                    {{/each}}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="detail">
+                <div class="icon">
+                  <i class="fa fa-lg fa-code"></i>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Skills
+                  </h4>
+
+                  <div class="content">
+                    <ul class="list-unstyled">
+                      {{#each resume.skills}}
+                        <li class="card card-nested card-skills">
+                          {{#if display_progress_bar}}
+                            <div class="skill-level js-tooltip" title="{{level}}" data-placement="left">
+                              <div class="skill-progress {{skill_class}}">
+                              </div>
+                            </div>
+                          {{/if}}
+                          <div class="skill-info">
+                            <strong>{{name}}</strong>
+
+                            <div class="space-top labels">
+                              {{#keywords}}
+                                <span class="label label-keyword">{{.}}</span>
+                              {{/keywords}}
+                            </div>
+                          </div>
+                        </li>
+                      {{/each}}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail">
+                <div class="icon">
+                  <i class="fa fa-lg fa-mortar-board"></i>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Education
+                  </h4>
+
+                  <div class="content">
+                    <ul class="list-unstyled">
+                      {{#each resume.education}}
+                        <li class="card card-nested">
+                          <div class="content has-sidebar">
+                            <p>
+                              <strong>{{area}}, {{studyType}}</strong>,&nbsp;
+                              {{institution}}
+                            </p>
+                            <i>{{gpa}}</i>
+                            <div class="space-top labels">
+                              {{#courses}}
+                                <span class="label label-keyword">{{.}}</span>
+                              {{/courses}}
+                            </div>
+                          </div>
+                          <div class="sidebar text-muted text-center">
+                            <p>
+                              <strong>Started:</strong>&nbsp;
+                              {{startDate}}
+                            </p>
+                            <p>
+                              {{#if endDate}}
+                                <strong>Completion:</strong>&nbsp;
+                                {{endDate}}
+                              {{else}}
+                                <span class="label label-success">
+                                  Currently Pursuing
+                                </span>
+                              {{/if}}
+                            </p>
+                          </div>
+                        </li>
+                      {{/each}}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {{#if resume.awards}}
+                <div class="detail">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-trophy"></i>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Awards
+                    </h4>
+
+                    <div class="content">
+                      <ul class="list-unstyled">
+                        {{#each resume.awards}}
+                          <li class="card card-nested">
+                            <div class="content has-sidebar">
+                              <p>
+                                <strong>{{title}}</strong>,&nbsp;
+                                {{awarder}}
+                              </p>
+                              <p class="clear-margin"> {{summary}} </p>
+                            </div>
+                            <div class="sidebar text-muted text-center">
+                              <p>
+                                <strong>Awarded on:</strong>&nbsp;
+                                {{date}}
+                              </p>
+                            </div>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+              {{#if resume.volunteer}}
+                <div class="detail">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-child"></i>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Volunteer Work
+                    </h4>
+
+                    <div class="content">
+                      <ul class="list-unstyled">
+                        {{#each resume.volunteer}}
+                          <li class="card card-nested">
+                            <div class="content has-sidebar">
+                              <p>
+                                <strong>{{position}}</strong>,&nbsp;
+                                {{organization}}
+                              </p>
+                              <p>{{summary}}</p>
+                              <ul>
+                                {{#each highlights}}
+                                  <li> {{.}} </li>
+                                {{/each}}
+                              </ul>
+                            </div>
+                            <div class="sidebar text-muted text-center">
+                              <p>
+                                <strong>Since:</strong>&nbsp;
+                                {{startDate}}
+                              </p>
+                              <p>
+                                {{#if endDate}}
+                                  <strong>Until:</strong>&nbsp;
+                                  {{endDate}}
+                                {{else}}
+                                  <span class="label label-success">
+                                    Currently Volunteering
+                                  </span>
+                                {{/if}}
+                              </p>
+                            </div>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+              {{#if resume.publications}}
+                <div class="detail">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-book"></i>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Publications
+                    </h4>
+
+                    <div class="content">
+                      <ul class="list-unstyled">
+                        {{#each resume.publications}}
+                          <li class="card card-nested">
+                            <div class="content has-sidebar">
+                              <p>
+                                <strong>
+                                  {{#if website}}
+                                    <a href="{{website}}"  target="_blank">{{name}}</a>
+                                  {{else}}
+                                    {{name}}
+                                  {{/if}}
+                                </strong>,&nbsp;
+                                {{publisher}}
+                              </p>
+                              <p class="clear-margin">{{summary}}</p>
+                            </div>
+                            <div class="sidebar text-muted text-center">
+                              <p>
+                                <strong>Published on:</strong>&nbsp;
+                                {{releaseDate}}
+                              </p>
+                            </div>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+              {{#if resume.interests}}
+                <div class="detail">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-heart"></i>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Interests
+                    </h4>
+
+                    <div class="content">
+                      <ul class="list-unstyled">
+                        {{#each resume.interests}}
+                          <li class="card card-nested">
+                            <p>
+                              <strong>{{name}}</strong>
+                            </p>
+
+                            <div class="space-top labels">
+                              {{#keywords}}
+                                <span class="label label-keyword">{{.}}</span>
+                              {{/keywords}}
+                            </div>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+              {{#if resume.references}}
+                <div class="detail">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-thumbs-up"></i>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      References
+                    </h4>
+
+                    <div class="content">
+                      <ul class="list-unstyled">
+                        {{#each resume.references}}
+                          <li class="card card-nested">
+                            <p>
+                              <strong>{{name}}</strong>
+                            </p>
+                            <p class="clear-margin">{{reference}}</p>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+  </body>
 </html>
