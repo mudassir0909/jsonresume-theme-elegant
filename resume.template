@@ -442,7 +442,9 @@
                             <p>
                               <strong>{{name}}</strong>
                             </p>
-                            <p class="clear-margin">{{reference}}</p>
+                            <blockquote>
+                              <p class="clear-margin">{{reference}}</p>
+                            </blockquote>
                           </li>
                         {{/each}}
                       </ul>
