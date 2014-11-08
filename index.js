@@ -92,8 +92,21 @@ function render(resume) {
         if ( skill_info.level ) {
             skill_info.skill_class = skill_info.level.toLowerCase();
             skill_info.level = _s.capitalize( skill_info.level.trim() );
-            skill_info.display_progress_bar = _.contains( levels, skill_info.level );
+            skill_info.display_progress_bar = _.contains( levels,
+                                                          skill_info.level );
         }
+    });
+
+    resume.skills = _.sortBy( resume.skills, function( skill ) {
+        var level = skill.level && skill.level.toLowerCase(),
+            sort_map = {
+                master: 1,
+                advanced: 2,
+                intermediate: 3,
+                beginner: 4
+            };
+
+        return sort_map[ level ];
     });
 
     _.each( resume.education, function( education_info ) {
