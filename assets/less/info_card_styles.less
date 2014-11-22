@@ -1,8 +1,28 @@
+.profile-card-wrapper {
+    @media (max-width: @screen-desktop) {
+        position: relative;
+    }
+}
+
 .profile-pic {
     padding: 20px 0;
+
+    @media (max-width: @screen-desktop) {
+        padding: 10px 0;
+    }
+}
+
+.name {
+    @media (max-width: @screen-desktop) {
+        margin-top: 10px;
+    }
 }
 
 .contact-details {
+    @media (max-width: @screen-tablet) {
+        text-align: center;
+    }
+
     .detail {
         display: table;
         padding: 10px 0;
@@ -10,6 +30,10 @@
         .icon {
             padding: 0 10px;
             color: @icon-color;
+
+            @media (max-width: @screen-desktop) {
+                padding: 0 5px 0 0;
+            }
         }
 
         .info {
@@ -19,6 +43,19 @@
         .icon, .info {
             display: table-cell;
             vertical-align: middle;
+        }
+
+        @media (max-width: @screen-tablet) {
+            .make-xs-column(12);
+        }
+
+        @media (max-width: @screen-desktop) {
+            .make-sm-column(3);
+            padding: 10px;
+
+            .icon, .info {
+                display: inline-block;
+            }
         }
     }
 }

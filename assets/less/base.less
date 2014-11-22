@@ -20,9 +20,14 @@ body {
 }
 
 .card-nested {
+    .clearfix();
     min-height: 0;
     margin-bottom: 10px;
     border-width: 1px 0 0 0;
+
+    @media (max-width: @screen-phone) {
+        padding: 5px 0;
+    }
 }
 
 .background-card {
@@ -31,6 +36,10 @@ body {
 
 .card-wrapper {
     padding: 5px;
+
+    @media (max-width: @screen-desktop) {
+        float: none !important;
+    }
 }
 
 .text-bolder {
@@ -56,9 +65,39 @@ body {
             color: @icon-color;
         }
 
+        .mobile-title {
+            display: none;
+            @media (max-width: @screen-phone) {
+                display: inline-block;
+                margin-left: 5px;
+                font-weight: bold;
+                text-transform: uppercase;
+                vertical-align: middle;
+            }
+        }
+
         .icon, .info {
             display: table-cell;
             padding: 0 10px;
+        }
+
+        @media (max-width: @screen-phone) {
+            display: block;
+
+            .icon {
+                max-width: inherit;
+                min-width: inherit;
+                text-align: left;
+            }
+
+            .icon, .info {
+                display: block;
+                padding: 10px 0;
+            }
+
+            .title {
+                display: none;
+            }
         }
     }
 }
@@ -70,10 +109,25 @@ body {
         float: left;
         padding: 0 10px;
         border-right: 1px solid darken(@card-border-color, 10%);
+
+        @media (max-width: @screen-desktop) {
+            width: 100%;
+            border-right: 0;
+        }
+        @media (max-width: @screen-phone) {
+            padding: 0 2px;
+        }
     }
+
     .sidebar {
         margin-left: 80%;
         box-sizing: border-box;
         padding: 10px;
+    }
+}
+
+ul {
+    @media (max-width: @screen-phone) {
+        padding-left: 25px;
     }
 }
