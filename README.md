@@ -1,6 +1,7 @@
 Responsive theme for jsonresume inspired by card layouts.
 
 ### Credits
+* [ThomWright](https://github.com/ThomWright), [JamesonNetworks](https://github.com/JamesonNetworks) & [Elaniobro](https://github.com/Elaniobro) for their pull requests
 * Floating Menu: inspired by [Smart Fixed Navigation](http://codyhouse.co/demo/smart-fixed-navigation/index.html)
 
 ### Contributing
