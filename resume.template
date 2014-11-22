@@ -21,14 +21,14 @@
     </script>
     <div class="container-fluid">
       <div class="row main clearfix">
-        <section class="col-md-3 card-wrapper affix">
+        <section class="col-md-3 card-wrapper profile-card-wrapper affix">
           <div class="card profile-card">
             {{#resume.basics}}
               <div class="profile-pic">
                 <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
                   alt="64x64" src="{{picture}}" style="width: 100px; height: 100px;">
               </div>
-              <h3 class="text-center text-bolder"> {{name}}</h3>
+              <h3 class="text-center text-bolder name"> {{name}}</h3>
               <h5 class="text-muted text-center">{{label}}</h5>
               <hr>
 
