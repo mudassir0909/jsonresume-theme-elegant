@@ -68,7 +68,7 @@
                     </span>
 
                     <span class="info">
-                      {{email}}
+                      <a href="mailto:{{email}}" class="link-disguise">{{email}}</a>
                     </span>
                   </div>
                 {{/if}}

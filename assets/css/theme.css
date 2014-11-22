@@ -21,6 +21,12 @@
   padding: 5px;
   border: 1px solid #357ebd;
 }
+.link-disguise {
+  color: inherit;
+}
+.link-disguise:hover {
+  color: inherit;
+}
 body {
   font-family: 'Lato';
   background: #f0f0f0;
