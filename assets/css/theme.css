@@ -162,6 +162,106 @@ body {
     padding-left: 25px;
   }
 }
+/*
+    Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
+*/
+.floating-nav-trigger {
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 10px;
+  background-color: white;
+  font-size: 1.5em;
+  color: #357ebd;
+  z-index: 100;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+.floating-nav-trigger .close-icon {
+  display: none;
+}
+.floating-nav-trigger:hover {
+  color: #1f496e;
+  background-color: #e6e6e6;
+  text-decoration: none;
+}
+.floating-nav-trigger.is-open {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.floating-nav-trigger.is-open .close-icon {
+  display: inherit;
+}
+.floating-nav-trigger.is-open .fa-bars {
+  display: none;
+}
+.floating-nav-trigger.is-open:hover {
+  background-color: white;
+}
+.floating-nav {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -webkit-transition: transform 0.3s, visibility 0s 0.3s;
+  -o-transition: transform 0.3s, visibility 0s 0.3s;
+  transition: transform 0.3s, visibility 0s 0.3s;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  position: fixed;
+  z-index: 50;
+  right: 10px;
+  bottom: 10px;
+  background-color: white;
+  width: 90%;
+  max-width: 400px;
+  visibility: hidden;
+  overflow: hidden;
+}
+.floating-nav ul {
+  font-size: 1.2em;
+  margin: 0;
+}
+.floating-nav ul li {
+  border-bottom: 1px solid #eff2f6;
+}
+.floating-nav ul li a {
+  padding: 20px;
+  text-decoration: none;
+  color: #357ebd;
+  display: block;
+}
+.floating-nav ul li a:hover {
+  color: #1f496e;
+}
+.floating-nav ul li i.fa {
+  margin-right: 10px;
+}
+.floating-nav ul li:last-child {
+  border-bottom: 0;
+}
+.floating-nav.is-visible {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: transform 0.3s, visibility 0s 0s;
+  -o-transition: transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s, visibility 0s 0s;
+  visibility: visible;
+}
 @media (max-width: 992px) {
   .profile-card-wrapper {
     position: relative;

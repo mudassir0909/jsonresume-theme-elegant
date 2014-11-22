@@ -15,12 +15,92 @@
   <body>
     <script>
       window.onload = function () {
+        var toggleFloatingMenu = function() {
+          $( '.js-floating-nav' ).toggleClass( 'is-visible' );
+          $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
+        };
+
         $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
         $( ".js-tooltip" ).tooltip();
+        $( '.js-floating-nav-trigger' ).on( 'click', toggleFloatingMenu );
+        $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
       }
     </script>
     <div class="container-fluid">
       <div class="row main clearfix">
+        <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
+          <i class="fa fa-bars"></i>
+          <span class="close-icon">&times;</span>
+        </a>
+        <nav class="floating-nav js-floating-nav">
+          <ul class="list-unstyled">
+            <li>
+              <a href="#about">
+                <i class="fa fa-user"></i>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#work-experience">
+                <i class="fa fa-building"></i>
+                Work Experience
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <i class="fa fa-code"></i>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#education">
+                <i class="fa fa-mortar-board"></i>
+                Education
+              </a>
+            </li>
+            {{#if resume.awards}}
+              <li>
+                <a href="#awards">
+                  <i class="fa fa-trophy"></i>
+                  Awards
+                </a>
+              </li>
+            {{/if}}
+            {{#if resume.volunteer}}
+              <li>
+                <a href="#volunteer-work">
+                  <i class="fa fa-child"></i>
+                  Volunteer Work
+                </a>
+              </li>
+            {{/if}}
+            {{#if resume.publications}}
+              <li>
+                <a href="#publications">
+                  <i class="fa fa-book"></i>
+                  Publications
+                </a>
+              </li>
+            {{/if}}
+            {{#if resume.interests}}
+              <li>
+                <a href="#interests">
+                  <i class="fa fa-heart"></i>
+                  Interests
+                </a>
+              </li>
+            {{/if}}
+            {{#if resume.references}}
+              <li>
+                <a href="#references">
+                  <i class="fa fa-thumbs-up"></i>
+                  References
+                </a>
+              </li>
+            {{/if}}
+          </ul>
+        </nav>
+
         <section class="col-md-3 card-wrapper profile-card-wrapper affix">
           <div class="card profile-card">
             {{#resume.basics}}
