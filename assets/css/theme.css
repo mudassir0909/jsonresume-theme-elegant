@@ -4,6 +4,9 @@
 .space-top {
   margin-top: 10px;
 }
+.space-right {
+  margin-right: 10px;
+}
 .icon-left {
   margin-right: 5px;
 }
@@ -12,6 +15,7 @@
 }
 .labels {
   word-spacing: 5px;
+  line-height: 2;
 }
 .label-keyword {
   display: inline-block;
@@ -26,6 +30,11 @@
 }
 .link-disguise:hover {
   color: inherit;
+}
+@media (max-width: 992px) {
+  .clear-margin-sm {
+    margin-bottom: 0;
+  }
 }
 body {
   font-family: 'Lato';
@@ -47,11 +56,29 @@ body {
   margin-bottom: 10px;
   border-width: 1px 0 0 0;
 }
+.card-nested:before,
+.card-nested:after {
+  content: " ";
+  display: table;
+}
+.card-nested:after {
+  clear: both;
+}
+@media (max-width: 480px) {
+  .card-nested {
+    padding: 5px 0;
+  }
+}
 .background-card {
   padding: 10px 20px;
 }
 .card-wrapper {
   padding: 5px;
+}
+@media (max-width: 992px) {
+  .card-wrapper {
+    float: none !important;
+  }
 }
 .text-bolder {
   font-weight: bold;
@@ -72,10 +99,40 @@ body {
 .background-details .detail .icon {
   color: #707070;
 }
+.background-details .detail .mobile-title {
+  display: none;
+}
+@media (max-width: 480px) {
+  .background-details .detail .mobile-title {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+}
 .background-details .detail .icon,
 .background-details .detail .info {
   display: table-cell;
   padding: 0 10px;
+}
+@media (max-width: 480px) {
+  .background-details .detail {
+    display: block;
+  }
+  .background-details .detail .icon {
+    max-width: inherit;
+    min-width: inherit;
+    text-align: left;
+  }
+  .background-details .detail .icon,
+  .background-details .detail .info {
+    display: block;
+    padding: 10px 0;
+  }
+  .background-details .detail .title {
+    display: none;
+  }
 }
 .info .content.has-sidebar {
   width: 80%;
@@ -84,10 +141,26 @@ body {
   padding: 0 10px;
   border-right: 1px solid #cdcdcd;
 }
+@media (max-width: 992px) {
+  .info .content.has-sidebar {
+    width: 100%;
+    border-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .info .content.has-sidebar {
+    padding: 0 2px;
+  }
+}
 .info .sidebar {
   margin-left: 80%;
   box-sizing: border-box;
   padding: 10px;
+}
+@media (max-width: 480px) {
+  ul {
+    padding-left: 25px;
+  }
 }
 @media (max-width: 992px) {
   .profile-card-wrapper {
@@ -238,4 +311,14 @@ body {
 }
 .skill-info {
   margin-left: 10px;
+}
+@media (max-width: 480px) {
+  .skill-info {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .quote {
+    font-size: inherit;
+  }
 }

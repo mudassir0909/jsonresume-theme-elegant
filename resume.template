@@ -120,9 +120,10 @@
             <hr>
 
             <div class="background-details">
-              <div class="detail">
+              <div class="detail" id="about">
                 <div class="icon">
                   <i class="fa fa-lg fa-user"></i>
+                  <span class="mobile-title">About</span>
                 </div>
                 <div class="info">
                   <h4 class="title text-uppercase">
@@ -135,9 +136,10 @@
                 </div>
               </div>
 
-              <div class="detail">
+              <div class="detail" id="work-experience">
                 <div class="icon">
                   <i class="fa fa-lg fa-building"></i>
+                  <span class="mobile-title">Work Experience</span>
                 </div>
                 <div class="info">
                   <h4 class="title text-uppercase">
@@ -148,7 +150,25 @@
                     {{#each resume.work}}
                       <li class="card card-nested clearfix">
                         <div class="content has-sidebar">
-                          <p><strong>{{position}}</strong>,&nbsp;{{company}}</p>
+                          <p class="clear-margin-sm">
+                            <strong>{{position}}</strong>,&nbsp;{{company}}
+                          </p>
+                          <p class="text-muted visible-xs visible-sm">
+                            <small>
+                              <span class="space-right">
+                                {{startDate}} -
+                                {{#if endDate}}
+                                  {{endDate}}
+                                {{else}}
+                                  Present
+                                {{/if}}
+                              </span>
+                              <span>
+                                <i class="fa fa-clock-o icon-left"></i>
+                                {{duration}}
+                              </span>
+                            </small>
+                          </p>
                           <p>{{summary}}</p>
                           {{#if highlights}}
                             <ul>
@@ -159,7 +179,7 @@
                           {{/if}}
                         </div>
 
-                        <div class="sidebar text-muted text-center">
+                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
                           <p>
                             <strong>Joined:</strong>&nbsp;
                             {{startDate}}
@@ -185,9 +205,10 @@
                 </div>
               </div>
 
-              <div class="detail">
+              <div class="detail" id="skills">
                 <div class="icon">
                   <i class="fa fa-lg fa-code"></i>
+                  <span class="mobile-title">Skills</span>
                 </div>
                 <div class="info">
                   <h4 class="title text-uppercase">
@@ -220,9 +241,10 @@
                 </div>
               </div>
 
-              <div class="detail">
+              <div class="detail" id="education">
                 <div class="icon">
                   <i class="fa fa-lg fa-mortar-board"></i>
+                  <span class="mobile-title">Education</span>
                 </div>
                 <div class="info">
                   <h4 class="title text-uppercase">
@@ -234,9 +256,19 @@
                       {{#each resume.education}}
                         <li class="card card-nested">
                           <div class="content has-sidebar">
-                            <p>
+                            <p class="clear-margin-sm">
                               <strong>{{area}}, {{studyType}}</strong>,&nbsp;
                               {{institution}}
+                            </p>
+                            <p class="visible-xs visible-sm text-muted">
+                              <small>
+                                {{startDate}} -
+                                {{#if endDate}}
+                                  {{endDate}}
+                                {{else}}
+                                  Present
+                                {{/if}}
+                              </small>
                             </p>
                             <i>{{gpa}}</i>
                             <div class="space-top labels">
@@ -245,7 +277,7 @@
                               {{/courses}}
                             </div>
                           </div>
-                          <div class="sidebar text-muted text-center">
+                          <div class="sidebar text-muted text-center hidden-xs hidden-sm">
                             <p>
                               <strong>Started:</strong>&nbsp;
                               {{startDate}}
@@ -269,9 +301,10 @@
               </div>
 
               {{#if resume.awards}}
-                <div class="detail">
+                <div class="detail" id="awards">
                   <div class="icon">
                     <i class="fa fa-lg fa-trophy"></i>
+                    <span class="mobile-title">Awards</span>
                   </div>
                   <div class="info">
                     <h4 class="title text-uppercase">
@@ -283,13 +316,18 @@
                         {{#each resume.awards}}
                           <li class="card card-nested">
                             <div class="content has-sidebar">
-                              <p>
+                              <p class="clear-margin-sm">
                                 <strong>{{title}}</strong>,&nbsp;
                                 {{awarder}}
                               </p>
+                              <p class="visible-xs visible-sm text-muted">
+                                <small>
+                                  Awarded on: {{date}}
+                                </small>
+                              </p>
                               <p class="clear-margin"> {{summary}} </p>
                             </div>
-                            <div class="sidebar text-muted text-center">
+                            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
                               <p>
                                 <strong>Awarded on:</strong>&nbsp;
                                 {{date}}
@@ -304,9 +342,10 @@
               {{/if}}
 
               {{#if resume.volunteer}}
-                <div class="detail">
+                <div class="detail" id="volunteer-work">
                   <div class="icon">
                     <i class="fa fa-lg fa-child"></i>
+                    <span class="mobile-title">Volunteer Work</span>
                   </div>
                   <div class="info">
                     <h4 class="title text-uppercase">
@@ -318,9 +357,19 @@
                         {{#each resume.volunteer}}
                           <li class="card card-nested">
                             <div class="content has-sidebar">
-                              <p>
+                              <p class="clear-margin-sm">
                                 <strong>{{position}}</strong>,&nbsp;
                                 {{organization}}
+                              </p>
+                              <p class="visible-xs visible-sm text-muted">
+                                <small>
+                                  {{startDate}} -
+                                  {{#if endDate}}
+                                    {{endDate}}
+                                  {{else}}
+                                    Present
+                                  {{/if}}
+                                </small>
                               </p>
                               <p>{{summary}}</p>
                               <ul>
@@ -329,7 +378,7 @@
                                 {{/each}}
                               </ul>
                             </div>
-                            <div class="sidebar text-muted text-center">
+                            <div class="sidebar hidden-xs hidden-sm text-muted text-center">
                               <p>
                                 <strong>Since:</strong>&nbsp;
                                 {{startDate}}
@@ -354,9 +403,10 @@
               {{/if}}
 
               {{#if resume.publications}}
-                <div class="detail">
+                <div class="detail" id="publications">
                   <div class="icon">
                     <i class="fa fa-lg fa-book"></i>
+                    <span class="mobile-title">Publications</span>
                   </div>
                   <div class="info">
                     <h4 class="title text-uppercase">
@@ -368,7 +418,7 @@
                         {{#each resume.publications}}
                           <li class="card card-nested">
                             <div class="content has-sidebar">
-                              <p>
+                              <p class="clear-margin-sm">
                                 <strong>
                                   {{#if website}}
                                     <a href="{{website}}"  target="_blank">{{name}}</a>
@@ -378,9 +428,14 @@
                                 </strong>,&nbsp;
                                 {{publisher}}
                               </p>
+                              <p class="visible-xs visible-sm text-muted">
+                                <small>
+                                  Published on: {{releaseDate}}
+                                </small>
+                              </p>
                               <p class="clear-margin">{{summary}}</p>
                             </div>
-                            <div class="sidebar text-muted text-center">
+                            <div class="sidebar text-muted text-center hidden-sm hidden-xs">
                               <p>
                                 <strong>Published on:</strong>&nbsp;
                                 {{releaseDate}}
@@ -395,9 +450,10 @@
               {{/if}}
 
               {{#if resume.interests}}
-                <div class="detail">
+                <div class="detail" id="interests">
                   <div class="icon">
                     <i class="fa fa-lg fa-heart"></i>
+                    <span class="mobile-title">Interests</span>
                   </div>
                   <div class="info">
                     <h4 class="title text-uppercase">
@@ -426,9 +482,10 @@
               {{/if}}
 
               {{#if resume.references}}
-                <div class="detail">
+                <div class="detail" id="references">
                   <div class="icon">
                     <i class="fa fa-lg fa-thumbs-up"></i>
+                    <span class="mobile-title">References</span>
                   </div>
                   <div class="info">
                     <h4 class="title text-uppercase">
@@ -442,7 +499,7 @@
                             <p>
                               <strong>{{name}}</strong>
                             </p>
-                            <blockquote>
+                            <blockquote class="quote">
                               <p class="clear-margin">{{reference}}</p>
                             </blockquote>
                           </li>

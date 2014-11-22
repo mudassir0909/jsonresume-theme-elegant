@@ -6,6 +6,10 @@
     margin-top: 10px;
 }
 
+.space-right {
+    margin-right: 10px;
+}
+
 .icon-left {
     margin-right: 5px;
 }
@@ -16,6 +20,7 @@
 
 .labels {
     word-spacing: 5px;
+    line-height: 2;
 }
 
 .label-keyword {
@@ -32,5 +37,11 @@
 
     &:hover {
         color: inherit
+    }
+}
+
+.clear-margin-sm {
+    @media (max-width: @screen-desktop) {
+        margin-bottom: 0;
     }
 }
