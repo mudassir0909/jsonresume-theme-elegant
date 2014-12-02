@@ -1,5 +1,5 @@
 # Elegant Theme [![npm version](https://badge.fury.io/js/jsonresume-theme-elegant.svg)](http://badge.fury.io/js/jsonresume-theme-elegant)
-_____________
+
 Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layouts.
 
 [Theme Preview](http://themes.jsonresume.org/elegant)
