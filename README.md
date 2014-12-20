@@ -4,6 +4,27 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 
 [Theme Preview](http://themes.jsonresume.org/elegant)
 
+### Supported Social Profiles 
+* github
+* linkedin
+* stackoverflow
+* twitter
+* soundcloud
+* pinterest
+* vimeo
+* behance
+* codepen
+* foursquare
+* reddit
+* spotify
+* dribble
+* dribbble
+* facebook
+* angellist
+* bitbucket
+* skype
+
+
 ### Credits
 * [ThomWright](https://github.com/ThomWright), [JamesonNetworks](https://github.com/JamesonNetworks) & [Elaniobro](https://github.com/Elaniobro) for their pull requests
 * Floating Menu: inspired by [Smart Fixed Navigation](http://codyhouse.co/demo/smart-fixed-navigation/index.html)
