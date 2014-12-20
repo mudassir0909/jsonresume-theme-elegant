@@ -3,7 +3,8 @@
 .make-social-link(@color){
     color: @color;
 
-    &:hover {
+    &:hover, &:focus {
+        text-decoration: none;
         color: darken(@color, 10%);
     }
 }

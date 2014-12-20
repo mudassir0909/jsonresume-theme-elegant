@@ -45,14 +45,51 @@ function humanizeDuration ( moment_obj, did_leave_company ) {
     }
 }
 
+function getUrlFromUsername( site, username ) {
+    var url_map = {
+        github: 'github.com',
+        twitter: 'twitter.com',
+        soundcloud: 'soundcloud.com',
+        pinterest: 'pinterest.com',
+        vimeo: 'vimeo.com',
+        behance: 'behance.net',
+        codepen: 'codepen.io',
+        foursquare: 'foursquare.com',
+        reddit: 'reddit.com',
+        spotify: 'spotify.com',
+        dribble: 'dribbble.com',
+        dribbble: 'dribbble.com',
+        facebook: 'facebook.com',
+        angellist: 'angel.co',
+        bitbucket: 'bitbucket.org'
+    };
+
+    site = site.toLowerCase();
+
+    if ( !username || !url_map[ site ] ) {
+        return;
+    }
+
+    switch( site ) {
+        case 'skype':
+            return 'skype:' + username + '?call';
+        case 'reddit':
+        case 'spotify':
+            return '//' + url_map[ site ] + '/user/' + username;
+        default:
+            return '//' + url_map[ site ] + '/' + username;
+    }
+ }
+
 function render(resume) {
     var css = fs.readFileSync(__dirname + '/assets/css/theme.css', 'utf-8'),
         template = fs.readFileSync(__dirname + '/resume.template', 'utf-8'),
         profiles = resume.basics.profiles,
-        twitter_account = getNetwork(profiles, 'twitter'),
-        github_account = getNetwork(profiles, 'github'),
-        linkedin_account = getNetwork(profiles, 'linkedin'),
-        skype_account = getNetwork(profiles, 'skype'),
+        social_sites = ["github", "linkedin", "stackoverflow", "twitter",
+                        "soundcloud", "pinterest", "vimeo", "behance",
+                        "codepen", "foursquare", "reddit", "spotify",
+                        "dribble", "dribbble", "facebook", "angellist",
+                        "bitbucket", "skype"],
         date_format = 'MMM, YYYY';
 
     if (!resume.basics.picture && hasEmail(resume)) {
@@ -144,17 +181,15 @@ function render(resume) {
         });
     });
 
-    twitter_account && _.extend(resume.basics, {
-        twitterHandle: twitter_account.username
-    });
-    github_account && _.extend(resume.basics, {
-        githubUsername: github_account.username
-    });
-    linkedin_account && linkedin_account.url && _.extend(resume.basics, {
-        linkedinUrl: linkedin_account.url
-    });
-    skype_account && _.extend(resume.basics, {
-        skypeHandle: skype_account.username
+    _.each( social_sites, function( site ) {
+        var username,
+            social_account = getNetwork( profiles, site );
+
+        if ( social_account ) {
+            username = social_account.username;
+            resume.basics[ site + '_url' ] =
+                getUrlFromUsername( site, username ) || social_account.url;
+        }
     });
 
     return Handlebars.compile(template)({

@@ -60,8 +60,14 @@
     }
 }
 
+.social-links {
+    line-height: 2.5;
+}
+
 .social-link {
     margin-left: 5px;
+    min-width: 35px;
+    display: inline-block;
 
     &:first-child {
         margin-left: 0;
@@ -91,3 +97,22 @@
 .link-skype {
     .make-social-link(@skype-color);
 }
+
+.link-stackoverflow {
+    .make-social-link(@stackoverflow-color);
+}
+
+.link-soundcloud {
+    .make-social-link(@soundcloud-color);
+}
+.link-pinterest { .make-social-link(@pinterest-color); }
+.link-vimeo { .make-social-link(@vimeo-color); }
+.link-behance { .make-social-link(@behance-color); }
+.link-codepen { .make-social-link(@codepen-color); }
+.link-foursquare { .make-social-link(@foursquare-color); }
+.link-reddit { .make-social-link(@reddit-color); }
+.link-spotify { .make-social-link(@spotify-color); }
+.link-dribbble { .make-social-link(@dribbble-color); }
+.link-facebook { .make-social-link(@facebook-color); }
+.link-angellist { .make-social-link(@angellist-color); }
+.link-bitbucket { .make-social-link(@bitbucket-color); }
