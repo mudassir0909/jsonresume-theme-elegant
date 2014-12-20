@@ -335,8 +335,13 @@ body {
     width: 25%;
   }
 }
+.social-links {
+  line-height: 2.5;
+}
 .social-link {
   margin-left: 5px;
+  min-width: 35px;
+  display: inline-block;
 }
 .social-link:first-child {
   margin-left: 0;
@@ -347,32 +352,146 @@ body {
 .link-github {
   color: #454545;
 }
-.link-github:hover {
+.link-github:hover,
+.link-github:focus {
+  text-decoration: none;
   color: #2b2b2b;
 }
 .link-twitter {
   color: #33ccff;
 }
-.link-twitter:hover {
+.link-twitter:hover,
+.link-twitter:focus {
+  text-decoration: none;
   color: #00bfff;
 }
 .link-blog {
   color: #f36f24;
 }
-.link-blog:hover {
+.link-blog:hover,
+.link-blog:focus {
+  text-decoration: none;
   color: #d8560c;
 }
 .link-linkedin {
   color: #007bb6;
 }
-.link-linkedin:hover {
+.link-linkedin:hover,
+.link-linkedin:focus {
+  text-decoration: none;
   color: #005983;
 }
 .link-skype {
   color: #12a5f4;
 }
-.link-skype:hover {
+.link-skype:hover,
+.link-skype:focus {
+  text-decoration: none;
   color: #0986ca;
+}
+.link-stackoverflow {
+  color: #8e8e92;
+}
+.link-stackoverflow:hover,
+.link-stackoverflow:focus {
+  text-decoration: none;
+  color: #747479;
+}
+.link-soundcloud {
+  color: #e8822d;
+}
+.link-soundcloud:hover,
+.link-soundcloud:focus {
+  text-decoration: none;
+  color: #cc6916;
+}
+.link-pinterest {
+  color: #bd091f;
+}
+.link-pinterest:hover,
+.link-pinterest:focus {
+  text-decoration: none;
+  color: #8c0717;
+}
+.link-vimeo {
+  color: #17b3e8;
+}
+.link-vimeo:hover,
+.link-vimeo:focus {
+  text-decoration: none;
+  color: #128fba;
+}
+.link-behance {
+  color: #2c98cf;
+}
+.link-behance:hover,
+.link-behance:focus {
+  text-decoration: none;
+  color: #2379a5;
+}
+.link-codepen {
+  color: #1c1c1c;
+}
+.link-codepen:hover,
+.link-codepen:focus {
+  text-decoration: none;
+  color: #020202;
+}
+.link-foursquare {
+  color: #fa4778;
+}
+.link-foursquare:hover,
+.link-foursquare:focus {
+  text-decoration: none;
+  color: #f91554;
+}
+.link-reddit {
+  color: #545454;
+}
+.link-reddit:hover,
+.link-reddit:focus {
+  text-decoration: none;
+  color: #3b3b3b;
+}
+.link-spotify {
+  color: #acd200;
+}
+.link-spotify:hover,
+.link-spotify:focus {
+  text-decoration: none;
+  color: #829f00;
+}
+.link-dribbble {
+  color: #ce366f;
+}
+.link-dribbble:hover,
+.link-dribbble:focus {
+  text-decoration: none;
+  color: #a82959;
+}
+.link-facebook {
+  color: #4b6daa;
+}
+.link-facebook:hover,
+.link-facebook:focus {
+  text-decoration: none;
+  color: #3b5687;
+}
+.link-angellist {
+  color: #000000;
+}
+.link-angellist:hover,
+.link-angellist:focus {
+  text-decoration: none;
+  color: #000000;
+}
+.link-bitbucket {
+  color: #205081;
+}
+.link-bitbucket:hover,
+.link-bitbucket:focus {
+  text-decoration: none;
+  color: #163758;
 }
 .card-skills {
   position: relative;

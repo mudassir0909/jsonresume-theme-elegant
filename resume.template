@@ -172,25 +172,69 @@
               <hr>
 
               <div class="social-links text-center">
-                {{#if linkedinUrl}}
+                {{#if linkedin_url}}
                   <a class="fa fa-linkedin fa-2x social-link link-linkedin"
-                       href="{{linkedinUrl}}" target="_blank"></a>
+                       href="{{linkedin_url}}" target="_blank"></a>
                 {{/if}}
-                {{#if githubUsername}}
+                {{#if github_url}}
                   <a class="fa fa-github fa-2x social-link link-github"
-                       href="http://www.github.com/{{githubUsername}}" target="_blank"></a>
+                       href="{{github_url}}" target="_blank"></a>
                 {{/if}}
-                {{#if skypeHandle}}
+                {{#if bitbucket_url}}
+                  <a class="fa fa-bitbucket fa-2x social-link link-bitbucket" href="{{bitbucket_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if stackoverflow_url}}
+                  <a class="fa fa-stack-overflow fa-2x social-link link-stackoverflow"
+                       href="{{stackoverflow_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if codepen_url}}
+                  <a class="fa fa-codepen fa-2x social-link link-codepen" href="{{codepen_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if skype_url}}
                   <a class="fa fa-skype fa-2x social-link link-skype"
-                       href="skype:{{skypeHandle}}?call" target="_blank"></a>
+                       href="{{skype_url}}" target="_blank"></a>
                 {{/if}}
-                {{#if twitterHandle}}
+                {{#if twitter_url}}
                   <a class="fa fa-twitter fa-2x social-link link-twitter"
-                       href="http://www.twitter.com/{{twitterHandle}}" target="_blank"></a>
+                       href="{{twitter_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if facebook_url}}
+                  <a class="fa fa-facebook-square fa-2x social-link link-facebook" href="{{facebook_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if soundcloud_url}}
+                  <a class="fa fa-soundcloud fa-2x social-link link-soundcloud"
+                       href="{{soundcloud_url}}" target="_blank"></a>
                 {{/if}}
                 {{#if website}}
                   <a class="fa fa-rss fa-2x social-link link-blog"
                        href="{{website}}" target="_blank"></a>
+                {{/if}}
+                {{#if pinterest_url}}
+                  <a class="fa fa-pinterest fa-2x social-link link-pinterest" href="{{pinterest_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if vimeo_url}}
+                  <a class="fa fa-vimeo-square fa-2x social-link link-vimeo" href="{{vimeo_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if behance_url}}
+                  <a class="fa fa-behance fa-2x social-link link-behance" href="{{behance_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if foursquare_url}}
+                  <a class="fa fa-foursquare fa-2x social-link link-foursquare" href="{{foursquare_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if reddit_url}}
+                  <a class="fa fa-reddit fa-2x social-link link-reddit" href="{{reddit_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if spotify_url}}
+                  <a class="fa fa-spotify fa-2x social-link link-spotify" href="{{spotify_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if dribble_url}}
+                  <a class="fa fa-dribble fa-2x social-link link-dribbble" href="{{dribble_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if dribbble_url}}
+                  <a class="fa fa-dribbble fa-2x social-link link-dribbble" href="{{dribbble_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if angellist_url}}
+                  <a class="fa fa-angellist fa-2x social-link link-angellist" href="{{angellist_url}}" target="_blank"></a>
                 {{/if}}
               </div>
             {{/resume.basics}}
