@@ -246,10 +246,13 @@
                                   Present
                                 {{/if}}
                               </span>
-                              <span>
-                                <i class="fa fa-clock-o icon-left"></i>
-                                {{duration}}
-                              </span>
+
+                              {{#if duration}}
+                                <span>
+                                  <i class="fa fa-clock-o icon-left"></i>
+                                  {{duration}}
+                                </span>
+                              {{/if}}
                             </small>
                           </p>
                           <p>{{summary}}</p>
@@ -263,24 +266,29 @@
                         </div>
 
                         <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                          <p>
-                            <strong>Joined:</strong>&nbsp;
-                            {{startDate}}
-                          </p>
-                          <p>
-                            {{#if endDate}}
-                              <strong>Left:</strong>&nbsp;
-                              {{endDate}}
-                            {{else}}
-                              <span class="label label-success">
-                                Currently Working
-                              </span>
-                            {{/if}}
-                          </p>
-                          <p>
-                            <i class="fa fa-clock-o icon-left"></i>
-                            {{duration}}
-                          </p>
+                          {{#if startDate}}
+                            <p>
+                              <strong>Joined:</strong>&nbsp;
+                              {{startDate}}
+                            </p>
+
+                            <p>
+                              {{#if endDate}}
+                                <strong>Left:</strong>&nbsp;
+                                {{endDate}}
+                              {{else}}
+                                <span class="label label-success">
+                                  Currently Working
+                                </span>
+                              {{/if}}
+                            </p>
+                          {{/if}}
+                          {{#if duration}}
+                            <p>
+                              <i class="fa fa-clock-o icon-left"></i>
+                              {{duration}}
+                            </p>
+                          {{/if}}
                         </div>
                       </li>
                     {{/each}}
