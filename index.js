@@ -80,10 +80,13 @@ function render(resume) {
         }
 
         did_leave_company = !! end_date;
-        end_date = end_date || new Date();
-        work_info.duration = humanizeDuration(
-            moment.duration( end_date.getTime() - start_date.getTime() ),
-            did_leave_company )
+
+        if ( start_date ) {
+            end_date = end_date || new Date();
+            work_info.duration = humanizeDuration(
+                moment.duration( end_date.getTime() - start_date.getTime() ),
+                did_leave_company )
+        }
     });
 
     _.each( resume.skills, function( skill_info ) {
