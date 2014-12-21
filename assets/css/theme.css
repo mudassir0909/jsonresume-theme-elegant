@@ -541,3 +541,8 @@ body {
     font-size: inherit;
   }
 }
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
