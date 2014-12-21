@@ -107,12 +107,17 @@
         <section class="col-md-3 card-wrapper profile-card-wrapper affix">
           <div class="card profile-card">
             {{#resume.basics}}
-              <div class="profile-pic">
-                <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
-                  alt="64x64" src="{{picture}}" style="width: 100px; height: 100px;">
-              </div>
-              <h3 class="text-center text-bolder name"> {{name}}</h3>
-              <h5 class="text-muted text-center">{{label}}</h5>
+              <span class="profile-pic-container">
+                <div class="profile-pic">
+                  <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
+                    alt="64x64" src="{{picture}}" style="width: 100px; height: 100px;">
+                </div>
+
+                <div class="name-and-profession">
+                  <h3 class="text-center text-bolder name"> {{name}}</h3>
+                  <h5 class="text-muted text-center">{{label}}</h5>
+                </div>
+              </span>
               <hr>
 
               <div class="contact-details clearfix">
