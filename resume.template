@@ -12,7 +12,7 @@
     </style>
   </head>
 
-  <body>
+  <body itemscope itemtype="http://schema.org/Person">
     <script>
       window.onload = function () {
         var toggleFloatingMenu = function() {
@@ -110,12 +110,12 @@
               <span class="profile-pic-container">
                 <div class="profile-pic">
                   <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
-                    alt="64x64" src="{{picture}}" style="width: 100px; height: 100px;">
+                    alt="64x64" src="{{picture}}" style="width: 100px; height: 100px;" itemprop="image">
                 </div>
 
                 <div class="name-and-profession">
-                  <h3 class="text-center text-bolder name"> {{name}}</h3>
-                  <h5 class="text-muted text-center">{{label}}</h5>
+                  <h3 class="text-center text-bolder name" itemprop="name"> {{name}}</h3>
+                  <h5 class="text-muted text-center" itemprop="jobTitle">{{label}}</h5>
                 </div>
               </span>
               <hr>
@@ -143,7 +143,7 @@
                       <i class="fa fa-lg fa-phone"></i>
                     </span>
 
-                    <span class="info">
+                    <span class="info" itemprop="telephone">
                       {{phone}}
                     </span>
                   </div>
@@ -156,7 +156,7 @@
                     </span>
 
                     <span class="info">
-                      <a href="mailto:{{email}}" class="link-disguise">{{email}}</a>
+                      <a href="mailto:{{email}}" class="link-disguise" itemprop="email">{{email}}</a>
                     </span>
                   </div>
                 {{/if}}
@@ -262,7 +262,7 @@
                     About
                   </h4>
 
-                  <div class="content">
+                  <div class="content" itemprop="description">
                     {{resume.basics.summary}}
                   </div>
                 </div>
@@ -456,7 +456,7 @@
                         {{#each resume.awards}}
                           <li class="card card-nested">
                             <div class="content has-sidebar">
-                              <p class="clear-margin-sm">
+                              <p class="clear-margin-sm" itemprop="award">
                                 <strong>{{title}}</strong>,&nbsp;
                                 {{awarder}}
                               </p>
