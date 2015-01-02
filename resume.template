@@ -109,8 +109,8 @@
             {{#resume.basics}}
               <span class="profile-pic-container">
                 <div class="profile-pic">
-                  <img class="media-object img-circle center-block"  data-src="holder.js/64x64"
-                    alt="64x64" src="{{picture}}" style="width: 100px; height: 100px;" itemprop="image">
+                  <img class="media-object img-circle center-block"  data-src="holder.js"
+                    alt="{{name}}" src="{{picture}}" itemprop="image">
                 </div>
 
                 <div class="name-and-profession">
