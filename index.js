@@ -75,7 +75,7 @@ function getUrlFromUsername( site, username ) {
             return 'skype:' + username + '?call';
         case 'reddit':
         case 'spotify':
-            return '//' + url_map[ site ] + '/user/' + username;
+            return '//' + 'open.' + url_map[ site ] + '/user/' + username;
         default:
             return '//' + url_map[ site ] + '/' + username;
     }
