@@ -275,6 +275,10 @@ body {
     padding: 10px 0;
   }
 }
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+}
 @media (max-width: 992px) {
   .name {
     margin-top: 10px;
