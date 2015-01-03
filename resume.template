@@ -109,7 +109,7 @@
             {{#resume.basics}}
               <span class="profile-pic-container">
                 <div class="profile-pic">
-                  <img class="media-object img-circle center-block"  data-src="holder.js"
+                  <img class="media-object img-circle center-block"  data-src="holder.js/100x100"
                     alt="{{name}}" src="{{picture}}" itemprop="image">
                 </div>
 
