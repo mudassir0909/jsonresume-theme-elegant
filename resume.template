@@ -283,7 +283,12 @@
                       <li class="card card-nested clearfix">
                         <div class="content has-sidebar">
                           <p class="clear-margin-sm">
-                            <strong>{{position}}</strong>,&nbsp;{{company}}
+                            <strong>{{position}}</strong>,&nbsp;
+                            {{#if website}}
+                              <a href="{{website}}"  target="_blank">{{company}}</a>
+                            {{else}}
+                              {{company}}
+                            {{/if}}
                           </p>
                           <p class="text-muted visible-xs visible-sm">
                             <small>
@@ -499,7 +504,11 @@
                             <div class="content has-sidebar">
                               <p class="clear-margin-sm">
                                 <strong>{{position}}</strong>,&nbsp;
-                                {{organization}}
+                                {{#if website}}
+                                  <a href="{{website}}"  target="_blank">{{organization}}</a>
+                                {{else}}
+                                  {{organization}}
+                                {{/if}}
                               </p>
                               <p class="visible-xs visible-sm text-muted">
                                 <small>
