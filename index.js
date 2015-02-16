@@ -62,7 +62,8 @@ function getUrlFromUsername( site, username ) {
         facebook: 'facebook.com',
         angellist: 'angel.co',
         bitbucket: 'bitbucket.org',
-        googleplus: 'plus.google.com'
+        googleplus: 'plus.google.com',
+        skype: 'none'
     };
 
     site = site.toLowerCase();
