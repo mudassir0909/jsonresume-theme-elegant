@@ -61,7 +61,8 @@ function getUrlFromUsername( site, username ) {
         dribbble: 'dribbble.com',
         facebook: 'facebook.com',
         angellist: 'angel.co',
-        bitbucket: 'bitbucket.org'
+        bitbucket: 'bitbucket.org',
+        skype: 'none'
     };
 
     site = site.toLowerCase();
