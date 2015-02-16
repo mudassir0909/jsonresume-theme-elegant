@@ -22,6 +22,7 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 * facebook
 * angellist
 * bitbucket
+* googleplus
 * skype
 
 
