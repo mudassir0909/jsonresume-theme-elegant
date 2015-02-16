@@ -61,7 +61,10 @@ function getUrlFromUsername( site, username ) {
         dribbble: 'dribbble.com',
         facebook: 'facebook.com',
         angellist: 'angel.co',
-        bitbucket: 'bitbucket.org'
+        bitbucket: 'bitbucket.org',
+        tumblr: 'tumblr.com',
+        youtube: 'www.youtube.com',
+        gratipay: 'gratipay.com'
     };
 
     site = site.toLowerCase();
@@ -76,6 +79,10 @@ function getUrlFromUsername( site, username ) {
         case 'reddit':
         case 'spotify':
             return '//' + 'open.' + url_map[ site ] + '/user/' + username;
+        case 'tumblr':
+            return '//' + username + '.' + url_map[ site ];
+        case 'youtube':
+            return '//' + url_map[ site ] + '/user/' + username;
         default:
             return '//' + url_map[ site ] + '/' + username;
     }
@@ -89,7 +96,8 @@ function render(resume) {
                         "soundcloud", "pinterest", "vimeo", "behance",
                         "codepen", "foursquare", "reddit", "spotify",
                         "dribble", "dribbble", "facebook", "angellist",
-                        "bitbucket", "skype"],
+                        "bitbucket", "skype", "youtube", "tumblr", 
+                        "gratipay"],
         date_format = 'MMM, YYYY';
 
     if (!resume.basics.picture && hasEmail(resume)) {

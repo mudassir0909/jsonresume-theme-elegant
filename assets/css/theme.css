@@ -409,6 +409,14 @@ body {
   text-decoration: none;
   color: #cc6916;
 }
+.link-youtube {
+  color: #dd4b39;
+}
+.link-youtube:hover,
+.link-youtube:focus {
+  text-decoration: none;
+  color: #c23321;
+}
 .link-pinterest {
   color: #bd091f;
 }
@@ -416,6 +424,14 @@ body {
 .link-pinterest:focus {
   text-decoration: none;
   color: #8c0717;
+}
+.link-gratipay {
+  color: #663300;
+}
+.link-gratipay:hover,
+.link-gratipay:focus {
+  text-decoration: none;
+  color: #331a00;
 }
 .link-vimeo {
   color: #17b3e8;
@@ -464,6 +480,14 @@ body {
 .link-spotify:focus {
   text-decoration: none;
   color: #829f00;
+}
+.link-tumblr {
+  color: #2d4661;
+}
+.link-tumblr:hover,
+.link-tumblr:focus {
+  text-decoration: none;
+  color: #1d2d3e;
 }
 .link-dribbble {
   color: #ce366f;
