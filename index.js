@@ -62,6 +62,7 @@ function getUrlFromUsername( site, username ) {
         facebook: 'facebook.com',
         angellist: 'angel.co',
         bitbucket: 'bitbucket.org',
+        googleplus: 'plus.google.com',
         tumblr: 'tumblr.com',
         youtube: 'www.youtube.com',
         gratipay: 'gratipay.com'
@@ -79,6 +80,8 @@ function getUrlFromUsername( site, username ) {
         case 'reddit':
         case 'spotify':
             return '//' + 'open.' + url_map[ site ] + '/user/' + username;
+        case 'googleplus':
+            return '//' + url_map[site] + '/u/0/+' + username;
         case 'tumblr':
             return '//' + username + '.' + url_map[ site ];
         case 'youtube':
@@ -97,7 +100,7 @@ function render(resume) {
                         "codepen", "foursquare", "reddit", "spotify",
                         "dribble", "dribbble", "facebook", "angellist",
                         "bitbucket", "skype", "youtube", "tumblr", 
-                        "gratipay"],
+                        "gratipay", "googleplus"],
         date_format = 'MMM, YYYY';
 
     if (!resume.basics.picture && hasEmail(resume)) {
