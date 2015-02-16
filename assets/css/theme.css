@@ -409,6 +409,14 @@ body {
   text-decoration: none;
   color: #cc6916;
 }
+.link-googleplus {
+  color: #dd4b39;
+}
+.link-googleplus:hover,
+.link-googleplus:focus {
+  text-decoration: none;
+  color: #c23321;
+}
 .link-pinterest {
   color: #bd091f;
 }
