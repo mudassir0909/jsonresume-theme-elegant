@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-elegant",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Elegant theme for jsonresume",
   "main": "index.js",
   "scripts": {
@@ -34,6 +34,8 @@
     "grunt-contrib-less": "^0.11.4",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-exec": "^0.4.6",
+    "grunt-contrib-copy": "0.4.x",
+    "grunt-contrib-clean": "0.5.x",
     "less": "^1.7.5",
     "underscore.string": "^2.3.3"
   }
