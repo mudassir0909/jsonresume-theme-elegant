@@ -63,7 +63,10 @@ function getUrlFromUsername( site, username ) {
         angellist: 'angel.co',
         bitbucket: 'bitbucket.org',
         googleplus: 'plus.google.com',
-        skype: 'skype'
+        skype: 'skype',
+        tumblr: 'tumblr.com',
+        youtube: 'www.youtube.com',
+        gratipay: 'gratipay.com'
     };
 
     site = site.toLowerCase();
@@ -80,6 +83,10 @@ function getUrlFromUsername( site, username ) {
             return '//' + 'open.' + url_map[ site ] + '/user/' + username;
         case 'googleplus':
             return '//' + url_map[ site ] + '/u/0/+' + username;
+        case 'tumblr':
+            return '//' + username + '.' + url_map[ site ];
+        case 'youtube':
+            return '//' + url_map[ site ] + '/user/' + username;
         default:
             return '//' + url_map[ site ] + '/' + username;
     }
@@ -93,7 +100,8 @@ function render(resume) {
                         "soundcloud", "pinterest", "vimeo", "behance",
                         "codepen", "foursquare", "reddit", "spotify",
                         "dribble", "dribbble", "facebook", "angellist",
-                        "bitbucket", "skype", "googleplus"],
+                        "bitbucket", "skype", "youtube", "tumblr", 
+                        "gratipay", "googleplus"],
         date_format = 'MMM, YYYY';
 
     if (!resume.basics.picture && hasEmail(resume)) {
