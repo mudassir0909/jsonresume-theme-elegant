@@ -409,19 +409,19 @@ body {
   text-decoration: none;
   color: #cc6916;
 }
-<<<<<<< HEAD
-.link-youtube {
-  color: #dd4b39;
-}
-.link-youtube:hover,
-.link-youtube:focus {
-=======
 .link-googleplus {
   color: #dd4b39;
 }
 .link-googleplus:hover,
 .link-googleplus:focus {
->>>>>>> Added support for Google+ in social icons.
+  text-decoration: none;
+  color: #c23321;
+}
+.link-youtube {
+  color: #dd4b39;
+}
+.link-youtube:hover,
+.link-youtube:focus {
   text-decoration: none;
   color: #c23321;
 }
