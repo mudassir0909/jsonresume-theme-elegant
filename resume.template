@@ -210,6 +210,9 @@
                   <a class="fa fa-soundcloud fa-2x social-link link-soundcloud"
                        href="{{soundcloud_url}}" target="_blank"></a>
                 {{/if}}
+                {{#if googleplus_url}}
+                  <a class="fa fa-google-plus-square fa-2x social-link link-googleplus" href="{{googleplus_url}}" target="_blank"></a>
+                {{/if}}
                 {{#if website}}
                   <a class="fa fa-rss fa-2x social-link link-blog"
                        href="{{website}}" target="_blank"></a>
