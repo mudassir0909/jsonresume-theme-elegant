@@ -63,7 +63,7 @@ function getUrlFromUsername( site, username ) {
         angellist: 'angel.co',
         bitbucket: 'bitbucket.org',
         googleplus: 'plus.google.com',
-        skype: 'none'
+        skype: 'skype'
     };
 
     site = site.toLowerCase();
@@ -74,12 +74,12 @@ function getUrlFromUsername( site, username ) {
 
     switch( site ) {
         case 'skype':
-            return 'skype:' + username + '?call';
+            return url_map[ site ] + ':' + username + '?call';
         case 'reddit':
         case 'spotify':
             return '//' + 'open.' + url_map[ site ] + '/user/' + username;
         case 'googleplus':
-            return '//' + url_map[site] + '/u/0/+' + username;
+            return '//' + url_map[ site ] + '/u/0/+' + username;
         default:
             return '//' + url_map[ site ] + '/' + username;
     }
