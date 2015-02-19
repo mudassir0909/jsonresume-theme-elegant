@@ -82,11 +82,7 @@ function getUrlFromUsername( site, username ) {
         case 'spotify':
             return '//' + 'open.' + url_map[ site ] + '/user/' + username;
         case 'googleplus':
-<<<<<<< HEAD
             return '//' + url_map[ site ] + '/u/0/+' + username;
-=======
-            return '//' + url_map[site] + '/u/0/+' + username;
->>>>>>> Added support for Google+ in social icons.
         case 'tumblr':
             return '//' + username + '.' + url_map[ site ];
         case 'youtube':
