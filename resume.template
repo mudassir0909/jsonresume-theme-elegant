@@ -22,7 +22,7 @@
         };
 
         $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
-        $( ".js-tooltip" ).tooltip();
+        $( "[rel=tooltip]" ).tooltip();
         $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
           e.preventDefault();
           toggleFloatingMenu();
@@ -295,8 +295,12 @@
                   <ul class="list-unstyled">
                     {{#each resume.work}}
                       <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
+                        <div class="content">
+                          <p class="clear-margin relative">
+                            {{#unless endDate}}
+                              <i class="fa fa-circle current-event"
+                                 rel="tooltip" title="Currently Working" data-placement="left"></i>
+                            {{/unless}}
                             <strong>{{position}}</strong>,&nbsp;
                             {{#if website}}
                               <a href="{{website}}"  target="_blank">{{company}}</a>
@@ -304,7 +308,7 @@
                               {{company}}
                             {{/if}}
                           </p>
-                          <p class="text-muted visible-xs visible-sm">
+                          <p class="text-muted">
                             <small>
                               <span class="space-right">
                                 {{startDate}} -
@@ -332,32 +336,6 @@
                             </ul>
                           {{/if}}
                         </div>
-
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                          {{#if startDate}}
-                            <p>
-                              <strong>Joined:</strong>&nbsp;
-                              {{startDate}}
-                            </p>
-
-                            <p>
-                              {{#if endDate}}
-                                <strong>Left:</strong>&nbsp;
-                                {{endDate}}
-                              {{else}}
-                                <span class="label label-success">
-                                  Currently Working
-                                </span>
-                              {{/if}}
-                            </p>
-                          {{/if}}
-                          {{#if duration}}
-                            <p>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              {{duration}}
-                            </p>
-                          {{/if}}
-                        </div>
                       </li>
                     {{/each}}
                   </ul>
@@ -379,7 +357,7 @@
                       {{#each resume.skills}}
                         <li class="card card-nested card-skills">
                           {{#if display_progress_bar}}
-                            <div class="skill-level js-tooltip" title="{{level}}" data-placement="left">
+                            <div class="skill-level" rel="tooltip" title="{{level}}" data-placement="left">
                               <div class="skill-progress {{skill_class}}">
                               </div>
                             </div>
@@ -414,12 +392,17 @@
                     <ul class="list-unstyled">
                       {{#each resume.education}}
                         <li class="card card-nested">
-                          <div class="content has-sidebar">
-                            <p class="clear-margin-sm">
+                          <div class="content">
+                            <p class="clear-margin relative">
+                              {{#unless endDate}}
+                                <i class="fa fa-circle current-event"
+                                   rel="tooltip" title="Currently Pursuing" data-placement="left"></i>
+                              {{/unless}}
+
                               <strong>{{area}}, {{studyType}}</strong>,&nbsp;
                               {{institution}}
                             </p>
-                            <p class="visible-xs visible-sm text-muted">
+                            <p class="text-muted">
                               <small>
                                 {{startDate}} -
                                 {{#if endDate}}
@@ -435,22 +418,6 @@
                                 <span class="label label-keyword">{{.}}</span>
                               {{/courses}}
                             </div>
-                          </div>
-                          <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Started:</strong>&nbsp;
-                              {{startDate}}
-                            </p>
-                            <p>
-                              {{#if endDate}}
-                                <strong>Completion:</strong>&nbsp;
-                                {{endDate}}
-                              {{else}}
-                                <span class="label label-success">
-                                  Currently Pursuing
-                                </span>
-                              {{/if}}
-                            </p>
                           </div>
                         </li>
                       {{/each}}
@@ -474,23 +441,17 @@
                       <ul class="list-unstyled">
                         {{#each resume.awards}}
                           <li class="card card-nested">
-                            <div class="content has-sidebar">
-                              <p class="clear-margin-sm" itemprop="award">
+                            <div class="content">
+                              <p class="clear-margin" itemprop="award">
                                 <strong>{{title}}</strong>,&nbsp;
                                 {{awarder}}
                               </p>
-                              <p class="visible-xs visible-sm text-muted">
+                              <p class="text-muted">
                                 <small>
                                   Awarded on: {{date}}
                                 </small>
                               </p>
                               <p class="clear-margin"> {{summary}} </p>
-                            </div>
-                            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                              <p>
-                                <strong>Awarded on:</strong>&nbsp;
-                                {{date}}
-                              </p>
                             </div>
                           </li>
                         {{/each}}
@@ -515,8 +476,13 @@
                       <ul class="list-unstyled">
                         {{#each resume.volunteer}}
                           <li class="card card-nested">
-                            <div class="content has-sidebar">
-                              <p class="clear-margin-sm">
+                            <div class="content">
+                              <p class="clear-margin relative">
+                                {{#unless endDate}}
+                                  <i class="fa fa-circle current-event"
+                                     rel="tooltip" title="Currently Volunteering" data-placement="left"></i>
+                                {{/unless}}
+
                                 <strong>{{position}}</strong>,&nbsp;
                                 {{#if website}}
                                   <a href="{{website}}"  target="_blank">{{organization}}</a>
@@ -524,7 +490,7 @@
                                   {{organization}}
                                 {{/if}}
                               </p>
-                              <p class="visible-xs visible-sm text-muted">
+                              <p class="text-muted">
                                 <small>
                                   {{startDate}} -
                                   {{#if endDate}}
@@ -540,22 +506,6 @@
                                   <li> {{.}} </li>
                                 {{/each}}
                               </ul>
-                            </div>
-                            <div class="sidebar hidden-xs hidden-sm text-muted text-center">
-                              <p>
-                                <strong>Since:</strong>&nbsp;
-                                {{startDate}}
-                              </p>
-                              <p>
-                                {{#if endDate}}
-                                  <strong>Until:</strong>&nbsp;
-                                  {{endDate}}
-                                {{else}}
-                                  <span class="label label-success">
-                                    Currently Volunteering
-                                  </span>
-                                {{/if}}
-                              </p>
                             </div>
                           </li>
                         {{/each}}
@@ -580,8 +530,8 @@
                       <ul class="list-unstyled">
                         {{#each resume.publications}}
                           <li class="card card-nested">
-                            <div class="content has-sidebar">
-                              <p class="clear-margin-sm">
+                            <div class="content">
+                              <p class="clear-margin">
                                 <strong>
                                   {{#if website}}
                                     <a href="{{website}}"  target="_blank">{{name}}</a>
@@ -591,18 +541,12 @@
                                 </strong>,&nbsp;
                                 {{publisher}}
                               </p>
-                              <p class="visible-xs visible-sm text-muted">
+                              <p class="text-muted">
                                 <small>
                                   Published on: {{releaseDate}}
                                 </small>
                               </p>
                               <p class="clear-margin">{{summary}}</p>
-                            </div>
-                            <div class="sidebar text-muted text-center hidden-sm hidden-xs">
-                              <p>
-                                <strong>Published on:</strong>&nbsp;
-                                {{releaseDate}}
-                              </p>
                             </div>
                           </li>
                         {{/each}}
