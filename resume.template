@@ -162,6 +162,18 @@
                   </div>
                 {{/if}}
 
+                {{#if website}}
+                  <div class="detail">
+                    <span class="icon">
+                      <i class="fa fa-lg fa-link"></i>
+                    </span>
+
+                    <span class="info">
+                      <a href="{{website}}" target="_blank">{{website}}</a>
+                    </span>
+                  </div>
+                {{/if}}
+
                 {{#if languages}}
                   <div class="detail">
                     <span class="icon" title="Languages I speak">
@@ -220,10 +232,6 @@
                 {{/if}}
                 {{#if googleplus_url}}
                   <a class="fa fa-google-plus-square fa-2x social-link link-googleplus" href="{{googleplus_url}}" target="_blank"></a>
-                {{/if}}
-                {{#if website}}
-                  <a class="fa fa-rss fa-2x social-link link-blog"
-                       href="{{website}}" target="_blank"></a>
                 {{/if}}
                 {{#if pinterest_url}}
                   <a class="fa fa-pinterest fa-2x social-link link-pinterest" href="{{pinterest_url}}" target="_blank"></a>
