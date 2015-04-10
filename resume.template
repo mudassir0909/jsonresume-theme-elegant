@@ -44,24 +44,30 @@
                 About
               </a>
             </li>
+            {{#if resume.work}}
             <li>
               <a href="#work-experience">
                 <i class="fa fa-building"></i>
                 Work Experience
               </a>
             </li>
+            {{/if}}
+            {{#if resume.skills}}
             <li>
               <a href="#skills">
                 <i class="fa fa-code"></i>
                 Skills
               </a>
             </li>
+            {{/if}}
+            {{#if resume.education}}
             <li>
               <a href="#education">
                 <i class="fa fa-mortar-board"></i>
                 Education
               </a>
             </li>
+            {{/if}}
             {{#if resume.awards}}
               <li>
                 <a href="#awards">
@@ -128,13 +134,9 @@
                     <span class="icon">
                       <i class="fa fa-lg fa-location-arrow"></i>
                     </span>
-
-                    {{#location}}
-                      <span class="info">
-                        {{city}}, {{region}},
-                        {{countryCode}}
-                      </span>
-                    {{/location}}
+                    <span class="info">
+                      {{address_string location}}
+                    </span>
                   </div>
                 {{/if}}
 
@@ -290,6 +292,7 @@
                 </div>
               </div>
 
+              {{#if resume.work}}
               <div class="detail" id="work-experience">
                 <div class="icon">
                   <i class="fa fa-lg fa-building"></i>
@@ -349,43 +352,47 @@
                   </ul>
                 </div>
               </div>
+              {{/if}}
 
-              <div class="detail" id="skills">
-                <div class="icon">
-                  <i class="fa fa-lg fa-code"></i>
-                  <span class="mobile-title">Skills</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    Skills
-                  </h4>
+              {{#if resume.sills}}
+                <div class="detail" id="skills">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-code"></i>
+                    <span class="mobile-title">Skills</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Skills
+                    </h4>
 
-                  <div class="content">
-                    <ul class="list-unstyled">
-                      {{#each resume.skills}}
-                        <li class="card card-nested card-skills">
-                          {{#if display_progress_bar}}
-                            <div class="skill-level" rel="tooltip" title="{{level}}" data-placement="left">
-                              <div class="skill-progress {{skill_class}}">
+                    <div class="content">
+                      <ul class="list-unstyled">
+                        {{#each resume.skills}}
+                          <li class="card card-nested card-skills">
+                            {{#if display_progress_bar}}
+                              <div class="skill-level" rel="tooltip" title="{{level}}" data-placement="left">
+                                <div class="skill-progress {{skill_class}}">
+                                </div>
+                              </div>
+                            {{/if}}
+                            <div class="skill-info">
+                              <strong>{{name}}</strong>
+
+                              <div class="space-top labels">
+                                {{#keywords}}
+                                  <span class="label label-keyword">{{.}}</span>
+                                {{/keywords}}
                               </div>
                             </div>
-                          {{/if}}
-                          <div class="skill-info">
-                            <strong>{{name}}</strong>
-
-                            <div class="space-top labels">
-                              {{#keywords}}
-                                <span class="label label-keyword">{{.}}</span>
-                              {{/keywords}}
-                            </div>
-                          </div>
-                        </li>
-                      {{/each}}
-                    </ul>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
+              {{/if}}
 
+              {{#if resume.education}}
               <div class="detail" id="education">
                 <div class="icon">
                   <i class="fa fa-lg fa-mortar-board"></i>
@@ -433,6 +440,7 @@
                   </div>
                 </div>
               </div>
+              {{/if}}
 
               {{#if resume.awards}}
                 <div class="detail" id="awards">

@@ -4,12 +4,14 @@ var gravatar = require('gravatar');
 var _ = require('underscore');
 var _s = require('underscore.string');
 var moment = require('moment');
+var handlebarsHelpers = require('./lib/handlebars_helpers');
 
 // Utity Methods ( need be moved to a separate file)
-
+//
 function hasEmail(resume) {
     return !!resume.basics && !! resume.basics.email;
 }
+
 
 function getNetwork(profiles, network_name) {
     return _.find(profiles, function(profile) {
