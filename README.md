@@ -30,7 +30,7 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 
 
 ### Credits
-* [Ryan B. Harvey](https://github.com/nihonjinrxs), [Chris Vogt](https://github.com/chrisvogt), [ThomWright](https://github.com/ThomWright), [JamesonNetworks](https://github.com/JamesonNetworks) & [Elaniobro](https://github.com/Elaniobro) for their pull requests
+* [Ryan B. Harvey](https://github.com/nihonjinrxs), [Chris Vogt](https://github.com/chrisvogt), [ThomWright](https://github.com/ThomWright), [JamesonNetworks](https://github.com/JamesonNetworks), [Elaniobro](https://github.com/Elaniobro) & [Rui](https://github.com/rpbaltazar) for their pull requests
 * Floating Menu: inspired by [Smart Fixed Navigation](http://codyhouse.co/demo/smart-fixed-navigation/index.html)
 
 ### Contributing
