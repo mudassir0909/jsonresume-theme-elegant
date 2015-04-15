@@ -38,12 +38,14 @@
         </a>
         <nav class="floating-nav js-floating-nav">
           <ul class="list-unstyled">
+            {{#if resume.about}}
             <li>
               <a href="#about">
                 <i class="fa fa-user"></i>
                 About
               </a>
             </li>
+            {{/if}}
             {{#if resume.work}}
             <li>
               <a href="#work-experience">
@@ -276,6 +278,7 @@
             <hr>
 
             <div class="background-details">
+              {{#if resume.about}}
               <div class="detail" id="about">
                 <div class="icon">
                   <i class="fa fa-lg fa-user"></i>
@@ -291,6 +294,7 @@
                   </div>
                 </div>
               </div>
+              {{/if}}
 
               {{#if resume.work}}
               <div class="detail" id="work-experience">
@@ -354,7 +358,7 @@
               </div>
               {{/if}}
 
-              {{#if resume.sills}}
+              {{#if resume.skills}}
                 <div class="detail" id="skills">
                   <div class="icon">
                     <i class="fa fa-lg fa-code"></i>
