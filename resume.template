@@ -38,7 +38,7 @@
         </a>
         <nav class="floating-nav js-floating-nav">
           <ul class="list-unstyled">
-            {{#if resume.about}}
+            {{#if resume.basics.summary}}
             <li>
               <a href="#about">
                 <i class="fa fa-user"></i>
@@ -278,7 +278,7 @@
             <hr>
 
             <div class="background-details">
-              {{#if resume.about}}
+              {{#if resume.basics.summary}}
               <div class="detail" id="about">
                 <div class="icon">
                   <i class="fa fa-lg fa-user"></i>
