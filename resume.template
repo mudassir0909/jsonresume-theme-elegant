@@ -244,6 +244,9 @@
                 {{#if pinterest_url}}
                   <a class="fa fa-pinterest fa-2x social-link link-pinterest" href="{{pinterest_url}}" target="_blank"></a>
                 {{/if}}
+                {{#if instagram_url}}
+                  <a class="fa fa-instagram fa-2x social-link link-instagram" href="{{instagram_url}}" target="_blank"></a>
+                {{/if}}
                 {{#if vimeo_url}}
                   <a class="fa fa-vimeo-square fa-2x social-link link-vimeo" href="{{vimeo_url}}" target="_blank"></a>
                 {{/if}}

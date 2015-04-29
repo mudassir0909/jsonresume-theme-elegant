@@ -13,6 +13,7 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 * dribble
 * facebook
 * foursquare
+* instagram
 * github
 * googleplus
 * gratipay

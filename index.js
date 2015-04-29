@@ -53,6 +53,7 @@ function getUrlFromUsername( site, username ) {
         twitter: 'twitter.com',
         soundcloud: 'soundcloud.com',
         pinterest: 'pinterest.com',
+        instagram: 'instagram.com',
         vimeo: 'vimeo.com',
         behance: 'behance.net',
         codepen: 'codepen.io',
@@ -87,6 +88,8 @@ function getUrlFromUsername( site, username ) {
             return '//' + 'open.' + url_map[ site ] + '/user/' + username;
         case 'lastfm':
             return '//' + url_map[ site ] + '/user/' + username;
+        case 'instagram':
+            return '//' + url_map[ site ] + '/' + username;
         case 'googleplus':
             return '//' + url_map[ site ] + '/u/0/+' + username;
         case 'tumblr':
@@ -109,7 +112,8 @@ function render(resume) {
                         "codepen", "foursquare", "reddit", "spotify",
                         "dribble", "dribbble", "facebook", "angellist",
                         "bitbucket", "skype", "youtube", "tumblr",
-                        "gratipay", "googleplus", "lastfm", "stackexchange"],
+                        "gratipay", "googleplus", "lastfm", "stackexchange",
+                        "instagram"],
         date_format = 'MMM, YYYY';
 
     if (!resume.basics.picture && hasEmail(resume)) {

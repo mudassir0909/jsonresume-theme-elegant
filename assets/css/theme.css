@@ -407,6 +407,14 @@ body {
   text-decoration: none;
   color: #0986ca;
 }
+.link-instagram {
+  color: #3f729b;
+}
+.link-instagram:hover,
+.link-instagram:focus {
+  text-decoration: none;
+  color: #305777;
+}
 .link-stackoverflow {
   color: #8e8e92;
 }
