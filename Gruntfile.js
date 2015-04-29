@@ -3,10 +3,14 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         less: {
-            compile: {
-                src: './assets/less/theme.less',
-                dest: './assets/css/theme.css'
+          development: {
+            options: {
+              paths: ["assets"]
+            },
+            files: {
+              "css/theme.css": "less/theme.less"
             }
+          }
         },
         watch: {
             styles: {
@@ -69,15 +73,15 @@ module.exports = function(grunt) {
 
     // Default tasks
     grunt.registerTask('default', ['exec']);
-    grunt.registerTask('build', [ 
-        /* Uncomment this item once you've created your own resume.json file 
+    grunt.registerTask('build', [
+        /* Uncomment this item once you've created your own resume.json file
            in the project root.  This will use your own data to build your site.
          */
         // 'copy:resumejson',
-        'clean', 
-        'copy:build', 
+        'clean',
+        'copy:build',
         'exec:build_index' //,
-        /* Uncomment this item (and the comma above) if you add a favicon.ico 
+        /* Uncomment this item (and the comma above) if you add a favicon.ico
            in the project root. You'll also need to uncomment the <link...> tag
            at the top of resume.template.
          */
