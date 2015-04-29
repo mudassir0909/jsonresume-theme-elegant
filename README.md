@@ -16,12 +16,14 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 * github
 * googleplus
 * gratipay
+* lastfm
 * linkedin
 * pinterest
 * reddit
 * skype
 * soundcloud
 * spotify
+* stackexchange
 * stackoverflow
 * tumblr
 * twitter
