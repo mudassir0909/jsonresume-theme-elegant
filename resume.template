@@ -213,6 +213,10 @@
                   <a class="fa fa-stack-overflow fa-2x social-link link-stackoverflow"
                        href="{{stackoverflow_url}}" target="_blank"></a>
                 {{/if}}
+                {{#if stackexchange_url}}
+                  <a class="fa fa-stack-exchange fa-2x social-link link-stackexchange"
+                       href="{{stackexchange_url}}" target="_blank"></a>
+                {{/if}}
                 {{#if codepen_url}}
                   <a class="fa fa-codepen fa-2x social-link link-codepen" href="{{codepen_url}}" target="_blank"></a>
                 {{/if}}
@@ -240,6 +244,9 @@
                 {{#if pinterest_url}}
                   <a class="fa fa-pinterest fa-2x social-link link-pinterest" href="{{pinterest_url}}" target="_blank"></a>
                 {{/if}}
+                {{#if instagram_url}}
+                  <a class="fa fa-instagram fa-2x social-link link-instagram" href="{{instagram_url}}" target="_blank"></a>
+                {{/if}}
                 {{#if vimeo_url}}
                   <a class="fa fa-vimeo-square fa-2x social-link link-vimeo" href="{{vimeo_url}}" target="_blank"></a>
                 {{/if}}
@@ -254,6 +261,9 @@
                 {{/if}}
                 {{#if spotify_url}}
                   <a class="fa fa-spotify fa-2x social-link link-spotify" href="{{spotify_url}}" target="_blank"></a>
+                {{/if}}
+                {{#if lastfm_url}}
+                  <a class="fa fa-lastfm fa-2x social-link link-lastfm" href="{{lastfm_url}}" target="_blank"></a>
                 {{/if}}
                 {{#if tumblr_url}}
                   <a class="fa fa-tumblr-square fa-2x social-link link-tumblr" href="{{tumblr_url}}" target="_blank"></a>

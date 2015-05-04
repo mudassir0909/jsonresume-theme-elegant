@@ -53,12 +53,15 @@ function getUrlFromUsername( site, username ) {
         twitter: 'twitter.com',
         soundcloud: 'soundcloud.com',
         pinterest: 'pinterest.com',
+        instagram: 'instagram.com',
         vimeo: 'vimeo.com',
         behance: 'behance.net',
         codepen: 'codepen.io',
         foursquare: 'foursquare.com',
         reddit: 'reddit.com',
         spotify: 'spotify.com',
+        stackexchange: 'stackexchange.com',
+        lastfm: 'lastfm.com',
         dribble: 'dribbble.com',
         dribbble: 'dribbble.com',
         facebook: 'facebook.com',
@@ -83,12 +86,18 @@ function getUrlFromUsername( site, username ) {
         case 'reddit':
         case 'spotify':
             return '//' + 'open.' + url_map[ site ] + '/user/' + username;
+        case 'lastfm':
+            return '//' + url_map[ site ] + '/user/' + username;
+        case 'instagram':
+            return '//' + url_map[ site ] + '/' + username;
         case 'googleplus':
             return '//' + url_map[ site ] + '/u/0/+' + username;
         case 'tumblr':
             return '//' + username + '.' + url_map[ site ];
         case 'youtube':
             return '//' + url_map[ site ] + '/user/' + username;
+        case 'stackexchange':
+            return '//' + url_map[ site ] + '/users/' + username;
         default:
             return '//' + url_map[ site ] + '/' + username;
     }
@@ -102,8 +111,9 @@ function render(resume) {
                         "soundcloud", "pinterest", "vimeo", "behance",
                         "codepen", "foursquare", "reddit", "spotify",
                         "dribble", "dribbble", "facebook", "angellist",
-                        "bitbucket", "skype", "youtube", "tumblr", 
-                        "gratipay", "googleplus"],
+                        "bitbucket", "skype", "youtube", "tumblr",
+                        "gratipay", "googleplus", "lastfm", "stackexchange",
+                        "instagram"],
         date_format = 'MMM, YYYY';
 
     if (!resume.basics.picture && hasEmail(resume)) {

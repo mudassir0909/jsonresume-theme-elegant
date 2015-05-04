@@ -4,30 +4,32 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 
 [Theme Preview](http://themes.jsonresume.org/elegant)
 
-### Supported Social Profiles 
-* github
-* linkedin
-* stackoverflow
-* twitter
-* soundcloud
-* pinterest
-* vimeo
-* behance
-* codepen
-* foursquare
-* reddit
-* spotify
-* dribble
-* dribbble
-* facebook
+### Supported Social Profiles
 * angellist
+* behance
 * bitbucket
+* codepen
+* dribbble
+* dribble
+* facebook
+* foursquare
+* instagram
+* github
 * googleplus
-* skype
-* youtube
-* tumblr
 * gratipay
-
+* lastfm
+* linkedin
+* pinterest
+* reddit
+* skype
+* soundcloud
+* spotify
+* stackexchange
+* stackoverflow
+* tumblr
+* twitter
+* vimeo
+* youtube
 
 ### Credits
 * [Ryan B. Harvey](https://github.com/nihonjinrxs), [Chris Vogt](https://github.com/chrisvogt), [ThomWright](https://github.com/ThomWright), [JamesonNetworks](https://github.com/JamesonNetworks), [Elaniobro](https://github.com/Elaniobro) & [Rui](https://github.com/rpbaltazar) for their pull requests
@@ -48,7 +50,7 @@ Visit [http://localhost:8888](http://localhost:8888) to see the theme in action.
 You can test your changes by updating `resume.json` file inside `node_modules/resume-schema/` folder. You might want to rerun `grunt exec:run_server` whenever you make any changes to `resume.json`
 
 ##### Updating Styles
-All the LESS files are organized under the folder `assets/less/`. Please go through the comments inside `theme.less` to find out which file to put your LESS changes. Grunt compiles `assets/less/theme.less` to `assets/css/theme.css` which is used eventually in the theme. 
+All the LESS files are organized under the folder `assets/less/`. Please go through the comments inside `theme.less` to find out which file to put your LESS changes. Grunt compiles `assets/less/theme.less` to `assets/css/theme.css` which is used eventually in the theme.
 
 **_Please Do not make any changes inside `assets/css/theme.css`_**
 
@@ -58,4 +60,3 @@ All the javascript changes go into `index.js` which is responsible for rendering
 ### Roadmap
 
 [https://github.com/mudassir0909/jsonresume-theme-elegant/labels/enhancement](https://github.com/mudassir0909/jsonresume-theme-elegant/labels/enhancement)
-
