@@ -71,7 +71,8 @@ function getUrlFromUsername( site, username ) {
         skype: 'skype',
         tumblr: 'tumblr.com',
         youtube: 'www.youtube.com',
-        gratipay: 'gratipay.com'
+        gratipay: 'gratipay.com',
+        hackernews: 'news.ycombinator.com'
     };
 
     site = site.toLowerCase();
@@ -98,6 +99,8 @@ function getUrlFromUsername( site, username ) {
             return '//' + url_map[ site ] + '/user/' + username;
         case 'stackexchange':
             return '//' + url_map[ site ] + '/users/' + username;
+        case 'hackernews':
+            return '//' + url_map[ site ] + '/user?id=' + username;
         default:
             return '//' + url_map[ site ] + '/' + username;
     }
@@ -113,7 +116,7 @@ function render(resume) {
                         "dribble", "dribbble", "facebook", "angellist",
                         "bitbucket", "skype", "youtube", "tumblr",
                         "gratipay", "googleplus", "lastfm", "stackexchange",
-                        "instagram"],
+                        "instagram", "hackernews"],
         date_format = 'MMM, YYYY';
 
     if (!resume.basics.picture && hasEmail(resume)) {

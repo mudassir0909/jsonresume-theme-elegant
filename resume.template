@@ -277,6 +277,9 @@
                 {{#if angellist_url}}
                   <a class="fa fa-angellist fa-2x social-link link-angellist" href="{{angellist_url}}" target="_blank"></a>
                 {{/if}}
+                {{#if hackernews_url}}
+                  <a class="fa fa-hacker-news fa-2x social-link link-hackernews" href="{{hackernews_url}}" target="_blank"></a>
+                {{/if}}
               </div>
             {{/resume.basics}}
           </div>
