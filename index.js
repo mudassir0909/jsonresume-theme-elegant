@@ -5,6 +5,7 @@ var _ = require('underscore');
 var _s = require('underscore.string');
 var moment = require('moment');
 var handlebarsHelpers = require('./lib/handlebars_helpers');
+var jade = require("jade");
 
 // Utity Methods ( need be moved to a separate file)
 //
@@ -219,10 +220,16 @@ function render(resume) {
         }
     });
 
-    return Handlebars.compile(template)({
-        css: css,
-        resume: resume
+    console.log(resume);
+
+    return jade.renderFile('index.jade', {
+      resume: resume,
+      css: css
     });
+    // return Handlebars.compile(template)({
+    //     css: css,
+    //     resume: resume
+    // });
 }
 
 module.exports = {

@@ -1,0 +1,14 @@
+mixin make_nav_link(nav_item)
+  li
+    a(href="#" + nav_item.target)
+      i.fa(class=nav_item.icon)
+      | #{nav_item.label}
+
+a(href="#").js-floating-nav-trigger.floating-nav-trigger
+  i.fa.fa-bars
+  span.close-icon &times;
+
+nav.floating-nav.js-floating-nav
+  ul.list-unstyled
+    - each nav_item in floating_nav_items
+      +make_nav_link(nav_item)
