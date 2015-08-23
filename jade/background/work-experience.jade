@@ -1,0 +1,42 @@
+if resume.work && resume.work.length
+  .detail#work-experience
+    .icon
+      i.fa.fa-lg.fa-building
+      span.mobile-title Work Experience
+
+    .info
+      h4.title.text-uppercase Work Experience
+
+      ul.list-unstyled
+        - each experience in resume.work
+          li.card.card-nested.clearfix
+            .content
+              p.clear-margin.relative
+                if !experience.endDate
+                  i.fa.fa-circle.current-event(
+                    rel="tooltip",
+                    title="Currently Working",
+                    data-placement="left"
+                  )
+                strong= experience.position
+                |,&nbsp;
+                if experience.website
+                  a(href=experience.website, target="_blank")= experience.company
+                else
+                  |#{experience.company}
+
+              p.text-muted
+                small
+                  span.space-right
+                    |#{experience.startDate} - #{experience.endDate || 'Present'}
+
+                  if experience.duration
+                    span
+                      i.fa.fa-clock-o.icon-left
+                      |#{experience.duration}
+
+              p= experience.summary
+              if experience.highlights
+                ul
+                  - each highlight in experience.highlights
+                    li= highlight

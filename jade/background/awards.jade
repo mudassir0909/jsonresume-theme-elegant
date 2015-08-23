@@ -1,0 +1,23 @@
+if resume.awards && resume.awards.length
+  .detail#awards
+    .icon
+      i.fa.fa-lg.fa-trophy
+      span.mobile-title Awards
+
+    .info
+      h4.title.text-uppercase Awards
+
+      .content
+        ul.list-unstyled
+          - each award in resume.awards
+            li.card.card-nested
+              .content
+                p.clear-margin(itemprop="award")
+                  strong= award.title + " "
+                  |#{award.awarder}
+
+                p.text-muted
+                  small
+                    |Awarded on: #{award.date}
+
+                p.clear-margin= award.summary

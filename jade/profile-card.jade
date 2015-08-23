@@ -17,29 +17,32 @@ section.col-md-3.card-wrapper.profile-card-wrapper.affix
           alt=resume.basics.name,
           src=resume.basics.picture,
           itemprop="image")
-      
+
       .name-and-profession.text-center
         h3(itemprop="name"): b= resume.basics.name
         h5.text-muted(itemprop="jobTitle")= resume.basics.label
-    
+
     hr
-    
+
     .contact-details.clearfix
-      - if resume.basics.location
-        +profile_card_detail("fa-location-arrow", resume.basics.location)
-      - if resume.basics.phone
+      if resume.basics.computed_location
+        +profile_card_detail("fa-location-arrow", resume.basics.computed_location)
+      if resume.basics.phone
         +profile_card_detail("fa-phone", resume.basics.phone, "telephone")
-      - if resume.basics.email
+      if resume.basics.email
         +profile_card_detail("fa-envelope")
           a.link-disguise(href="mailto:" + resume.basics.email, itemprop="email")= resume.basics.email
-      - if resume.basics.website
+      if resume.basics.website
         +profile_card_detail("fa-link")
           a(href=resume.basics.website, target="_blank")= resume.basics.website
-      - if resume.basics.languages
+      if resume.basics.languages
         +profile_card_detail('fa-language', resume.basics.languages, null, 'Languages I speak')
-        
+
     hr
 
     .social-links.text-center
-      - each link in social_links
-        a.fa.fa-2x.social-link(href=link.url, target="_blank", class="link-" + link.label + " fa-" + link.label)
+      - each profile in resume.basics.profiles
+        a.fa.fa-2x.social-link(
+          href=profile.url,
+          target="_blank",
+          class="link-" + profile.label + " fa-" + profile.icon_name)

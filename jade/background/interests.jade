@@ -1,0 +1,19 @@
+if resume.interests && resume.interests.length
+  .detail#interests
+    .icon
+      i.fa.fa-lg.fa-heart
+      span.mobile-title Interests
+
+    .info
+      h4.title.text-uppercase Interests
+
+      .content
+        ul.list-unstyled
+          - each interest in resume.interests
+            li.card.card-nested
+              p
+                strong= interest.name
+
+              .space-top.labels
+                - each keyword in interest.keywords
+                  span.label.label-keyword= keyword

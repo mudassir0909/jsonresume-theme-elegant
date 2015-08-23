@@ -17,7 +17,6 @@
   margin-left: 5px;
 }
 .labels {
-  word-spacing: 5px;
   line-height: 2;
 }
 .label-keyword {
@@ -27,6 +26,10 @@
   font-size: 0.9em;
   padding: 5px;
   border: 1px solid #357ebd;
+  margin-right: 5px;
+}
+.label-keyword:last-child {
+  margin-right: 0;
 }
 .link-disguise {
   color: inherit;
@@ -85,9 +88,6 @@ body {
   .card-wrapper {
     float: none !important;
   }
-}
-.text-bolder {
-  font-weight: bold;
 }
 .background-details .detail {
   display: table;
@@ -566,6 +566,14 @@ body {
 .link-bitbucket:focus {
   text-decoration: none;
   color: #163758;
+}
+.link-hackernews {
+  color: #ff6600;
+}
+.link-hackernews:hover,
+.link-hackernews:focus {
+  text-decoration: none;
+  color: #cc5200;
 }
 .card-skills {
   position: relative;
