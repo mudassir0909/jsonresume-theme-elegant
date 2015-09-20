@@ -1,11 +1,11 @@
 mixin make_nav_link(nav_item)
   li
     a(href="#" + nav_item.target)
-      i.fa(class='fa-' + nav_item.icon)
+      i.mr-10(class='icon-' + nav_item.icon)
       | #{nav_item.label}
 
 a(href="#").js-floating-nav-trigger.floating-nav-trigger
-  i.fa.fa-bars
+  i.icon-bars
   span.close-icon &times;
 
 nav.floating-nav.js-floating-nav

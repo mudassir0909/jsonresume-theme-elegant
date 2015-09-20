@@ -10,7 +10,6 @@
     display: block;
     border-radius: 50%;
     text-align: center;
-    padding-top: 10px;
     background-color: white;
     font-size: 1.5em;
     color: @color;
@@ -18,6 +17,11 @@
     position: fixed;
     bottom: 10px;
     right: 10px;
+    text-decoration: none !important;
+
+    > [class^="icon-"], [class*=" icon-"], > .close-icon {
+        line-height: 50px;
+    }
 
     .close-icon {
         display: none;
@@ -26,7 +30,6 @@
     &:hover {
         color: darken(@color, 20%);
         background-color: #e6e6e6;
-        text-decoration: none;
     }
 
     &.is-open {
@@ -34,7 +37,7 @@
         .close-icon {
             display: inherit;
         }
-        .fa-bars {
+        .icon-bars {
             display: none;
         }
         &:hover {
@@ -75,10 +78,6 @@
                 &:hover {
                     color: darken(@color, 20%);
                 }
-            }
-
-            i.fa {
-                margin-right: 10px;
             }
 
             &:last-child {

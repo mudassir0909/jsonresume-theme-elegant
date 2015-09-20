@@ -1,7 +1,7 @@
 mixin profile_card_detail(icon, info, itemprop, icon_title)
   .detail
     span.icon(title=icon_title)
-      i.fa.fa-lg(class=icon)
+      i.icon.fs-lg(class=icon)
     span.info(itemprop=itemprop)
       if block
         block
@@ -26,23 +26,23 @@ section.col-md-3.card-wrapper.profile-card-wrapper.affix
 
     .contact-details.clearfix
       if resume.basics.computed_location
-        +profile_card_detail("fa-location-arrow", resume.basics.computed_location)
+        +profile_card_detail("icon-location", resume.basics.computed_location)
       if resume.basics.phone
-        +profile_card_detail("fa-phone", resume.basics.phone, "telephone")
+        +profile_card_detail("icon-phone", resume.basics.phone, "telephone")
       if resume.basics.email
-        +profile_card_detail("fa-envelope")
+        +profile_card_detail("icon-mail")
           a.link-disguise(href="mailto:" + resume.basics.email, itemprop="email")= resume.basics.email
       if resume.basics.website
-        +profile_card_detail("fa-link")
+        +profile_card_detail("icon-link")
           a(href=resume.basics.website, target="_blank")= resume.basics.website
       if resume.basics.languages
-        +profile_card_detail('fa-language', resume.basics.languages, null, 'Languages I speak')
+        +profile_card_detail('icon-language', resume.basics.languages, null, 'Languages I speak')
 
     hr
 
     .social-links.text-center
       - each profile in resume.basics.profiles
-        a.fa.fa-2x.social-link(
+        a.fs-2x.social-link(
           href=profile.url,
           target="_blank",
-          class="link-" + profile.label + " fa-" + profile.icon_name)
+          class="link-" + profile.label + " icon-" + profile.icon_name)

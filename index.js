@@ -13,13 +13,13 @@ function interpolate(object, keyPath) {
 
 function getFloatingNavItems(resume) {
     var floating_nav_items = [
-        {label: 'About', target: 'about', icon: 'user', requires: 'basics.summary'},
-        {label: 'Work Experience', target: 'work-experience', icon: 'building', requires: 'work'},
-        {label: 'Skills', target: 'skills', icon: 'code', requires: 'skills'},
-        {label: 'Education', target: 'education', icon: 'mortar-board', requires: 'education'},
+        {label: 'About', target: 'about', icon: 'board', requires: 'basics.summary'},
+        {label: 'Work Experience', target: 'work-experience', icon: 'office', requires: 'work'},
+        {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
+        {label: 'Education', target: 'education', icon: 'graduation-cap', requires: 'education'},
         {label: 'Awards', target: 'awards', icon: 'trophy', requires: 'awards'},
         {label: 'Volunteer Work', target: 'volunteer-work', icon: 'child', requires: 'volunteer'},
-        {label: 'Publications', target: 'publications', icon: 'book', requires: 'publications'},
+        {label: 'Publications', target: 'publications', icon: 'newspaper', requires: 'publications'},
         {label: 'Interests', target: 'interests', icon: 'heart', requires: 'interests'},
         {label: 'References', target: 'references', icon: 'thumbs-up', requires: 'references'}
     ];

@@ -1,7 +1,7 @@
 if resume.education && resume.education.length
   .detail#education
     .icon
-      i.fa.fa-lg.fa-mortar-board
+      i.fs-lg.icon-graduation-cap
       span.mobile-title Education
 
     .info
@@ -14,7 +14,7 @@ if resume.education && resume.education.length
               .content
                 p.clear-margin.relative
                   if !education_info.endDate
-                    i.fa.fa-circle.current-event(
+                    i.icon-circle.current-event(
                       rel="tooltip",
                       title="Currently Pursuing",
                       data-placement="left"
