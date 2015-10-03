@@ -49,15 +49,13 @@ function render(resume) {
 
     _(resume.basics.profiles).each(function(profile) {
         var label = profile.network.toLowerCase();
-        var icon_name_map = {
-            'stackoverflow': 'stack-overflow',
-            'facebook': 'facebook-square'
-        };
 
         profile.url = utils.getUrlForProfile(resume, label);
         profile.label = label;
-        profile.icon_name = icon_name_map[label] || label;
     });
+
+    resume.basics.top_five_profiles = resume.basics.profiles.slice(0, 5);
+    resume.basics.remaining_profiles = resume.basics.profiles.slice(5);
 
     _.each(resume.work, function(work_info) {
         var duration;

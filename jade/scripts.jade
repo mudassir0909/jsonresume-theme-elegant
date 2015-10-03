@@ -1,5 +1,6 @@
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/collapse.js")
 
 script.
   $(function () {
@@ -15,6 +16,18 @@ script.
       toggleFloatingMenu();
     });
     $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
+
+    $("#remaining-profiles").on('show.bs.collapse', function() {
+      $( '.js-profiles-collapse > i' )
+        .removeClass( 'icon-chevron-down' )
+        .addClass( 'icon-chevron-up' );
+    });
+
+    $("#remaining-profiles").on('hidden.bs.collapse', function() {
+      $( '.js-profiles-collapse > i' )
+        .removeClass( 'icon-chevron-up' )
+        .addClass( 'icon-chevron-down' );
+    });
   });
 
 script.
