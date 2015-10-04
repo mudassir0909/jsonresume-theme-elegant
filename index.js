@@ -3,6 +3,10 @@ var jade = require('jade');
 var _ = require('underscore');
 var utils = require('jsonresume-themeutils');
 
+utils.setConfig({
+    date_format: 'MMM, YYYY'
+});
+
 function interpolate(object, keyPath) {
     var keys = keyPath.split('.');
 
@@ -33,7 +37,6 @@ function render(resume) {
     var addressValues;
     var addressAttrs = ['address', 'city', 'region', 'countryCode', 'postalCode'];
     var css = fs.readFileSync(__dirname + '/assets/css/theme.css', 'utf-8');
-    var date_format = 'MMM, YYYY';
 
     resume.basics.picture = utils.getUrlForPicture(resume);
 
@@ -64,13 +67,13 @@ function render(resume) {
         var did_leave_company = !!end_date;
 
         if (end_date) {
-            work_info.endDate = utils.getFormattedDate(end_date, date_format);
+            work_info.endDate = utils.getFormattedDate(end_date);
         }
 
         if (start_date) {
             end_date = end_date || new Date();
             duration = utils.getDuration(start_date, end_date);
-            work_info.startDate = utils.getFormattedDate(start_date, date_format);
+            work_info.startDate = utils.getFormattedDate(start_date);
 
             if (!duration.years() && !duration.months() && duration.days() > 1) {
                 work_info.duration = 'Recently joined';
@@ -85,7 +88,7 @@ function render(resume) {
             var date = education_info[type];
 
             if (date) {
-                education_info[type] = utils.getFormattedDate(date, date_format);
+                education_info[type] = utils.getFormattedDate(date);
             }
         });
     });
@@ -103,7 +106,7 @@ function render(resume) {
             var date = volunteer_info[type];
 
             if (date) {
-                volunteer_info[type] = utils.getFormattedDate(date, date_format);
+                volunteer_info[type] = utils.getFormattedDate(date);
             }
         });
     });

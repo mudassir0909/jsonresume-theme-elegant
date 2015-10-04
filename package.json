@@ -25,7 +25,7 @@
     "gravatar": "^1.0.6",
     "handlebars": "^2.0.0-alpha.4",
     "jade": "^1.11.0",
-    "jsonresume-themeutils": "^1.0.0",
+    "jsonresume-themeutils": "^1.1.2",
     "moment": "^2.8.1",
     "resume-schema": "0.0.15",
     "tarball-extract": "0.0.3",
