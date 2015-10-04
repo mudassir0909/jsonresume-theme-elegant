@@ -776,12 +776,12 @@ body {
   color: #cc5200;
 }
 .link-exercism {
-  color: #750629;
+  color: #d81d4e;
 }
 .link-exercism:hover,
 .link-exercism:focus {
   text-decoration: none;
-  color: #440418;
+  color: #ab173e;
 }
 .card-skills {
   position: relative;
