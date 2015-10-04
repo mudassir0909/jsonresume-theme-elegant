@@ -1,227 +1,128 @@
 var fs = require('fs');
-var Handlebars = require('handlebars');
-var gravatar = require('gravatar');
+var jade = require('jade');
 var _ = require('underscore');
-var _s = require('underscore.string');
-var moment = require('moment');
-var handlebarsHelpers = require('./lib/handlebars_helpers');
+var utils = require('jsonresume-themeutils');
 
-// Utity Methods ( need be moved to a separate file)
-//
-function hasEmail(resume) {
-    return !!resume.basics && !! resume.basics.email;
+utils.setConfig({
+    date_format: 'MMM, YYYY'
+});
+
+function interpolate(object, keyPath) {
+    var keys = keyPath.split('.');
+
+    return _(keys).reduce(function(res, key) {
+        return (res || {})[key];
+    }, object);
 }
 
+function getFloatingNavItems(resume) {
+    var floating_nav_items = [
+        {label: 'About', target: 'about', icon: 'board', requires: 'basics.summary'},
+        {label: 'Work Experience', target: 'work-experience', icon: 'office', requires: 'work'},
+        {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
+        {label: 'Education', target: 'education', icon: 'graduation-cap', requires: 'education'},
+        {label: 'Awards', target: 'awards', icon: 'trophy', requires: 'awards'},
+        {label: 'Volunteer Work', target: 'volunteer-work', icon: 'child', requires: 'volunteer'},
+        {label: 'Publications', target: 'publications', icon: 'newspaper', requires: 'publications'},
+        {label: 'Interests', target: 'interests', icon: 'heart', requires: 'interests'},
+        {label: 'References', target: 'references', icon: 'thumbs-up', requires: 'references'}
+    ];
 
-function getNetwork(profiles, network_name) {
-    return _.find(profiles, function(profile) {
-        return profile.network.toLowerCase() === network_name;
+    return _(floating_nav_items).filter(function(item) {
+        return interpolate(resume, item.requires);
     });
 }
-
-function humanizeDuration ( moment_obj, did_leave_company ) {
-    var days,
-        months = moment_obj.months(),
-        years = moment_obj.years(),
-        month_str = months > 1 ? 'months' : 'month',
-        year_str = years > 1 ? 'years' : 'year';
-
-    if ( months && years ) {
-        return years + ' ' + year_str + ' ' + months + ' ' + month_str;
-    }
-
-    if ( months ) {
-        return months + ' ' + month_str;
-    }
-
-    if ( years ) {
-        return years + ' ' + year_str;
-    }
-
-    if ( did_leave_company ) {
-        days = moment_obj.days();
-
-        return ( days > 1 ? days + ' days' : days + ' day' );
-    } else {
-        return 'Recently joined';
-    }
-}
-
-function getUrlFromUsername( site, username ) {
-    var url_map = {
-        github: 'github.com',
-        twitter: 'twitter.com',
-        soundcloud: 'soundcloud.com',
-        pinterest: 'pinterest.com',
-        instagram: 'instagram.com',
-        vimeo: 'vimeo.com',
-        behance: 'behance.net',
-        codepen: 'codepen.io',
-        foursquare: 'foursquare.com',
-        reddit: 'reddit.com',
-        spotify: 'spotify.com',
-        stackexchange: 'stackexchange.com',
-        lastfm: 'lastfm.com',
-        dribble: 'dribbble.com',
-        dribbble: 'dribbble.com',
-        facebook: 'facebook.com',
-        angellist: 'angel.co',
-        bitbucket: 'bitbucket.org',
-        googleplus: 'plus.google.com',
-        skype: 'skype',
-        tumblr: 'tumblr.com',
-        youtube: 'www.youtube.com',
-        gratipay: 'gratipay.com',
-        hackernews: 'news.ycombinator.com'
-    };
-
-    site = site.toLowerCase();
-
-    if ( !username || !url_map[ site ] ) {
-        return;
-    }
-
-    switch( site ) {
-        case 'skype':
-            return url_map[ site ] + ':' + username + '?call';
-        case 'reddit':
-        case 'spotify':
-            return '//' + 'open.' + url_map[ site ] + '/user/' + username;
-        case 'lastfm':
-            return '//' + url_map[ site ] + '/user/' + username;
-        case 'instagram':
-            return '//' + url_map[ site ] + '/' + username;
-        case 'googleplus':
-            return '//' + url_map[ site ] + '/u/0/+' + username;
-        case 'tumblr':
-            return '//' + username + '.' + url_map[ site ];
-        case 'youtube':
-            return '//' + url_map[ site ] + '/user/' + username;
-        case 'stackexchange':
-            return '//' + url_map[ site ] + '/users/' + username;
-        case 'hackernews':
-            return '//' + url_map[ site ] + '/user?id=' + username;
-        default:
-            return '//' + url_map[ site ] + '/' + username;
-    }
- }
 
 function render(resume) {
-    var css = fs.readFileSync(__dirname + '/assets/css/theme.css', 'utf-8'),
-        template = fs.readFileSync(__dirname + '/resume.template', 'utf-8'),
-        profiles = resume.basics.profiles,
-        social_sites = ["github", "linkedin", "stackoverflow", "twitter",
-                        "soundcloud", "pinterest", "vimeo", "behance",
-                        "codepen", "foursquare", "reddit", "spotify",
-                        "dribble", "dribbble", "facebook", "angellist",
-                        "bitbucket", "skype", "youtube", "tumblr",
-                        "gratipay", "googleplus", "lastfm", "stackexchange",
-                        "instagram", "hackernews"],
-        date_format = 'MMM, YYYY';
+    var addressValues;
+    var addressAttrs = ['address', 'city', 'region', 'countryCode', 'postalCode'];
+    var css = fs.readFileSync(__dirname + '/assets/css/theme.css', 'utf-8');
 
-    if (!resume.basics.picture && hasEmail(resume)) {
-        resume.basics.picture = gravatar.url(resume.basics.email.replace('(at)', '@'), {
-            s: '100',
-            r: 'pg',
-            d: 'mm'
-        });
+    resume.basics.picture = utils.getUrlForPicture(resume);
+
+    addressValues = _(addressAttrs).map(function(key) {
+        return resume.basics.location[key];
+    });
+
+    resume.basics.computed_location = _.compact(addressValues).join(', ');
+
+    if (resume.languages) {
+        resume.basics.languages = _.pluck(resume.languages, 'language').join(', ');
     }
 
-    if ( resume.languages ) {
-        resume.basics.languages = _.pluck( resume.languages, 'language' ).join( ', ' );
-    }
-    _.each( resume.work, function( work_info ) {
-        var did_leave_company,
-            start_date = work_info.startDate && new Date( work_info.startDate ),
-            end_date = work_info.endDate && new Date( work_info.endDate );
+    _(resume.basics.profiles).each(function(profile) {
+        var label = profile.network.toLowerCase();
 
-        if ( start_date ) {
-            work_info.startDate = moment( start_date ).format( date_format );
+        profile.url = utils.getUrlForProfile(resume, label);
+        profile.label = label;
+    });
+
+    resume.basics.top_five_profiles = resume.basics.profiles.slice(0, 5);
+    resume.basics.remaining_profiles = resume.basics.profiles.slice(5);
+
+    _.each(resume.work, function(work_info) {
+        var duration;
+        var start_date = work_info.startDate;
+        var end_date = work_info.endDate;
+        var did_leave_company = !!end_date;
+
+        if (end_date) {
+            work_info.endDate = utils.getFormattedDate(end_date);
         }
 
-        if ( end_date ) {
-            work_info.endDate = moment( end_date ).format( date_format );
-        }
-
-        did_leave_company = !! end_date;
-
-        if ( start_date ) {
+        if (start_date) {
             end_date = end_date || new Date();
-            work_info.duration = humanizeDuration(
-                moment.duration( end_date.getTime() - start_date.getTime() ),
-                did_leave_company )
+            duration = utils.getDuration(start_date, end_date);
+            work_info.startDate = utils.getFormattedDate(start_date);
+
+            if (!duration.years() && !duration.months() && duration.days() > 1) {
+                work_info.duration = 'Recently joined';
+            } else {
+                work_info.duration = utils.getDuration(start_date, end_date, true);
+            }
         }
     });
 
-    _.each( resume.skills, function( skill_info ) {
-        var levels = [ 'Beginner', 'Intermediate', 'Advanced', 'Master' ];
+    _.each(resume.education, function(education_info) {
+        _.each(['startDate', 'endDate'], function(type) {
+            var date = education_info[type];
 
-        if ( skill_info.level ) {
-            skill_info.skill_class = skill_info.level.toLowerCase();
-            skill_info.level = _s.capitalize( skill_info.level.trim() );
-            skill_info.display_progress_bar = _.contains( levels,
-                                                          skill_info.level );
-        }
-    });
-
-    resume.skills = _.sortBy( resume.skills, function( skill ) {
-        var level = skill.level && skill.level.toLowerCase(),
-            sort_map = {
-                master: 1,
-                advanced: 2,
-                intermediate: 3,
-                beginner: 4
-            };
-
-        return sort_map[ level ];
-    });
-
-    _.each( resume.education, function( education_info ) {
-        _.each( [ 'startDate', 'endDate' ], function ( date ) {
-            var date_obj = new Date( education_info[ date ] );
-
-            if ( education_info[ date ] ) {
-                education_info[ date ] = moment( date_obj ).format( date_format );
+            if (date) {
+                education_info[type] = utils.getFormattedDate(date);
             }
         });
     });
 
-    _.each( resume.awards, function( award_info ) {
-        if ( award_info.date ) {
-            award_info.date = moment( new Date( award_info.date ) ).format( 'MMM DD, YYYY' )
+    _.each(resume.awards, function(award) {
+        var date = award.date;
+
+        if (date) {
+            award.date = utils.getFormattedDate(date, 'MMM DD, YYYY');
         }
     });
 
-    _.each( resume.publications, function( publication_info ) {
-        if ( publication_info.releaseDate ) {
-            publication_info.releaseDate = moment( new Date( publication_info.releaseDate ) ).format( 'MMM DD, YYYY' )
-        }
-    });
+    _.each(resume.volunteer, function(volunteer_info) {
+        _.each(['startDate', 'endDate'], function (type) {
+            var date = volunteer_info[type];
 
-    _.each( resume.volunteer, function( volunteer_info ) {
-        _.each( [ 'startDate', 'endDate' ], function ( date ) {
-            var date_obj = new Date( volunteer_info[ date ] );
-
-            if ( volunteer_info[ date ] ) {
-                volunteer_info[ date ] = moment( date_obj ).format( date_format );
+            if (date) {
+                volunteer_info[type] = utils.getFormattedDate(date);
             }
         });
     });
 
-    _.each( social_sites, function( site ) {
-        var username,
-            social_account = getNetwork( profiles, site );
+    _.each(resume.publications, function(publication_info) {
+        var date = publication_info.releaseDate;
 
-        if ( social_account ) {
-            username = social_account.username;
-            resume.basics[ site + '_url' ] =
-                getUrlFromUsername( site, username ) || social_account.url;
+        if (date) {
+            publication_info.releaseDate = utils.getFormattedDate(date, 'MMM DD, YYYY');
         }
     });
 
-    return Handlebars.compile(template)({
-        css: css,
-        resume: resume
+    return jade.renderFile('index.jade', {
+      resume: resume,
+      floating_nav_items: getFloatingNavItems(resume),
+      css: css
     });
 }
 

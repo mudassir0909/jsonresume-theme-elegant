@@ -1,0 +1,33 @@
+if resume.education && resume.education.length
+  .detail#education
+    .icon
+      i.fs-lg.icon-graduation-cap
+      span.mobile-title Education
+
+    .info
+      h4.title.text-uppercase Education
+
+      .content
+        ul.list-unstyled
+          - each education_info in resume.education
+            li.card.card-nested
+              .content
+                p.clear-margin.relative
+                  if !education_info.endDate
+                    i.icon-circle.current-event(
+                      rel="tooltip",
+                      title="Currently Pursuing",
+                      data-placement="left"
+                    )
+
+                  strong
+                    |#{education_info.area}, #{education_info.studyType},&nbsp;
+                  |#{education_info.institution}
+
+                p.text-muted
+                  small
+                    |#{education_info.startDate} - #{education_info.endDate || 'Present'}
+                i= education_info.gpa
+                .space-top.labels
+                  - each course in education_info.courses
+                    span.label.label-keyword= course

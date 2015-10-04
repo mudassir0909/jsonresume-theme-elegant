@@ -8,7 +8,7 @@ module.exports = function(grunt) {
               paths: ["assets"]
             },
             files: {
-              "css/theme.css": "less/theme.less"
+              "assets/css/theme.css": "assets/less/theme.less"
             }
           }
         },
@@ -80,6 +80,7 @@ module.exports = function(grunt) {
         // 'copy:resumejson',
         'clean',
         'copy:build',
+        'less',
         'exec:build_index' //,
         /* Uncomment this item (and the comma above) if you add a favicon.ico
            in the project root. You'll also need to uncomment the <link...> tag
