@@ -4,13 +4,17 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 
 [Theme Preview](http://themes.jsonresume.org/elegant)
 
-### Supported Social Profiles
+### Social Profiles
+The profiles are shown in the order in which they are specified in the `basics.profiles` array. By default, only 5 profiles are shown & others are revealed on demand.
+
+#### Supported Profiles
 * angellist
 * behance
 * bitbucket
 * codepen
 * dribbble
 * dribble
+* exercism
 * facebook
 * foursquare
 * instagram
