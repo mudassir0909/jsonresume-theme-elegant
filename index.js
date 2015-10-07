@@ -10,9 +10,10 @@ utils.setConfig({
 function interpolate(object, keyPath) {
     var keys = keyPath.split('.');
 
-    return _(keys).reduce(function(res, key) {
+    return !_.isEmpty(
+      _(keys).reduce(function(res, key) {
         return (res || {})[key];
-    }, object);
+    }, object));
 }
 
 function getFloatingNavItems(resume) {
