@@ -28,6 +28,7 @@ if resume.education && resume.education.length
                   small
                     |#{education_info.startDate} - #{education_info.endDate || 'Present'}
                 i= education_info.gpa
-                .space-top.labels
-                  - each course in education_info.courses
-                    span.label.label-keyword= course
+                if education_info.courses
+                  .space-top.labels
+                    - each course in education_info.courses
+                      span.label.label-keyword= course
