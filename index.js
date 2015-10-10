@@ -15,6 +15,15 @@ function interpolate(object, keyPath) {
     }, object);
 }
 
+function capitalize(str) {
+    if (str) {
+        str = str.toString();
+        return str[0].toUpperCase() + str.slice(1).toLowerCase();
+    }
+
+    return str;
+}
+
 function getFloatingNavItems(resume) {
     var floating_nav_items = [
         {label: 'About', target: 'about', icon: 'board', requires: 'basics.summary'},
@@ -82,6 +91,16 @@ function render(resume) {
             } else {
                 work_info.duration = utils.getDuration(start_date, end_date, true);
             }
+        }
+    });
+
+    _.each(resume.skills, function(skill_info) {
+        var levels = ['Beginner', 'Intermediate', 'Advanced', 'Master'];
+
+        if (skill_info.level) {
+            skill_info.skill_class = skill_info.level.toLowerCase();
+            skill_info.level = capitalize(skill_info.level.trim());
+            skill_info.display_progress_bar = _.contains(levels, skill_info.level);
         }
     });
 
