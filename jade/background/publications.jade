@@ -1,4 +1,5 @@
-if resume.publications && resume.publications.length
+
+unless _.isEmpty(resume.publications)
   .detail#publications
     .icon
       i.fs-lg.icon-newspaper

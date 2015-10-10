@@ -1,4 +1,4 @@
-if resume.skills && resume.skills.length
+unless _.isEmpty(resume.skills)
   .detail#skills
     .icon
       i.fs-lg.icon-tools

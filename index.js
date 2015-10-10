@@ -143,7 +143,8 @@ function render(resume) {
     return jade.renderFile(__dirname + '/index.jade', {
       resume: resume,
       floating_nav_items: getFloatingNavItems(resume),
-      css: css
+      css: css,
+      _: _
     });
 }
 

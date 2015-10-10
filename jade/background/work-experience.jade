@@ -1,4 +1,4 @@
-if resume.work && resume.work.length
+unless _.isEmpty(resume.work)
   .detail#work-experience
     .icon
       i.fs-lg.icon-office
@@ -36,7 +36,8 @@ if resume.work && resume.work.length
                       |#{experience.duration}
 
               p= experience.summary
-              if experience.highlights
+
+              unless _.isEmpty(resume.highlights)
                 ul
                   - each highlight in experience.highlights
                     li= highlight

@@ -1,4 +1,4 @@
-if resume.awards && resume.awards.length
+unless _.isEmpty(resume.awards)
   .detail#awards
     .icon
       i.fs-lg.icon-trophy

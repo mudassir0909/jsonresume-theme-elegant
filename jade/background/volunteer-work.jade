@@ -1,4 +1,4 @@
-if resume.volunteer && resume.volunteer.length
+unless _.isEmpty(resume.volunteer)
   .detail#volunteer-work
     .icon
       i.fs-lg.icon-child
@@ -32,6 +32,7 @@ if resume.volunteer && resume.volunteer.length
 
                 p= volunteer_info.summary
 
-                ul
-                  - each highlight in volunteer_info.highlights
-                    li= highlight
+                unless _.isEmpty(volunteer_info.highlights)
+                  ul
+                    - each highlight in volunteer_info.highlights
+                      li= highlight

@@ -1,4 +1,4 @@
-if resume.interests && resume.interests.length
+unless _.isEmpty(resume.interests)
   .detail#interests
     .icon
       i.fs-lg.icon-heart
