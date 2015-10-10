@@ -29,7 +29,9 @@ function getFloatingNavItems(resume) {
     ];
 
     return _(floating_nav_items).filter(function(item) {
-        return interpolate(resume, item.requires);
+        var value = interpolate(resume, item.requires);
+
+        return !_.isEmpty(value);
     });
 }
 
