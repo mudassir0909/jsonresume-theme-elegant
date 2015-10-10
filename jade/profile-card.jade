@@ -53,10 +53,11 @@ section.col-md-3.card-wrapper.profile-card-wrapper.affix
       div
         +render_links(resume.basics.top_five_profiles)
 
-        button.btn.btn-default.btn-sm.btn-circle-sm.pull-right.js-profiles-collapse(
-          data-toggle="collapse",
-          data-target="#remaining-profiles")
-          i.icon-chevron-down.fs-lg
+        if resume.basics.remaining_profiles.length > 0
+          button.btn.btn-default.btn-sm.btn-circle-sm.pull-right.js-profiles-collapse(
+            data-toggle="collapse",
+            data-target="#remaining-profiles")
+            i.icon-chevron-down.fs-lg
 
-      #remaining-profiles.collapse
-        +render_links(resume.basics.remaining_profiles)
+          #remaining-profiles.collapse
+            +render_links(resume.basics.remaining_profiles)
