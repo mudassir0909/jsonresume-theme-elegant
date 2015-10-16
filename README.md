@@ -39,7 +39,7 @@ The profiles are shown in the order in which they are specified in the `basics.p
 * youtube
 
 ### Credits
-* [Ryan B. Harvey](https://github.com/nihonjinrxs), [Chris Vogt](https://github.com/chrisvogt), [ThomWright](https://github.com/ThomWright), [JamesonNetworks](https://github.com/JamesonNetworks), [Elaniobro](https://github.com/Elaniobro) & [Rui](https://github.com/rpbaltazar) for their pull requests
+* Thank you [contributors](https://github.com/mudassir0909/jsonresume-theme-elegant/graphs/contributors) for your pull requests
 * Floating Menu: inspired by [Smart Fixed Navigation](http://codyhouse.co/demo/smart-fixed-navigation/index.html)
 
 ### Contributing
