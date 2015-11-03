@@ -18,6 +18,7 @@ unless _.isEmpty(resume.skills)
               .skill-info
                 strong= skill.name
 
-                .space-top.labels
-                  - each keyword in skill.keywords
-                    span.label.label-keyword= keyword
+                unless _.isEmpty(skill.keywords)
+                  .space-top.labels
+                    - each keyword in skill.keywords
+                      span.label.label-keyword= keyword
