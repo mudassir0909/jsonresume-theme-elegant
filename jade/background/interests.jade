@@ -14,7 +14,7 @@ unless _.isEmpty(resume.interests)
               p
                 strong= interest.name
 
-              unless _.isEmpty(skill.keywords)
+              unless _.isEmpty(interest.keywords)
                 .space-top.labels
                   - each keyword in interest.keywords
                     span.label.label-keyword= keyword
