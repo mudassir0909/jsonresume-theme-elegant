@@ -2,6 +2,9 @@ var fs = require('fs');
 var jade = require('jade');
 var _ = require('underscore');
 var utils = require('jsonresume-themeutils');
+var moment = require('moment');
+
+require('./moment-precise-range.js');
 
 utils.setConfig({
     date_format: 'MMM, YYYY'
@@ -72,8 +75,7 @@ function render(resume) {
     resume.basics.remaining_profiles = resume.basics.profiles.slice(5);
 
     _.each(resume.work, function(work_info) {
-        var duration;
-        var start_date = work_info.startDate;
+        var start_date = moment(work_info.startDate);
         var end_date = work_info.endDate;
         var did_leave_company = !!end_date;
 
@@ -82,15 +84,10 @@ function render(resume) {
         }
 
         if (start_date) {
-            end_date = end_date || new Date();
-            duration = utils.getDuration(start_date, end_date);
+            end_date = end_date ? moment(end_date) : moment();
             work_info.startDate = utils.getFormattedDate(start_date);
 
-            if (!duration.years() && !duration.months() && duration.days() > 1) {
-                work_info.duration = 'Recently joined';
-            } else {
-                work_info.duration = utils.getDuration(start_date, end_date, true);
-            }
+            work_info.duration = moment.preciseDiff(start_date, end_date);
         }
     });
 
