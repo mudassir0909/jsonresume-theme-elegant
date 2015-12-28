@@ -11,7 +11,10 @@ unless _.isEmpty(resume.references)
         ul.list-unstyled
           - each reference_info in resume.references
             li.card.card-nested
-              p: strong= reference_info.name
+              if reference_info.website
+                a(href=reference_info.website, target="_blank")= reference_info.name
+              else
+                |#{reference_info.name}
 
               blockquote.quote
                 p.clear-margin= reference_info.reference
