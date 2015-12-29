@@ -1,0 +1,325 @@
+{
+  "basics": {
+    "name": "Mitesh Shah",
+    "label": "System Administrator",
+    "picture": "",
+    "email": "Mr.Miteshah@gmail.com",
+    "phone": "+91 8904417578",
+    "website": "https://miteshshah.github.io",
+    "summary": "I am passionate about making things easy/automate using shell scripts. I believe in \"Stay Lazy\" so most of my task is replaced by shell scripts :)",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Bangalore",
+      "countryCode": "IN",
+      "region": ""
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "MiteshShah",
+        "url": "https://github.com/MiteshShah"
+      },
+      {
+        "network": "Twitter",
+        "username": "MiteshShah05",
+        "url": "https://twitter.com/MiteshShah05"
+      },
+      {
+        "network": "googleplus",
+        "username": "MiteshShah",
+        "url": "https://plus.google.com/+MiteshShah"
+      },
+      {
+        "network": "linkedin",
+        "username": "MiteshShah05",
+        "url": "https://www.linkedin.com/in/MiteshShah05"
+      },
+      {
+        "network": "stackoverflow",
+        "username": "MiteshShah",
+        "url": "http://stackoverflow.com/users/2199313/Mitesh-Shah"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Perk.com",
+      "position": "System Administrator",
+      "website": "https://perk.com",
+      "startDate": "2014-12-01",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        "Server Hardening",
+        "Patch Critical Security Vulnerability",
+        "Setup/Manage Git Infrastructure using GitLab",
+        "Setup/Optimise ELK {ElasticSearch, Logstash, Kibana} Stack",
+        "Install/Update/Optimise Linux, Mac OS X, Windows Systems"
+      ]
+    },
+    {
+      "company": "rtCamp.com",
+      "position": "Product Head - EasyEngine",
+      "website": "https://rtcamp.com",
+      "startDate": "2014-04-01",
+      "endDate": "2014-11-30",
+      "summary": "Leading awesome project called EasyEngine (ee).",
+      "highlights": [
+        "EasyEngine written on Shell Scripts (5000+ Lines of Code)",
+        "Patch Critical Security Vulnerability - SSL Poodle, Heartbleed etc",
+        "Maintain NGINX package with custom modules like ngx_pagespeed, lua etc",
+        "Setup/Manage Continuous Integration (CI) using Jenkins from Scratch - Which start six different virtual machine to test EasyEngine on Debian/Ubuntu 32/64 bit systems."
+      ]
+    },
+    {
+      "company": "rtCamp.com",
+      "position": "Linux System Administrator",
+      "website": "https://rtcamp.com",
+      "startDate": "2012-09-01",
+      "endDate": "2014-03-31",
+      "summary": "",
+      "highlights": [
+        "Extensive experience as Linux (Ubuntu, Debian, Fedora, RHEL, CentOS, Backtrack) Server/System Administrator.",
+        "Expertise in Linux Server/System installation, configuration, administration, troubleshooting, monitoring and backup & recovery methodologies.",
+        "Expertise in the web server technologies such as Nginx, Gitolite, SSH, SFTP, IPTables, Fail2Ban, etc ",
+        "Responsible for blocking various websites and content filtering using Squid3 and DansGuardian Proxy software",
+        "Created EasyEngine (ee) to automate WordPress sertup on Debian/Ubuntu based Linux Servers."
+      ]
+    },
+    {
+      "company": "Illuminati Solutions Pvt LTD",
+      "position": "Linux System Administrator",
+      "website": "",
+      "startDate": "2010-09-01",
+      "endDate": "2012-08-31",
+      "summary": "",
+      "highlights": [
+        "Responsible for various hardware and software acquisitions and implementations.",
+        "Extensive experience as Linux (Ubuntu, Fedora, RHEL, CentOS, Backtrack) System Administrator.",
+        "Expertise in Linux System installation, configuration, administration, troubleshooting, monitoring and the development and testing of backup and recovery methodologies.",
+        "Expertise in the support of fundamental technologies such as DNS, SSH, SFTP and FTP, TCP/IP, Samba.",
+        "Responsible for blocking various websites and content filtering using Squid and  DansGuardian software.",
+        "Responsible for the implementation, administration and maintenance of company website hosted on local CentOS System."
+      ]
+    }
+  ],
+  "volunteer": [],
+  "github": [
+    {
+      "repository": "mudassir0909/jsonresume-theme-elegant",
+      "website": "https://github.com/mudassir0909/jsonresume-theme-elegant/pull/57",
+      "highlights": [
+        "Added URL in reference section"
+      ]
+    },
+    {
+      "repository": "Facebook/augmented-traffic-control",
+      "website": "https://github.com/facebook/augmented-traffic-control/pull/220",
+      "highlights": [
+        "Typo Fix & Reorted StyleSheet Issue on Django Framework #216"
+      ]
+    },
+    {
+      "repository": "NginxInc/nginx-wiki",
+      "website": "https://github.com/nginxinc/nginx-wiki/pull/210",
+      "highlights": [
+        "Updated EasyEngine Defination"
+      ]
+    },
+    {
+      "repository": "Blueliv/elk-config-examples",
+      "website": "https://github.com/Blueliv/elk-config-examples/pull/1",
+      "highlights": [
+        "Fix PDF URL"
+      ]
+    },
+    {
+      "repository": "10up/WordPress-Server-Configs",
+      "website": "https://github.com/10up/WordPress-Server-Configs/pull/2",
+      "highlights": [
+        "Nginx now support auto variable, so no need to change that variable when we change server"
+      ]
+    },
+    {
+      "repository": "discourse/discourse",
+      "website": "https://github.com/discourse/discourse/pull/2638",
+      "highlights": [
+        "Better way to retry curl command"
+      ]
+    },
+    {
+      "repository": "pickhardt/betty",
+      "website": "https://github.com/pickhardt/betty/pull/76",
+      "highlights": [
+        "Make curl silent"
+      ]
+    },
+    {
+      "repository": "h5bp/server-configs-nginx",
+      "website": "https://github.com/h5bp/server-configs-nginx/pull/38",
+      "highlights": [
+        "Nginx now support auto variable, so no need to change that variable when we change server"
+      ]
+    },
+    {
+      "repository": "creack/docker-vps",
+      "website": "https://github.com/creack/docker-vps/pull/1",
+      "highlights": [
+        "Automatic Reload NGINX Service When Modify Any Configuration File"
+      ]
+    },
+    {
+      "repository": "bellthoven/bangsh",
+      "website": "https://github.com/bellthoven/bangsh/pull/8",
+      "highlights": [
+        "Fix PATH Issue"
+      ]
+    },
+    {
+      "repository": "wp-cli/wp-cli",
+      "website": "https://github.com/wp-cli/wp-cli/pull/532",
+      "highlights": [
+        "Fix WordPress SubDomain Issue"
+      ]
+    }
+
+  ],
+  "education": [],
+  "awards": [
+    {
+      "title": "Newbie rtCamper Of The Year",
+      "date": "2012-03-11",
+      "awarder": "rtCamp",
+      "summary": ""
+    },
+    {
+      "title": "Geekish rtCamper of The Year",
+      "date": "2013-03-11",
+      "awarder": "rtCamp",
+      "summary": ""
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Web/Application Server",
+      "level": "",
+      "keywords": [
+        "NGINX",
+        "APACHE"
+      ]
+    },
+    {
+      "name": "Continuous Integration",
+      "level": "",
+      "keywords": [
+        "Jenkins",
+        "Travis-CI"
+      ]
+    },
+    {
+      "name": "Database",
+      "level": "",
+      "keywords": [
+        "MySQL",
+        "MariaDB"
+      ]
+    },
+    {
+      "name": "Content Management System",
+      "level": "",
+      "keywords": [
+        "Jekyll",
+        "WordPress"
+      ]
+    },
+    {
+      "name": "Programming Language",
+      "level": "",
+      "keywords": [
+        "Shell Scripting",
+        "Perl",
+        "Python"
+      ]
+    },
+    {
+      "name": "System Administrator",
+      "level": "Expert",
+      "keywords": [
+        "Linux",
+        "Debian/Ubuntu",
+        "RedHat/CentOS",
+        "OS X"
+      ]
+    },
+    {
+      "name": "Software",
+      "level": "",
+      "keywords": [
+        "ELK Stack",
+        "Ansible",
+        "Vagrant",
+        "Docker",
+        "OpenSSH",
+        "Squid3"
+      ]
+    },
+    {
+      "name": "Security Tools",
+      "level": "",
+      "keywords": [
+        "Nmap",
+        "Nitko",
+        "WireShark",
+        "TCPDUMP",
+        "Fail2Ban",
+        "IPtables",
+        "Metasploit",
+        "Slowloris"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Gujarati",
+      "fluency": ""
+    },
+    {
+      "language": "Hindi",
+      "fluency": ""
+    }
+  ],
+  "interests": [],
+  "references": [
+    {
+      "name": "Rahul Bansal - Founder & CEO",
+      "website": "https://rtcamp.com",
+      "reference": "Mitesh worked mainly on EasyEngine @rtCamp.   He single-handedly coded entire EasyEngine in early days. Later on, he builded a nice team to handle growth of the project.   From hiring, training to mentoring - he managed his team very well. At the same time, he worked hard on customer support forum and actively contributed to many other open-source projects during his tenure at rtCamp.   Apart from EasyEngine, Mitesh's knowledge on linux and security helped rtCamp in many areas. rtCamp is honored to have Mitesh working with us."
+    },
+    {
+      "name": "Harsh Malewar - Web Developer",
+      "reference": "Mitesh is a very proactive person and is very professional and friendly to work with. His skills in Ubuntu, System administration and Nginx is exceptional. He spearheaded one of the prime products at rtCamp called \"EasyEngine\". He actively developed & maintained the product based on developer and community feedback.  Mitesh is very helpful and resourceful and essentially a good team player. He helped me at various instances while EasyEngine was in it's baby steps. He also helped with production environment setups. He is creative and simplistic in his approach to solve problems and focuses on automation.  I highly recommend Mitesh for his groundwork experience and exceptional skills."
+    },
+    {
+      "name": "Harshad Yeola - System Admin @rtCamp",
+      "reference": "Mitesh is a proactive and tireless contributor who would make a great addition to any team. He is a Top Notch Linux System Administrator and server security expert. He makes routine server tasks very easy by automating them with shell script. EasyEngine is best example for his shell scripting.  Exploring to new technologies is his best feature. He is best at using NGINX, Pagespeed.  Solving problems by analysing logs is strength he got. And the last but not least he is OpenSource lover, so he contributes to opensource projects."
+    },
+    {
+      "name": "ANKIT GADE - WPML Support at OnTheGoSystems",
+      "reference": "If it's Linux, there is Mitesh.   Mitesh has extraordinary skills for system administration. He is a product head and lead developer of the EasyEngine project developed by rtCamp. He is very helpful to the colleagues and one will certainly enjoy and be benefited working with him."
+    },
+    {
+      "name": "Umesh Kumar - Code Wrangler at WPMUDev",
+      "reference": "Mitesh is good at Shell Scripting and Linux System administration. He is capable of handling the whole team, There were around 10-15 developers, and he was able to help each one of them whenever required. He developed the \"EasyEngine- CLI tool to manage WordPress and other PHP hosting\" and handled all the support and other tasks related to it. He is really good at Server administration. I wish him best for his future endeavours. :)"
+    },
+    {
+      "name": "Chirag Swadia - Full Stack Developer",
+      "reference": "Mitesh`s shell scripting skills are really great and he is very good at it. He has always helped in fixing issues related to servers of large traffic websites. \"EasyEngine\" was developed from scratch by Mitesh single handedly and it has made the life of Wordpress developers very easy. +1 to Mitesh for this awesome creation :-)"
+    }
+  ]
+}
