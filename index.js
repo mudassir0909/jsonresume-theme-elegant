@@ -75,8 +75,8 @@ function render(resume) {
     resume.basics.remaining_profiles = resume.basics.profiles.slice(5);
 
     _.each(resume.work, function(work_info) {
-        var start_date = moment(work_info.startDate);
-        var end_date = work_info.endDate;
+        var start_date = moment(work_info.startDate, "YYYY-MM-DD");
+        var end_date = moment(work_info.endDate, "YYYY-MM-DD");
         var did_leave_company = !!end_date;
 
         if (end_date) {
