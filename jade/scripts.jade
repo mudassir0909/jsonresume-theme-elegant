@@ -1,6 +1,5 @@
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
-script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js")
-script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/collapse.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js")
 
 script.
   $(function () {
@@ -10,7 +9,7 @@ script.
     };
 
     $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
-    $( "[rel=tooltip]" ).tooltip();
+    $( "[data-toggle=tooltip]" ).tooltip();
     $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
       e.preventDefault();
       toggleFloatingMenu();
