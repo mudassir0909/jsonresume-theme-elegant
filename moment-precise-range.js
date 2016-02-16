@@ -26,7 +26,7 @@ var moment = require('moment');
 
         /*
             The difference between two dates say 01-02-2016 & 31-03-2016 comes out as 1 month 30days
-            because technically it's the different between 01-02-2016:00:00:00 & 31-03-2016:00:00:00
+            because technically it's the difference between 01-02-2016:00:00:00 & 31-03-2016:00:00:00
             But when someone enters start date & end date in resume, they mean start of the start date
             and end of the end date.
 
