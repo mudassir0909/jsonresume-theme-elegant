@@ -12,7 +12,7 @@ unless _.isEmpty(resume.skills)
           - each skill in resume.skills
             li.card.card-nested.card-skills
               if skill.display_progress_bar
-                .skill-level(rel="tooltip", title=skill.level, data-placement="left")
+                .skill-level(data-toggle="tooltip", title=skill.level, data-placement="left")
                   .skill-progress(class=skill.skill_class)
 
               .skill-info
