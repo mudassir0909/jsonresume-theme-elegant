@@ -23,6 +23,21 @@ var moment = require('moment');
     };
     moment.preciseDiff = function(d1, d2) {
         var m1 = moment(d1), m2 = moment(d2);
+
+        /*
+            The difference between two dates say 01-02-2016 & 31-03-2016 comes out as 1 month 30days
+            because technically it's the difference between 01-02-2016:00:00:00 & 31-03-2016:00:00:00
+            But when someone enters start date & end date in resume, they mean start of the start date
+            and end of the end date.
+
+            The next two lines makes that correction, the start date is set as the start of the day, while
+            end date is set as start of the day of the very next day. Basically in the above example, instead
+            of making 31-03-2016:00:00:00 to 31-03-2016:23:59:59 which will get duration as 1 month 29days 23hours 59minutes 59sections
+            It is changed to 01-04-2016:00:00:00 instead, to get the precise calculation
+        */
+        m1 = m1.startOf('day');
+        m2 = m2.add(1, 'day').startOf('day');
+
         if (m1.isSame(m2)) {
             return STRINGS.nodiff;
         }
