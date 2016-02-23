@@ -23,7 +23,7 @@ console.log("Serving..");
 
 function render() {
     try {
-        return theme.render(resume);
+        return theme.render(JSON.parse(JSON.stringify(resume)));
     } catch (e) {
         console.log(e.message);
         return "";
