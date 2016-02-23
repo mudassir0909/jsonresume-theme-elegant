@@ -13,7 +13,7 @@ mixin render_links(profiles)
     a.fs-2x.social-link(
       href=profile.url,
       target="_blank",
-      rel="tooltip",
+      data-toggle="tooltip",
       title= resume.basics.name + " on " + profile.network,
       class="link-" + profile.label + " icon-" + profile.label)
 
