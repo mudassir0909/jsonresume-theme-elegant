@@ -9,13 +9,25 @@
 var http = require("http");
 var resume = require("resume-schema").resumeJson;
 var theme = require("./index.js");
+var path = require("path");
+var fs = require("fs");
 
 var port = 8888;
 http.createServer(function(req, res) {
-    res.writeHead(200, {
-        "Content-Type": "text/html"
-    });
-    res.end(render());
+    var picture = resume.basics.picture;
+    if (picture && req.url.replace(/^\//, "") === picture.replace(/^.\//, "")) {
+        var format = path.extname(picture);
+        var image = fs.readFileSync(picture);
+        res.writeHead(200, {
+            "Content-Type": "image/" + format
+        });
+        res.end(image, "binary");
+    } else {
+        res.writeHead(200, {
+            "Content-Type": "text/html"
+        });
+        res.end(render());
+    }
 }).listen(port);
 
 console.log("Preview: http://localhost:8888/");
