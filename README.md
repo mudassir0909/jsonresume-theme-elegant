@@ -53,6 +53,8 @@ $ grunt exec:run_server // Do this in a new terminal tab to run node server
 
 Visit [http://localhost:8888](http://localhost:8888) to see the theme in action.
 
+[![Throughput Graph](https://graphs.waffle.io/mudassir0909/jsonresume-theme-elegant/throughput.svg)](https://waffle.io/mudassir0909/jsonresume-theme-elegant/metrics)
+
 ##### Testing JSON changes
 You can test your changes by updating `resume.json` file inside `node_modules/resume-schema/` folder. You might want to rerun `grunt exec:run_server` whenever you make any changes to `resume.json`
 
