@@ -10,12 +10,14 @@ mixin profile_card_detail(icon, info, itemprop, icon_title)
 
 mixin render_links(profiles)
   - each profile in profiles
-    a.fs-2x.social-link(
+    a.social-link(
       href=profile.url,
       target="_blank",
       data-toggle="tooltip",
-      title= resume.basics.name + " on " + profile.network,
-      class="link-" + profile.label + " icon-" + profile.label)
+      title= resume.basics.name + " on " + profile.network)
+      i.fs-lg.social-link-icon(class="link-" + profile.label + " icon-" + profile.label)
+      span.social-link-label #{profile.url}
+    
 
 section.col-md-3.card-wrapper.profile-card-wrapper.affix
   .card.profile-card
