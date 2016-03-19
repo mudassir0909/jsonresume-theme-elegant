@@ -3,6 +3,7 @@ var jade = require('jade');
 var _ = require('underscore');
 var utils = require('jsonresume-themeutils');
 var moment = require('moment');
+var marked = require('marked');
 
 require('./moment-precise-range.js');
 
@@ -25,6 +26,12 @@ function capitalize(str) {
     }
 
     return str;
+}
+
+function convertMarkdown(str) {
+    if (str != null) {
+        return marked(str);
+    }
 }
 
 function getFloatingNavItems(resume) {
@@ -58,6 +65,8 @@ function render(resume) {
         return resume.basics.location[key];
     });
 
+    resume.basics.summary = convertMarkdown(resume.basics.summary);
+
     resume.basics.computed_location = _.compact(addressValues).join(', ');
 
     if (resume.languages) {
@@ -78,6 +87,8 @@ function render(resume) {
         var end_date;
         var start_date = moment(work_info.startDate, "YYYY-MM-DD");
         var did_leave_company = !!work_info.endDate;
+
+        work_info.summary = convertMarkdown(work_info.summary);
 
         if (work_info.endDate) {
             end_date = moment(work_info.endDate, "YYYY-MM-DD");
@@ -115,12 +126,16 @@ function render(resume) {
     _.each(resume.awards, function(award) {
         var date = award.date;
 
+        award.summary = convertMarkdown(award.summary);
+
         if (date) {
             award.date = utils.getFormattedDate(date, 'MMM DD, YYYY');
         }
     });
 
     _.each(resume.volunteer, function(volunteer_info) {
+        volunteer_info.summary = convertMarkdown(volunteer_info.summary);
+
         _.each(['startDate', 'endDate'], function (type) {
             var date = volunteer_info[type];
 
@@ -133,9 +148,15 @@ function render(resume) {
     _.each(resume.publications, function(publication_info) {
         var date = publication_info.releaseDate;
 
+        publication_info.summary = convertMarkdown(publication_info.summary);
+
         if (date) {
             publication_info.releaseDate = utils.getFormattedDate(date, 'MMM DD, YYYY');
         }
+    });
+
+    _.each(resume.references, function(reference_info) {
+        reference_info.reference = convertMarkdown(reference_info.reference);
     });
 
     return jade.renderFile(__dirname + '/index.jade', {

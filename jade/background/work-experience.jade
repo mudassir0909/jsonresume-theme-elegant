@@ -35,7 +35,7 @@ unless _.isEmpty(resume.work)
                       i.icon-clock.mr-5
                       |#{experience.duration}
 
-              p= experience.summary
+              p!= experience.summary
 
               unless _.isEmpty(experience.highlights)
                 ul

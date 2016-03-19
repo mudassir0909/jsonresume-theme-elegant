@@ -25,4 +25,4 @@ unless _.isEmpty(resume.publications)
                 p.text-muted
                   small= 'Published on: ' + publication.releaseDate
 
-                p.clear-margin= publication.summary
+                p.clear-margin!= publication.summary

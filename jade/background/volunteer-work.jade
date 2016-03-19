@@ -30,7 +30,7 @@ unless _.isEmpty(resume.volunteer)
                   small
                     |#{volunteer_info.startDate} - #{volunteer_info.endDate || 'Present'}
 
-                p= volunteer_info.summary
+                p!= volunteer_info.summary
 
                 unless _.isEmpty(volunteer_info.highlights)
                   ul
