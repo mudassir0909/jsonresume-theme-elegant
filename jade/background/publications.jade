@@ -9,7 +9,7 @@ unless _.isEmpty(resume.publications)
       h4.title.text-uppercase Publications
 
       .content
-        ul.list-unstyled
+        ul.list-unstyled.clear-margin
           - each publication in resume.publications
             li.card.card-nested
               .content
@@ -25,4 +25,4 @@ unless _.isEmpty(resume.publications)
                 p.text-muted
                   small= 'Published on: ' + publication.releaseDate
 
-                p.clear-margin!= publication.summary
+                .mop-wrapper!= publication.summary

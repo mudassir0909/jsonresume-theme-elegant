@@ -16,13 +16,12 @@ body {
     border: 1px solid @card-border-color;
     border-radius: @card-border-radius;
     min-height: 300px;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .card-nested {
     .clearfix();
     min-height: 0;
-    margin-bottom: 10px;
     border-width: 1px 0 0 0;
 
     @media (max-width: @screen-phone) {
@@ -45,7 +44,6 @@ body {
 .background-details {
     .detail {
         display: table;
-        padding: 10px 0;
 
         .icon {
             min-width: 45px;
@@ -135,4 +133,12 @@ ul {
     right: 100%;
     top: 4px;
     left: -10px;
+}
+
+.mop-wrapper { //mardown output wrapper
+    > p { // markdown outputs the result wrapped in a <p> tag, bootstrap has default margin for this tag, so negating it
+        &:last-child {
+            margin: 0;
+        }
+    }
 }

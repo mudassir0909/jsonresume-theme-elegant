@@ -8,7 +8,7 @@ unless _.isEmpty(resume.awards)
       h4.title.text-uppercase Awards
 
       .content
-        ul.list-unstyled
+        ul.list-unstyled.clear-margin
           - each award in resume.awards
             li.card.card-nested
               .content
@@ -20,4 +20,4 @@ unless _.isEmpty(resume.awards)
                   small
                     |Awarded on: #{award.date}
 
-                p.clear-margin!= award.summary
+                .mop-wrapper!= award.summary

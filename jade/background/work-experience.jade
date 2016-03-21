@@ -7,7 +7,7 @@ unless _.isEmpty(resume.work)
     .info
       h4.title.text-uppercase Work Experience
 
-      ul.list-unstyled
+      ul.list-unstyled.clear-margin
         - each experience in resume.work
           li.card.card-nested.clearfix
             .content
@@ -35,7 +35,7 @@ unless _.isEmpty(resume.work)
                       i.icon-clock.mr-5
                       |#{experience.duration}
 
-              p!= experience.summary
+              .mop-wrapper.space-bottom!= experience.summary
 
               unless _.isEmpty(experience.highlights)
                 ul

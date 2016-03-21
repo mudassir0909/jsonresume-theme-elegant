@@ -8,7 +8,7 @@ unless _.isEmpty(resume.skills)
       h4.title.text-uppercase Skills
 
       .content
-        ul.list-unstyled
+        ul.list-unstyled.clear-margin
           - each skill in resume.skills
             li.card.card-nested.card-skills
               if skill.display_progress_bar

@@ -6,4 +6,5 @@ unless _.isEmpty(resume.basics.summary)
     .info
       h4.title.text-uppercase About
 
-      .content(itemprop="description")!= resume.basics.summary
+      .card.card-nested
+        .content.mop-wrapper(itemprop="description")!= resume.basics.summary

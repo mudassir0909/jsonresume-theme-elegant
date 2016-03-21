@@ -8,7 +8,7 @@ unless _.isEmpty(resume.education)
       h4.title.text-uppercase Education
 
       .content
-        ul.list-unstyled
+        ul.list-unstyled.clear-margin
           - each education_info in resume.education
             li.card.card-nested
               .content
@@ -24,7 +24,7 @@ unless _.isEmpty(resume.education)
                     |#{education_info.area}, #{education_info.studyType},&nbsp;
                   |#{education_info.institution}
 
-                p.text-muted
+                p.text-muted(class=!education_info.gpa && _.isEmpty(education_info.courses) ? 'clear-margin' : '')
                   small
                     |#{education_info.startDate} - #{education_info.endDate || 'Present'}
                 i= education_info.gpa

@@ -8,7 +8,7 @@ unless _.isEmpty(resume.volunteer)
       h4.title.text-uppercase Volunteer Work
 
       .content
-        ul.list-unstyled
+        ul.list-unstyled.clear-margin
           - each volunteer_info in resume.volunteer
             li.card.card-nested
               .content
@@ -30,7 +30,7 @@ unless _.isEmpty(resume.volunteer)
                   small
                     |#{volunteer_info.startDate} - #{volunteer_info.endDate || 'Present'}
 
-                p!= volunteer_info.summary
+                .mop-wrapper!= volunteer_info.summary
 
                 unless _.isEmpty(volunteer_info.highlights)
                   ul

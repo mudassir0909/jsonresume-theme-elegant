@@ -183,6 +183,9 @@
 .space-right {
   margin-right: 10px;
 }
+.space-bottom {
+  margin-bottom: 10px;
+}
 .mr-5 {
   margin-right: 5px;
 }
@@ -257,11 +260,10 @@ body {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
   min-height: 300px;
-  padding: 10px;
+  padding: 10px 0;
 }
 .card-nested {
   min-height: 0;
-  margin-bottom: 10px;
   border-width: 1px 0 0 0;
 }
 .card-nested:before,
@@ -290,7 +292,6 @@ body {
 }
 .background-details .detail {
   display: table;
-  padding: 10px 0;
 }
 .background-details .detail .icon {
   min-width: 45px;
@@ -374,6 +375,9 @@ body {
   right: 100%;
   top: 4px;
   left: -10px;
+}
+.mop-wrapper > p:last-child {
+  margin: 0;
 }
 /*
     Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
@@ -480,6 +484,9 @@ body {
   .profile-card-wrapper {
     position: relative;
   }
+}
+.profile-card-wrapper .profile-card {
+  padding: 10px;
 }
 .profile-pic {
   padding: 20px 0;
@@ -817,9 +824,6 @@ body {
 .skill-level .skill-progress.master {
   height: 95%;
   background: #5cb85c;
-}
-.skill-info {
-  margin-left: 10px;
 }
 @media (max-width: 480px) {
   .skill-info {
