@@ -35,4 +35,4 @@ unless _.isEmpty(resume.volunteer)
                 unless _.isEmpty(volunteer_info.highlights)
                   ul
                     - each highlight in volunteer_info.highlights
-                      li= highlight
+                      li.mop-wrapper!= highlight

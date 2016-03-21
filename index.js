@@ -101,6 +101,10 @@ function render(resume) {
 
             work_info.duration = moment.preciseDiff(start_date, end_date);
         }
+
+        work_info.highlights = _(work_info.highlights).map(function(highlight) {
+            return convertMarkdown(highlight);
+        });
     });
 
     _.each(resume.skills, function(skill_info) {
@@ -142,6 +146,10 @@ function render(resume) {
             if (date) {
                 volunteer_info[type] = utils.getFormattedDate(date);
             }
+        });
+
+        volunteer_info.highlights = _(volunteer_info.highlights).map(function(highlight) {
+            return convertMarkdown(highlight);
         });
     });
 
