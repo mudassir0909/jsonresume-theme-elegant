@@ -825,6 +825,9 @@ body {
   height: 95%;
   background: #5cb85c;
 }
+.skill-info {
+  margin-left: 16px;
+}
 @media (max-width: 480px) {
   .skill-info {
     margin-left: 20px;
