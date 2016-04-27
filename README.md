@@ -5,7 +5,7 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 [Theme Preview](http://themes.jsonresume.org/elegant)
 
 ### Markdown Supported
-Only in the following places of now `resume.basics.summary`, `work[0].summary`, `volunteer[0].summary`, `awards[0].summary`, `publications[0].summary`, `references[0].reference`. If you have any other usecase, please raise an issue
+Only in the following places of now `resume.basics.summary`, `work[0].summary`, `work[0].highlights`, `education[0].courses`, `volunteer[0].summary`, `volunteer[0].highlights`, `awards[0].summary`, `publications[0].summary`, `references[0].reference`. If you have any other usecase, please raise an issue
 
 ### Social Profiles
 The profiles are shown in the order in which they are specified in the `basics.profiles` array. By default, only 5 profiles are shown & others are revealed on demand.
