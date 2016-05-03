@@ -3,7 +3,9 @@ var jade = require('jade');
 var _ = require('underscore');
 var utils = require('jsonresume-themeutils');
 var moment = require('moment');
-var marked = require('marked');
+var markdown = require('markdown-it')({
+    breaks: true
+}).use(require('markdown-it-abbr'));
 
 require('./moment-precise-range.js');
 
@@ -30,7 +32,7 @@ function capitalize(str) {
 
 function convertMarkdown(str) {
     if (str != null) {
-        return marked(str);
+        return markdown.render(str);
     }
 }
 
