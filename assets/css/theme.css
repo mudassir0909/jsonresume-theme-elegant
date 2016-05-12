@@ -581,6 +581,13 @@ body {
 .social-link:hover {
   text-decoration: none;
 }
+.social-link-icon {
+  display: inline-block;
+  font-size: 2em;
+}
+.social-link-label {
+  display: none;
+}
 .link-github {
   color: #454545;
 }
@@ -895,5 +902,14 @@ body {
   }
   .pagebreak {
     page-break-before: always;
+  }
+  .social-link-icon {
+    padding-right: 5px;
+    font-size: 1.33333333em;
+    line-height: .75em;
+    vertical-align: -15%;
+  }
+  .social-link-label {
+    display: inline-block;
   }
 }
