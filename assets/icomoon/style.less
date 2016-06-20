@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'icomoon';
-    src:    url('@{icomoon-font-path}/icomoon.eot?58pz0d');
-    src:    url('@{icomoon-font-path}/icomoon.eot?58pz0d#iefix') format('embedded-opentype'),
-        url('@{icomoon-font-path}/icomoon.ttf?58pz0d') format('truetype'),
-        url('@{icomoon-font-path}/icomoon.woff?58pz0d') format('woff'),
-        url('@{icomoon-font-path}/icomoon.svg?58pz0d#icomoon') format('svg');
+    src:    url('@{icomoon-font-path}/icomoon.eot?wn76he');
+    src:    url('@{icomoon-font-path}/icomoon.eot?wn76he#iefix') format('embedded-opentype'),
+        url('@{icomoon-font-path}/icomoon.ttf?wn76he') format('truetype'),
+        url('@{icomoon-font-path}/icomoon.woff?wn76he') format('woff'),
+        url('@{icomoon-font-path}/icomoon.svg?wn76he#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -26,6 +26,41 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-meetup .path1 {
+    &:before {
+        content: @icon-meetup-path1;    
+        color: rgb(255, 255, 255);
+    }
+}
+.icon-meetup .path2 {
+    &:before {
+        content: @icon-meetup-path2;    
+        margin-left: -1.5em;    
+        color: rgb(240, 1, 1);
+    }
+}
+.icon-meetup .path3 {
+    &:before {
+        content: @icon-meetup-path3;    
+        margin-left: -1.5em;    
+        color: rgb(3, 3, 3);
+    }
+}
+.icon-blogger {
+    &:before {
+        content: @icon-blogger;
+    }
+}
+.icon-exercism {
+    &:before {
+        content: @icon-exercism;
+    }
+}
+.icon-flickr {
+    &:before {
+        content: @icon-flickr;
+    }
+}
 .icon-medium {
     &:before {
         content: @icon-medium;
@@ -199,16 +234,6 @@
 .icon-facebook {
     &:before {
         content: @icon-facebook;
-    }
-}
-.icon-blogger {
-    &:before {
-        content: @icon-blogger;
-    }
-}
-.icon-exercism {
-    &:before {
-        content: @icon-exercism;
     }
 }
 .icon-profile {

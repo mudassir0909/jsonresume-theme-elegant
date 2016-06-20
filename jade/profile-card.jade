@@ -16,6 +16,9 @@ mixin render_links(profiles)
       data-toggle="tooltip",
       title= resume.basics.name + " on " + profile.network,
       class="link-" + profile.label + " icon-" + profile.label)
+      if profile.network.toLowerCase() == 'meetup'
+        span.path2
+        span.path3
 
 section.col-md-3.card-wrapper.profile-card-wrapper.affix
   .card.profile-card
