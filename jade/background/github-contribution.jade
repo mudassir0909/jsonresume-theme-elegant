@@ -1,0 +1,24 @@
+unless _.isEmpty(resume.github)
+  .detail#github-contribution
+    .icon
+      i.fs-lg.icon-github
+      span.mobile-title Github Contribution
+
+    .info
+      h4.title.text-uppercase Github Contribution
+
+      .content
+        ul.list-unstyled
+          - each github_info in resume.github
+            li.card.card-nested
+              .content
+                p.clear-margin.relative
+                  if github_info.website
+                    a(href=github_info.website, target="_blank")= github_info.repository
+                  else
+                    |#{github_info.repository}
+
+                unless _.isEmpty(github_info.highlights)
+                  ul
+                    - each highlight in github_info.highlights
+                      li= highlight
