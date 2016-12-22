@@ -950,6 +950,14 @@ body {
   text-decoration: none;
   color: #000000;
 }
+.link-telegram {
+  color: #3BABDD;
+}
+.link-telegram:hover,
+.link-telegram:focus {
+  text-decoration: none;
+  color: #2291c3;
+}
 .card-skills {
   position: relative;
 }
