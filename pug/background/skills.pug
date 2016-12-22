@@ -9,7 +9,7 @@ unless _.isEmpty(resume.skills)
 
       .content
         ul.list-unstyled.clear-margin
-          - each skill in resume.skills
+          each skill in resume.skills
             li.card.card-nested.card-skills
               if skill.display_progress_bar
                 .skill-level(data-toggle="tooltip", title=skill.level, data-placement="left")
@@ -20,5 +20,5 @@ unless _.isEmpty(resume.skills)
 
                 unless _.isEmpty(skill.keywords)
                   .space-top.labels
-                    - each keyword in skill.keywords
+                    each keyword in skill.keywords
                       span.label.label-keyword= keyword

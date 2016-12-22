@@ -2,3 +2,4 @@ node_modules/*
 resume.json
 build/*
 *.DS_Store
+public/

@@ -9,7 +9,7 @@ mixin profile_card_detail(icon, info, itemprop, icon_title)
         |#{info}
 
 mixin render_links(profiles)
-  - each profile in profiles
+  each profile in profiles
     a.fs-2x.social-link(
       href=profile.url,
       target="_blank",

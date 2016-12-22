@@ -9,7 +9,7 @@ unless _.isEmpty(resume.education)
 
       .content
         ul.list-unstyled.clear-margin
-          - each education_info in resume.education
+          each education_info in resume.education
             li.card.card-nested
               .content
                 p.clear-margin.relative
@@ -31,5 +31,5 @@ unless _.isEmpty(resume.education)
 
                 unless _.isEmpty(education_info.courses)
                   .space-top.labels
-                    - each course in education_info.courses
+                    each course in education_info.courses
                       span.label.label-keyword= course

@@ -9,7 +9,7 @@ unless _.isEmpty(resume.volunteer)
 
       .content
         ul.list-unstyled.clear-margin
-          - each volunteer_info in resume.volunteer
+          each volunteer_info in resume.volunteer
             li.card.card-nested
               .content
                 p.clear-margin.relative
@@ -34,5 +34,5 @@ unless _.isEmpty(resume.volunteer)
 
                 unless _.isEmpty(volunteer_info.highlights)
                   ul
-                    - each highlight in volunteer_info.highlights
+                    each highlight in volunteer_info.highlights
                       li.mop-wrapper!= highlight
