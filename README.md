@@ -16,19 +16,23 @@ The profiles are shown in the order in which they are specified in the `basics.p
 * angellist
 * behance
 * bitbucket
+* blogger
 * codepen
 * dribbble
 * dribble
 * exercism
 * facebook
+* flickr
 * foursquare
-* instagram
 * github
 * googleplus
 * gratipay
 * hackernews
+* instagram
 * lastfm
 * linkedin
+* medium
+* meetup
 * pinterest
 * reddit
 * skype
@@ -36,15 +40,11 @@ The profiles are shown in the order in which they are specified in the `basics.p
 * spotify
 * stackexchange
 * stackoverflow
+* telegram
 * tumblr
 * twitter
 * vimeo
 * youtube
-* medium
-* blogger
-* meetup
-* flickr
-* telegram
 
 ### Credits
 * Thank you [contributors](https://github.com/mudassir0909/jsonresume-theme-elegant/graphs/contributors) for your pull requests
