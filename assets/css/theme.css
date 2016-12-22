@@ -371,16 +371,28 @@
   padding: 0;
   outline: none !important;
 }
+@font-face {
+  font-family: 'jst-elegant';
+  src: url("http://unpkg.com/jsonresume-theme-elegant@1.8.12/assets/icomoon/fonts/icomoon.eot?f218wo");
+  src: url("http://unpkg.com/jsonresume-theme-elegant@1.8.12/assets/icomoon/fonts/icomoon.eot?f218wo#iefix") format('embedded-opentype'), url("http://unpkg.com/jsonresume-theme-elegant@1.8.12/assets/icomoon/fonts/icomoon.ttf?f218wo") format('truetype'), url("http://unpkg.com/jsonresume-theme-elegant@1.8.12/assets/icomoon/fonts/icomoon.woff?f218wo") format('woff'), url("http://unpkg.com/jsonresume-theme-elegant@1.8.12/assets/icomoon/fonts/icomoon.svg?f218wo#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'jst-elegant' !important;
+}
 body {
   font-family: 'Lato';
   background: #f0f0f0;
-  color: #333333;
+  color: #333;
 }
 .main {
   padding: 5px;
 }
 .card {
-  background: #ffffff;
+  background: white;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
   min-height: 300px;
@@ -731,7 +743,7 @@ body {
   color: #005983;
 }
 .link-skype {
-  color: #12a5f4;
+  color: #12A5F4;
 }
 .link-skype:hover,
 .link-skype:focus {
@@ -803,7 +815,7 @@ body {
   color: #8c0717;
 }
 .link-gratipay {
-  color: #663300;
+  color: #630;
 }
 .link-gratipay:hover,
 .link-gratipay:focus {
@@ -883,7 +895,7 @@ body {
   color: #3b5687;
 }
 .link-angellist {
-  color: #000000;
+  color: black;
 }
 .link-angellist:hover,
 .link-angellist:focus {
@@ -915,7 +927,7 @@ body {
   color: #ab173e;
 }
 .link-blogger {
-  color: #ff9234;
+  color: #FF9234;
 }
 .link-blogger:hover,
 .link-blogger:focus {
@@ -923,7 +935,7 @@ body {
   color: #ff7701;
 }
 .link-medium {
-  color: #00ab6c;
+  color: #00AB6C;
 }
 .link-medium:hover,
 .link-medium:focus {
@@ -931,7 +943,7 @@ body {
   color: #00784c;
 }
 .link-flickr {
-  color: #000000;
+  color: black;
 }
 .link-flickr:hover,
 .link-flickr:focus {
