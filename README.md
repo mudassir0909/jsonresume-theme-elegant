@@ -73,6 +73,9 @@ All the LESS files are organized under the folder `assets/less/`. Please go thro
 ##### Updating Javascript
 All the javascript changes go into `index.js` which is responsible for rendering the theme.
 
+##### Adding a new icon
+Visit this [wiki page](https://github.com/mudassir0909/jsonresume-theme-elegant/wiki/Adding-a-new-icon)
+
 ### Roadmap
 
 [https://github.com/mudassir0909/jsonresume-theme-elegant/labels/enhancement](https://github.com/mudassir0909/jsonresume-theme-elegant/labels/enhancement)
