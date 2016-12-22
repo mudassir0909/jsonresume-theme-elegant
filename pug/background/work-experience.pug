@@ -8,7 +8,7 @@ unless _.isEmpty(resume.work)
       h4.title.text-uppercase Work Experience
 
       ul.list-unstyled.clear-margin
-        - each experience in resume.work
+        each experience in resume.work
           li.card.card-nested.clearfix
             .content
               p.clear-margin.relative
@@ -39,5 +39,5 @@ unless _.isEmpty(resume.work)
 
               unless _.isEmpty(experience.highlights)
                 ul
-                  - each highlight in experience.highlights
+                  each highlight in experience.highlights
                     li.mop-wrapper!= highlight

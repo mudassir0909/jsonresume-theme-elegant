@@ -9,7 +9,7 @@ unless _.isEmpty(resume.references)
 
       .content
         ul.list-unstyled.clear-margin
-          - each reference_info in resume.references
+          each reference_info in resume.references
             li.card.card-nested
               if reference_info.website
                 a(href=reference_info.website, target="_blank")= reference_info.name

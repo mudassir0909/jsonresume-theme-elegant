@@ -1,5 +1,5 @@
 var fs = require('fs');
-var jade = require('jade');
+var pug = require('pug');
 var _ = require('underscore');
 var utils = require('jsonresume-themeutils');
 var moment = require('moment');
@@ -169,7 +169,7 @@ function render(resume) {
         reference_info.reference = convertMarkdown(reference_info.reference);
     });
 
-    return jade.renderFile(__dirname + '/index.jade', {
+    return pug.renderFile(__dirname + '/index.pug', {
       resume: resume,
       floating_nav_items: getFloatingNavItems(resume),
       css: css,

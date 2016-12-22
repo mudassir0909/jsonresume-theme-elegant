@@ -7,14 +7,15 @@
 //
 
 var http = require("http");
-var resume = require("resume-schema").resumeJson;
+var fs = require("fs");
+var resume = JSON.parse(fs.readFileSync('node_modules/resume-schema/resume.json', 'utf8'));
 var theme = require("./index.js");
 var path = require("path");
-var fs = require("fs");
 
 var port = 8888;
 http.createServer(function(req, res) {
-    var picture = resume.basics.picture.replace(/^\//, "");
+    var picture = resume.basics.picture && resume.basics.picture.replace(/^\//, "");
+
     if (picture && req.url.replace(/^\//, "") === picture.replace(/^.\//, "")) {
         var format = path.extname(picture);
         try {
