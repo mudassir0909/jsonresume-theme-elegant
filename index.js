@@ -86,23 +86,23 @@ function render(resume) {
     resume.basics.remaining_profiles = resume.basics.profiles.slice(5);
 
     _.each(resume.work, function(work_info) {
-        var end_date;
         var start_date = moment(work_info.startDate, "YYYY-MM-DD");
-        var did_leave_company = !!work_info.endDate;
+        var end_date = moment(work_info.endDate, "YYYY-MM-DD");
+        var can_calculate_period = start_date.isValid() && end_date.isValid();
 
-        work_info.summary = convertMarkdown(work_info.summary);
-
-        if (work_info.endDate) {
-            end_date = moment(work_info.endDate, "YYYY-MM-DD");
-            work_info.endDate = utils.getFormattedDate(end_date);
-        }
-
-        if (start_date) {
-            end_date = end_date ? moment(end_date) : moment();
-            work_info.startDate = utils.getFormattedDate(start_date);
-
+        if (can_calculate_period) {
             work_info.duration = moment.preciseDiff(start_date, end_date);
         }
+
+        if (start_date.isValid()) {
+          work_info.startDate = utils.getFormattedDate(start_date);
+        }
+
+        if (end_date.isValid()) {
+          work_info.endDate = utils.getFormattedDate(end_date);
+        }
+
+        work_info.summary = convertMarkdown(work_info.summary);
 
         work_info.highlights = _(work_info.highlights).map(function(highlight) {
             return convertMarkdown(highlight);
