@@ -672,12 +672,12 @@ body {
   color: #d31e40;
 }
 .link-stackoverflow {
-  color: #8e8e92;
+  color: #f48024;
 }
 .link-stackoverflow:hover,
 .link-stackoverflow:focus {
   text-decoration: none;
-  color: #747479;
+  color: #c3661c;
 }
 .link-stackexchange {
   color: #62b0df;
