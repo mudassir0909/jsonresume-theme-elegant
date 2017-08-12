@@ -52,6 +52,7 @@ The profiles are shown in the order in which they are specified in the `basics.p
 
 ### Contributing
 ```
+$ npm install -g grunt
 $ git clone https://github.com/mudassir0909/jsonresume-theme-elegant.git
 $ cd jsonresume-theme-elegant
 $ npm install
