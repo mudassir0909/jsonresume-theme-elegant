@@ -50,14 +50,15 @@ The profiles are shown in the order in which they are specified in the `basics.p
 * Thank you [contributors](https://github.com/mudassir0909/jsonresume-theme-elegant/graphs/contributors) for your pull requests
 * Floating Menu: inspired by [Smart Fixed Navigation](http://codyhouse.co/demo/smart-fixed-navigation/index.html)
 
-### Contributing
+### Instructions
+This project uses a program called grunt to build and serve the application. To use this node application, run the following commands in the directory that you would like to place the application.
 ```
 $ npm install -g grunt
 $ git clone https://github.com/mudassir0909/jsonresume-theme-elegant.git
 $ cd jsonresume-theme-elegant
 $ npm install
-$ grunt watch // watches for less file changes
-$ grunt exec:run_server // Do this in a new terminal tab to run node server
+$ grunt build 		// This command will only build the project into the build folder
+$ grunt serve           // This command will build and serve the application on localhost
 ```
 
 Visit [http://localhost:8888](http://localhost:8888) to see the theme in action.
