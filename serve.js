@@ -6,46 +6,23 @@
 // `node serve`
 //
 
-var http = require("http");
-var fs = require("fs");
-var resume = JSON.parse(fs.readFileSync('node_modules/resume-schema/resume.json', 'utf8'));
-var theme = require("./index.js");
-var path = require("path");
+var path = require('path');
+var connect = require('connect');
+var serveStatic = require('serve-static');
 
 var port = 8888;
-http.createServer(function(req, res) {
-    var picture = resume.basics.picture && resume.basics.picture.replace(/^\//, "");
-
-    if (picture && req.url.replace(/^\//, "") === picture.replace(/^.\//, "")) {
-        var format = path.extname(picture);
-        try {
-            var image = fs.readFileSync(picture);
-            res.writeHead(200, {
-                "Content-Type": "image/" + format
-            });
-            res.end(image, "binary");
-        } catch (error) {
-            if (error.code === "ENOENT") {
-                console.log("Picture not found !");
-                res.end();
-            } else {
-                throw error;
-            }
-        }
-    } else {
-        res.writeHead(200, {
-            "Content-Type": "text/html"
-        });
-        res.end(render());
-    }
-}).listen(port);
-
-console.log("Preview: http://localhost:8888/");
-console.log("Serving..");
+connect().use(serveStatic(path.join(__dirname,'build'))).listen(port, function() {
+	console.log("Preview: http://localhost:"+port);
+	console.log("Serving..");
+});
 
 function render() {
     try {
-        return theme.render(JSON.parse(JSON.stringify(resume)));
+    	return fs.readFileSync(path.join(__dirname, 'build/index.html'), {encoding: 'utf-8'}, function (err, data) {
+		if(!err) {
+			console.log(data);
+		}
+    	});
     } catch (e) {
         console.log(e.message);
         return "";
