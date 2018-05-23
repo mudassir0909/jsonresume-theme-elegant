@@ -37,9 +37,9 @@ module.exports = function(grunt) {
                 expand: true
             },
             build: {
-                cwd: './assets/css',
-                src: [ 'theme.css' ],
-                dest: './build/assets/css',
+                cwd: './assets/icomoon/fonts/',
+                src: [ '*' ],
+                dest: './build/assets/icomoon/fonts',
                 expand: true
             },
             favicon: {
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default tasks
-    grunt.registerTask('default', ['exec']);
+    grunt.registerTask('default', ['build', 'exec']);
     grunt.registerTask('build', [
         /* Uncomment this item once you've created your own resume.json file
            in the project root.  This will use your own data to build your site.
