@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?9yug7q');
-  src:  url('fonts/icomoon.eot?9yug7q#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?9yug7q') format('truetype'),
-    url('fonts/icomoon.woff?9yug7q') format('woff'),
-    url('fonts/icomoon.svg?9yug7q#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?gc4x2o');
+  src:  url('fonts/icomoon.eot?gc4x2o#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?gc4x2o') format('truetype'),
+    url('fonts/icomoon.woff?gc4x2o') format('woff'),
+    url('fonts/icomoon.svg?gc4x2o#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,20 +24,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-instagram:before {
-  content: "\e905";
-}
-.icon-trophy:before {
-  content: "\e605";
-}
-.icon-office:before {
-  content: "\e606";
-}
-.icon-clock:before {
-  content: "\e60a";
-}
-.icon-reddit:before {
-  content: "\e609";
+.icon-gitlab:before {
+  content: "\f296";
 }
 .icon-telegram:before {
   content: "\e904";
@@ -147,6 +135,21 @@
 .icon-facebook:before {
   content: "\f230";
 }
+.icon-instagram:before {
+  content: "\e905";
+}
+.icon-trophy:before {
+  content: "\e605";
+}
+.icon-office:before {
+  content: "\e606";
+}
+.icon-clock:before {
+  content: "\e60a";
+}
+.icon-reddit:before {
+  content: "\e609";
+}
 .icon-meetup .path1:before {
   content: "\e901";
   color: rgb(255, 255, 255);
@@ -185,12 +188,6 @@
 .icon-newspaper:before {
   content: "\e607";
 }
-.icon-dots-three-horizontal:before {
-  content: "\e60b";
-}
-.icon-thumbs-up:before {
-  content: "\e604";
-}
 .icon-chevron-down:before {
   content: "\e60c";
 }
@@ -206,4 +203,3 @@
 .icon-board:before {
   content: "\e608";
 }
-
