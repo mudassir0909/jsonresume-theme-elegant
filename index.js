@@ -40,6 +40,7 @@ function getFloatingNavItems(resume) {
     var floating_nav_items = [
         {label: 'About', target: 'about', icon: 'board', requires: 'basics.summary'},
         {label: 'Work Experience', target: 'work-experience', icon: 'office', requires: 'work'},
+        {label: 'Featured Projects', target: 'projects', icon: 'board', requires: 'projects'},
         {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
         {label: 'Education', target: 'education', icon: 'graduation-cap', requires: 'education'},
         {label: 'Awards', target: 'awards', icon: 'trophy', requires: 'awards'},
