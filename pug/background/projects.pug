@@ -1,0 +1,27 @@
+unless _.isEmpty(resume.projects)
+  .detail#projects
+    .icon
+      i.fs-lg.icon-board
+      span.mobile-title Featured Projects
+
+    .info
+      h4.title.text-uppercase Featured Projects
+
+      .content
+        ul.list-unstyled.clear-margin
+          each project in resume.projects
+            li.card.card-nested
+              p
+                a.space-right(href=project.website, target="_blank")= project.name
+                span.text-muted.space-right
+                    span.space-right
+                        |#{project.company},
+                    span
+                        |#{project.year}
+                a.link-icon(href=project.github, target="_blank")
+                    i.fs-lg.icon-github
+              p
+                |#{project.summary}
+              ul.list-inline.list-bullet
+                each technology in project.technologies
+                    li.text-muted!= technology
