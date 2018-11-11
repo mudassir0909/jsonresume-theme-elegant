@@ -38,7 +38,7 @@ function convertMarkdown(str) {
 
 function getFloatingNavItems(resume) {
     var floating_nav_items = [
-        {label: 'About', target: 'about', icon: 'board', requires: 'basics.summary'},
+        {label: 'Profile', target: 'profile', icon: 'board', requires: 'basics.summary'},
         {label: 'Work Experience', target: 'work-experience', icon: 'office', requires: 'work'},
         {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
         {label: 'Education', target: 'education', icon: 'graduation-cap', requires: 'education'},

@@ -263,7 +263,7 @@
 }
 .fs-lg {
   font-size: 1.33333333em;
-  line-height: .75em;
+  line-height: 0.75em;
   vertical-align: -15%;
 }
 .fs-2x {
@@ -672,12 +672,12 @@ body {
   color: #d31e40;
 }
 .link-stackoverflow {
-  color: #f48024;
+  color: #8e8e92;
 }
 .link-stackoverflow:hover,
 .link-stackoverflow:focus {
   text-decoration: none;
-  color: #c3661c;
+  color: #747479;
 }
 .link-stackexchange {
   color: #62b0df;
