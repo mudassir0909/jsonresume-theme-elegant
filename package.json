@@ -1,14 +1,14 @@
 {
-  "name": "jsonresume-theme-elegant",
+  "name": "jsonresume-theme-elegant-mrseanryan",
   "version": "1.10.2",
-  "description": "Elegant theme for jsonresume",
+  "description": "Elegant theme for jsonresume - tweaked by mrseanryan",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mudassir0909/jsonresume-theme-elegant.git"
+    "url": "https://github.com/mrseanryan/jsonresume-theme-elegant.git"
   },
   "keywords": [
     "jsonresume",
