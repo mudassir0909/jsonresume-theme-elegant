@@ -40,4 +40,7 @@ unless _.isEmpty(resume.work)
               unless _.isEmpty(experience.highlights)
                 ul
                   each highlight in experience.highlights
-                    li.mop-wrapper!= highlight
+                    if highlight.div
+                      div.mop-wrapper!= highlight.div
+                    if highlight.li
+                      li.mop-wrapper!= highlight.li

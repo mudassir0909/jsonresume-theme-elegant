@@ -105,7 +105,17 @@ function render(resume) {
         work_info.summary = convertMarkdown(work_info.summary);
 
         work_info.highlights = _(work_info.highlights).map(function(highlight) {
-            return convertMarkdown(highlight);
+            const md = convertMarkdown(highlight);
+
+            if(md.indexOf("<ul") >= 0) {
+                return {
+                    div: md
+                }
+            } else {
+                return {
+                    li: md
+                }
+            }
         });
     });
 
