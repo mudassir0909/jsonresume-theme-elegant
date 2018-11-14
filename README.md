@@ -25,6 +25,7 @@ The profiles are shown in the order in which they are specified in the `basics.p
 * flickr
 * foursquare
 * github
+* gitlab
 * googleplus
 * gratipay
 * hackernews

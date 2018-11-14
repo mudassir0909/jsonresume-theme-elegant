@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-elegant",
-  "version": "1.10.2",
+  "version": "1.12.0",
   "description": "Elegant theme for jsonresume",
   "main": "index.js",
   "scripts": {

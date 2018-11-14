@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?9yug7q');
-  src:  url('fonts/icomoon.eot?9yug7q#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?9yug7q') format('truetype'),
-    url('fonts/icomoon.woff?9yug7q') format('woff'),
-    url('fonts/icomoon.svg?9yug7q#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?z1lat9');
+  src:  url('fonts/icomoon.eot?z1lat9#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?z1lat9') format('truetype'),
+    url('fonts/icomoon.woff?z1lat9') format('woff'),
+    url('fonts/icomoon.svg?z1lat9#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,20 +24,64 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-instagram:before {
-  content: "\e905";
+.icon-gitlab .path1:before {
+  content: "\e906";
+  color: rgb(252, 109, 38);
 }
-.icon-trophy:before {
-  content: "\e605";
+.icon-gitlab .path2:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(226, 67, 41);
 }
-.icon-office:before {
-  content: "\e606";
+.icon-gitlab .path3:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(252, 109, 38);
 }
-.icon-clock:before {
-  content: "\e60a";
+.icon-gitlab .path4:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(252, 163, 38);
 }
-.icon-reddit:before {
-  content: "\e609";
+.icon-gitlab .path5:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(226, 67, 41);
+}
+.icon-gitlab .path6:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(252, 109, 38);
+}
+.icon-gitlab .path7:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(252, 163, 38);
+}
+.icon-gitlab .path8:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(226, 67, 41);
+}
+.icon-meetup .path1:before {
+  content: "\e901";
+  color: rgb(255, 255, 255);
+}
+.icon-meetup .path2:before {
+  content: "\e902";
+  margin-left: -1.5em;
+  color: rgb(240, 1, 1);
+}
+.icon-meetup .path3:before {
+  content: "\e903";
+  margin-left: -1.5em;
+  color: rgb(3, 3, 3);
+}
+.icon-blogger:before {
+  content: "\e900";
+}
+.icon-exercism:before {
+  content: "\e601";
 }
 .icon-telegram:before {
   content: "\e904";
@@ -147,25 +191,20 @@
 .icon-facebook:before {
   content: "\f230";
 }
-.icon-meetup .path1:before {
-  content: "\e901";
-  color: rgb(255, 255, 255);
+.icon-instagram:before {
+  content: "\e905";
 }
-.icon-meetup .path2:before {
-  content: "\e902";
-  margin-left: -1.5em;
-  color: rgb(240, 1, 1);
+.icon-trophy:before {
+  content: "\e605";
 }
-.icon-meetup .path3:before {
-  content: "\e903";
-  margin-left: -1.5em;
-  color: rgb(3, 3, 3);
+.icon-office:before {
+  content: "\e606";
 }
-.icon-blogger:before {
-  content: "\e900";
+.icon-clock:before {
+  content: "\e60a";
 }
-.icon-exercism:before {
-  content: "\e601";
+.icon-reddit:before {
+  content: "\e609";
 }
 .icon-profile:before {
   content: "\e600";
@@ -185,12 +224,6 @@
 .icon-newspaper:before {
   content: "\e607";
 }
-.icon-dots-three-horizontal:before {
-  content: "\e60b";
-}
-.icon-thumbs-up:before {
-  content: "\e604";
-}
 .icon-chevron-down:before {
   content: "\e60c";
 }
@@ -206,7 +239,6 @@
 .icon-board:before {
   content: "\e608";
 }
-
 
 .relative {
   position: relative;
@@ -263,7 +295,7 @@
 }
 .fs-lg {
   font-size: 1.33333333em;
-  line-height: .75em;
+  line-height: 0.75em;
   vertical-align: -15%;
 }
 .fs-2x {
@@ -286,8 +318,8 @@
 }
 @font-face {
   font-family: 'jst-elegant';
-  src: url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.eot?f218wo");
-  src: url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.eot?f218wo#iefix") format('embedded-opentype'), url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.ttf?f218wo") format('truetype'), url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.woff?f218wo") format('woff'), url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.svg?f218wo#icomoon") format('svg');
+  src: url("//unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.eot?f218wo");
+  src: url("//unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.eot?f218wo#iefix") format('embedded-opentype'), url("//unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.ttf?f218wo") format('truetype'), url("//unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.woff?f218wo") format('woff'), url("//unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.svg?f218wo#icomoon") format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -672,12 +704,12 @@ body {
   color: #d31e40;
 }
 .link-stackoverflow {
-  color: #f48024;
+  color: #8e8e92;
 }
 .link-stackoverflow:hover,
 .link-stackoverflow:focus {
   text-decoration: none;
-  color: #c3661c;
+  color: #747479;
 }
 .link-stackexchange {
   color: #62b0df;
