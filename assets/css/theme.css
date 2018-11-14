@@ -316,6 +316,7 @@
   padding: 0;
   outline: none !important;
 }
+/* the version when the icon file is last updated */
 @font-face {
   font-family: 'jst-elegant';
   src: url("//unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.eot?f218wo");
