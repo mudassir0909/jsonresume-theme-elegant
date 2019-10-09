@@ -19,6 +19,13 @@ module.exports = function(grunt) {
                 options: {
                     nospawn: true
                 }
+            },
+            pug: {
+                files: ['index.pug'],
+                tasks: ['exec:compile_pug'],
+                options: {
+                    nospawn: true
+                }
             }
         },
         exec: {
@@ -27,6 +34,9 @@ module.exports = function(grunt) {
             },
             build_index: {
                 cmd: "node render.js"
+            },
+            compile_pug: {
+                cmd: 'pug -c index.pug --out tpl && echo "module.exports = { renderResume: template };" >> ./tpl/index.js'
             }
         },
         copy: {
@@ -81,7 +91,7 @@ module.exports = function(grunt) {
         'clean',
         'copy:build',
         'less',
-        'exec:build_index' //,
+        'exec:build_index', //,
         /* Uncomment this item (and the comma above) if you add a favicon.ico
            in the project root. You'll also need to uncomment the <link...> tag
            at the top of resume.template.
@@ -91,5 +101,6 @@ module.exports = function(grunt) {
     grunt.registerTask('serve', [
         'build',
         'exec:run_server'
-    ])
+    ]);
+    grunt.registerTask('compile:pug', ['exec:compile_pug']);
 }

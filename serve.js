@@ -6,27 +6,28 @@
 // `node serve`
 //
 
-var http = require("http");
-var fs = require("fs");
-var resume = JSON.parse(fs.readFileSync('node_modules/resume-schema/resume.json', 'utf8'));
-var theme = require("./index.js");
-var path = require("path");
+const http = require('http');
+const fs = require('fs');
+const resume = JSON.parse(fs.readFileSync('node_modules/resume-schema/resume.json', 'utf8'));
+const theme = require('./index.js');
+const path = require('path');
 
-var port = 8888;
+const PORT = 8888;
+
 http.createServer(function(req, res) {
-    var picture = resume.basics.picture && resume.basics.picture.replace(/^\//, "");
+    const picture = resume.basics.picture && resume.basics.picture.replace(/^\//, '');
 
-    if (picture && req.url.replace(/^\//, "") === picture.replace(/^.\//, "")) {
-        var format = path.extname(picture);
+    if (picture && req.url.replace(/^\//, '') === picture.replace(/^.\//, '')) {
+        const format = path.extname(picture);
         try {
-            var image = fs.readFileSync(picture);
+            const image = fs.readFileSync(picture);
             res.writeHead(200, {
-                "Content-Type": "image/" + format
+                'Content-Type': `image/${format}`,
             });
-            res.end(image, "binary");
+            res.end(image, 'binary');
         } catch (error) {
-            if (error.code === "ENOENT") {
-                console.log("Picture not found !");
+            if (error.code === 'ENOENT') {
+                console.log('Picture not found !');
                 res.end();
             } else {
                 throw error;
@@ -34,20 +35,20 @@ http.createServer(function(req, res) {
         }
     } else {
         res.writeHead(200, {
-            "Content-Type": "text/html"
+            'Content-Type': 'text/html'
         });
         res.end(render());
     }
-}).listen(port);
+}).listen(PORT);
 
-console.log("Preview: http://localhost:8888/");
-console.log("Serving..");
+console.log(`Preview: http://localhost:${PORT}/`);
+console.log('Serving..');
 
 function render() {
     try {
         return theme.render(JSON.parse(JSON.stringify(resume)));
     } catch (e) {
         console.log(e.message);
-        return "";
+        return '';
     }
 }
