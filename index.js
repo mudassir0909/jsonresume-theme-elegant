@@ -1,11 +1,11 @@
 var fs = require('fs');
-var pug = require('pug');
 var _ = require('underscore');
 var utils = require('jsonresume-themeutils');
 var moment = require('moment');
 var markdown = require('markdown-it')({
     breaks: true
 }).use(require('markdown-it-abbr'));
+const { renderResume } = require('./tpl/index');
 
 require('./moment-precise-range.js');
 
@@ -169,11 +169,11 @@ function render(resume) {
         reference_info.reference = convertMarkdown(reference_info.reference);
     });
 
-    return pug.renderFile(__dirname + '/index.pug', {
-      resume: resume,
-      floating_nav_items: getFloatingNavItems(resume),
-      css: css,
-      _: _
+    return renderResume({
+        resume: resume,
+        floating_nav_items: getFloatingNavItems(resume),
+        css: css,
+        _: _
     });
 }
 

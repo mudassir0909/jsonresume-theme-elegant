@@ -54,10 +54,11 @@ The profiles are shown in the order in which they are specified in the `basics.p
 ### Contributing
 ```
 $ npm install -g grunt
+$ npm install -g pug-cli
 $ git clone https://github.com/mudassir0909/jsonresume-theme-elegant.git
 $ cd jsonresume-theme-elegant
 $ npm install
-$ grunt watch // watches for less file changes
+$ grunt watch // watches for file changes in *.pug & *.less
 $ grunt exec:run_server // Do this in a new terminal tab to run node server
 ```
 
