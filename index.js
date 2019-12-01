@@ -36,7 +36,7 @@ function render(resume) {
     resume.basics.top_five_profiles = resume.basics.profiles.slice(0, 5);
     resume.basics.remaining_profiles = resume.basics.profiles.slice(5);
 
-    resume.work.forEach(work_info => {
+    _(resume.work).forEach(work_info => {
         const start_date = moment(work_info.startDate, 'YYYY-MM-DD');
         const end_date = moment(work_info.endDate, 'YYYY-MM-DD');
         const can_calculate_period = start_date.isValid() && end_date.isValid();
@@ -59,7 +59,7 @@ function render(resume) {
             .map(highlight => convertMarkdown(highlight));
     });
 
-    resume.skills.forEach(skill_info => {
+    _(resume.skills).forEach(skill_info => {
         const levels = ['Beginner', 'Intermediate', 'Advanced', 'Master'];
 
         if (skill_info.level) {
@@ -69,7 +69,7 @@ function render(resume) {
         }
     });
 
-    resume.education.forEach(education_info => {
+    _(resume.education).forEach(education_info => {
         ['startDate', 'endDate'].forEach(type => {
             const date = education_info[type];
 
@@ -79,7 +79,7 @@ function render(resume) {
         });
     });
 
-    resume.awards.forEach(a => {
+    _(resume.awards).forEach(a => {
         const date = a.date;
 
         a.summary = convertMarkdown(a.summary);
@@ -89,7 +89,7 @@ function render(resume) {
         }
     });
 
-    resume.volunteer.forEach(v => {
+    _(resume.volunteer).forEach(v => {
         v.summary = convertMarkdown(v.summary);
 
         ['startDate', 'endDate'].forEach(type => {
@@ -103,7 +103,7 @@ function render(resume) {
         v.highlights = _(v.highlights).map(convertMarkdown);
     });
 
-    resume.publications.forEach(p => {
+    _(resume.publications).forEach(p => {
         const date = p.releaseDate;
 
         p.summary = convertMarkdown(p.summary);
@@ -113,7 +113,7 @@ function render(resume) {
         }
     });
 
-    resume.references.forEach(r => {
+    _(resume.references).forEach(r => {
         r.reference = convertMarkdown(r.reference);
     });
 
