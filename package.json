@@ -23,18 +23,19 @@
   "homepage": "https://github.com/mudassir0909/jsonresume-theme-elegant",
   "dependencies": {
     "gravatar": "^1.0.6",
-    "handlebars": "^4.0.11",
+    "handlebars": ">=4.0.14",
     "jsonresume-themeutils": "^1.4.3",
     "markdown-it": "^6.0.1",
     "markdown-it-abbr": "^1.0.3",
     "moment": "^2.22.2",
-    "pug": "^2.0.0-beta6",
+    "pug": "^2.0.4",
     "resume-schema": "0.0.16",
     "tarball-extract": "0.0.3",
+    "sshpk": ">=1.13.2",
     "underscore": "^1.6.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "^1.0.4",
     "grunt-contrib-clean": "0.5.x",
     "grunt-contrib-copy": "0.4.x",
     "grunt-contrib-less": "^2.0.0",
