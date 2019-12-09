@@ -28,49 +28,49 @@
 }
 
 .contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: #eee 1px solid;
+    padding-top: 25px;
+    margin-top: 25px;
+
     @media (max-width: @screen-tablet) {
         text-align: center;
     }
 
     .detail {
-        display: table;
-        padding: 10px 0;
+        min-width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 5px;
 
         .icon {
-            padding: 0 10px;
             color: @icon-color;
-
-            @media (max-width: @screen-desktop) {
-                padding: 0 5px 0 0;
-            }
         }
 
         .info {
-            font-size: 0.8em;
+          font-size: 0.8em;
+          padding: 0 10px;
         }
 
         .icon, .info {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        @media (max-width: @screen-tablet) {
-            .make-xs-column(12);
-        }
-
-        @media (max-width: @screen-desktop) {
-            .make-sm-column(3);
-            padding: 10px;
-
-            .icon, .info {
-                display: inline-block;
-            }
+          min-height: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          text-align: center;
+          vertical-align: middle;
         }
     }
 }
 
 .social-links {
     line-height: 2.5;
+    border-top: #eee 1px solid;
+    padding-top: 25px;
+    margin-top: 25px;
 }
 
 .social-link {

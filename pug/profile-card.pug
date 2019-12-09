@@ -43,7 +43,6 @@ section.col-md-3.card-wrapper.profile-card-wrapper.affix
         h3(itemprop="name"): b= resume.basics.name
         h5.text-muted(itemprop="jobTitle")= resume.basics.label
 
-    hr
 
     .contact-details.clearfix
       if resume.basics.computed_location
@@ -59,7 +58,6 @@ section.col-md-3.card-wrapper.profile-card-wrapper.affix
       if resume.basics.languages
         +profile_card_detail('icon-language', resume.basics.languages, null, 'Languages I speak')
 
-    hr
 
     .social-links.text-center
       div

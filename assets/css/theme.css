@@ -367,11 +367,6 @@ body {
 .card-wrapper {
   padding: 5px;
 }
-@media (max-width: 992px) {
-  .card-wrapper {
-    float: none !important;
-  }
-}
 .background-details .detail {
   display: table;
 }
@@ -587,63 +582,47 @@ body {
     margin-top: 10px;
   }
 }
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: #eee 1px solid;
+  padding-top: 25px;
+  margin-top: 25px;
+}
 @media (max-width: 768px) {
   .contact-details {
     text-align: center;
   }
 }
 .contact-details .detail {
-  display: table;
-  padding: 10px 0;
+  min-width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px;
 }
 .contact-details .detail .icon {
-  padding: 0 10px;
   color: #707070;
-}
-@media (max-width: 992px) {
-  .contact-details .detail .icon {
-    padding: 0 5px 0 0;
-  }
 }
 .contact-details .detail .info {
   font-size: 0.8em;
+  padding: 0 10px;
 }
 .contact-details .detail .icon,
 .contact-details .detail .info {
-  display: table-cell;
+  min-height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
   vertical-align: middle;
-}
-@media (max-width: 768px) {
-  .contact-details .detail {
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-@media (max-width: 992px) {
-  .contact-details .detail {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding: 10px;
-  }
-  .contact-details .detail .icon,
-  .contact-details .detail .info {
-    display: inline-block;
-  }
-}
-@media (max-width: 992px) and (min-width: 768px) {
-  .contact-details .detail {
-    float: left;
-    width: 25%;
-  }
 }
 .social-links {
   line-height: 2.5;
+  border-top: #eee 1px solid;
+  padding-top: 25px;
+  margin-top: 25px;
 }
 .social-link {
   margin-left: 5px;
@@ -974,15 +953,7 @@ body {
     vertical-align: middle;
     margin-left: 15px;
   }
-  .contact-details .detail {
-    position: relative;
-    float: left;
-    width: 25%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding: 0;
-  }
+  .social-links,
   .floating-nav,
   .floating-nav-trigger {
     display: none;
