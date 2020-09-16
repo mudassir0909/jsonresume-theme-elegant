@@ -18,7 +18,7 @@ unless _.isEmpty(resume.projects)
                     title="Currently Working",
                     data-placement="left"
                   )
-                strong=project.position
+                strong=project.name
                 |,&nbsp;
                 if project.website
                   a(href=project.website, target="_blank")= project.company

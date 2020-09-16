@@ -53,7 +53,6 @@ function render(resume) {
           project_info.endDate = utils.getFormattedDate(end_date);
         }
 
-        project_info.name = convertMarkdown(project_info.name);
         project_info.summary = convertMarkdown(project_info.summary);
 
         project_info.highlights = _(project_info.highlights)
