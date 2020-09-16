@@ -8,7 +8,7 @@
 
 const http = require('http');
 const fs = require('fs');
-const resume = JSON.parse(fs.readFileSync('node_modules/resume-schema/resume.json', 'utf8'));
+const resume = JSON.parse(fs.readFileSync('node_modules/resume-schema/sample.resume.json', 'utf8'));
 const theme = require('./index.js');
 const path = require('path');
 
