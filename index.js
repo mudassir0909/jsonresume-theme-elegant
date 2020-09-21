@@ -36,6 +36,29 @@ function render(resume) {
     resume.basics.top_five_profiles = resume.basics.profiles.slice(0, 5);
     resume.basics.remaining_profiles = resume.basics.profiles.slice(5);
 
+    _(resume.projects).forEach(project_info => {
+        const start_date = moment(project_info.startDate, 'YYYY-MM-DD');
+        const end_date = moment(project_info.endDate, 'YYYY-MM-DD');
+        const can_calculate_period = start_date.isValid() && end_date.isValid();
+
+        if (can_calculate_period) {
+            project_info.duration = moment.preciseDiff(start_date, end_date);
+        }
+
+        if (start_date.isValid()) {
+          project_info.startDate = utils.getFormattedDate(start_date);
+        }
+
+        if (end_date.isValid()) {
+          project_info.endDate = utils.getFormattedDate(end_date);
+        }
+
+        project_info.summary = convertMarkdown(project_info.summary);
+
+        project_info.highlights = _(project_info.highlights)
+            .map(highlight => convertMarkdown(highlight));
+    });
+
     _(resume.work).forEach(work_info => {
         const start_date = moment(work_info.startDate, 'YYYY-MM-DD');
         const end_date = moment(work_info.endDate, 'YYYY-MM-DD');
@@ -150,6 +173,7 @@ function getFloatingNavItems(resume) {
     const floating_nav_items = [
         {label: 'About', target: 'about', icon: 'board', requires: 'basics.summary'},
         {label: 'Work Experience', target: 'work-experience', icon: 'office', requires: 'work'},
+        {label: 'Projects Experience', target: 'projects-experience', icon: 'code', requires: 'projects'},
         {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
         {label: 'Education', target: 'education', icon: 'graduation-cap', requires: 'education'},
         {label: 'Awards', target: 'awards', icon: 'trophy', requires: 'awards'},

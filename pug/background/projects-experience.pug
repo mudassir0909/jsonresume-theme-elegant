@@ -1,0 +1,43 @@
+unless _.isEmpty(resume.projects)
+  .detail#projects-experience
+    .icon
+      i.fs-lg.icon-code
+      span.mobile-title Projects Experience
+
+    .info
+      h4.title.text-uppercase Projects Experience
+
+      ul.list-unstyled.clear-margin
+        each project in resume.projects
+          li.card.card-nested.clearfix
+            .content
+              p.clear-margin.relative
+                if !project.endDate
+                  i.icon-circle.current-event(
+                    rel="tooltip",
+                    title="Currently Working",
+                    data-placement="left"
+                  )
+                strong=project.name
+                |,&nbsp;
+                if project.website
+                  a(href=project.website, target="_blank")= project.company
+                else
+                  |#{project.company}
+
+              p.text-muted
+                small
+                  span.space-right
+                    |#{project.startDate} - #{project.endDate || 'Present'}
+
+                  if project.duration
+                    span
+                      i.icon-clock.mr-5
+                      |#{project.duration}
+
+              .mop-wrapper.space-bottom!= project.summary
+
+              unless _.isEmpty(project.highlights)
+                ul
+                  each highlight in project.highlights
+                    li.mop-wrapper!= highlight
