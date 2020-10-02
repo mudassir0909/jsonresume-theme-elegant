@@ -42,7 +42,9 @@ function render(resume) {
         const can_calculate_period = start_date.isValid() && end_date.isValid();
 
         if (can_calculate_period) {
-            project_info.duration = moment.preciseDiff(start_date, end_date);
+            project_info.duration = project_info.endDate != null && end_date.isValid()
+            ? moment.preciseDiff(start_date, end_date)
+            : moment.preciseDiff(start_date, moment()); // if end date is not specified calculate duration as of today
         }
 
         if (start_date.isValid()) {
@@ -65,7 +67,9 @@ function render(resume) {
         const can_calculate_period = start_date.isValid() && end_date.isValid();
 
         if (can_calculate_period) {
-            work_info.duration = moment.preciseDiff(start_date, end_date);
+            work_info.duration = work_info.endDate != null && end_date.isValid()
+            ? moment.preciseDiff(start_date, end_date)
+            : moment.preciseDiff(start_date, moment()); // if end date is not specified calculate duration as of today
         }
 
         if (start_date.isValid()) {
