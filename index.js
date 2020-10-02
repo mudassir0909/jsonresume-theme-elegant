@@ -38,7 +38,7 @@ function render(resume) {
 
     _(resume.projects).forEach(project_info => {
         const start_date = moment(project_info.startDate, 'YYYY-MM-DD');
-        const end_date = getDateOrToday(work_info.endDate);
+        const end_date = moment(project_info.endDate, 'YYYY-MM-DD');
         const can_calculate_period = start_date.isValid() && end_date.isValid();
 
         if (can_calculate_period) {
@@ -49,8 +49,7 @@ function render(resume) {
           project_info.startDate = utils.getFormattedDate(start_date);
         }
 
-        project_info.endDate = ""
-        if (end_date.isValid() && !end_date.isSame(moment())) {
+        if (end_date.isValid()) {
           project_info.endDate = utils.getFormattedDate(end_date);
         }
 
@@ -62,7 +61,7 @@ function render(resume) {
 
     _(resume.work).forEach(work_info => {
         const start_date = moment(work_info.startDate, 'YYYY-MM-DD');
-        const end_date = getDateOrToday(work_info.endDate);
+        const end_date = moment(work_info.endDate, 'YYYY-MM-DD');
         const can_calculate_period = start_date.isValid() && end_date.isValid();
 
         if (can_calculate_period) {
@@ -73,8 +72,7 @@ function render(resume) {
           work_info.startDate = utils.getFormattedDate(start_date);
         }
 
-        work_info.endDate = ""
-        if (end_date.isValid() && !end_date.isSame(moment())) {
+        if (end_date.isValid()) {
           work_info.endDate = utils.getFormattedDate(end_date);
         }
 
@@ -169,10 +167,6 @@ function convertMarkdown(str) {
     if (str != null) {
         return markdown.render(str);
     }
-}
-
-function getDateOrToday(date) {
-  return moment(date, 'YYYY-MM-DD').isAfter(Date.now()) ? moment() : moment(date, 'YYYY-MM-DD');
 }
 
 function getFloatingNavItems(resume) {
