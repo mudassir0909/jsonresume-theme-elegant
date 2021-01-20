@@ -1,46 +1,22 @@
 {
   "name": "jsonresume-theme-elegant",
-  "version": "1.13.2",
+  "version": "2.0.0",
   "description": "Elegant theme for jsonresume",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mudassir0909/jsonresume-theme-elegant.git"
-  },
-  "keywords": [
-    "jsonresume",
-    "theme",
-    "elegant"
-  ],
-  "author": "Mudassir Ali <mudassir.dev@gmail.com>",
+  "repository": "https://github.com/mudassir0909/jsonresume-theme-elegant",
+  "author": "Mudassir Ali",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mudassir0909/jsonresume-theme-elegant/issues"
-  },
-  "homepage": "https://github.com/mudassir0909/jsonresume-theme-elegant",
-  "dependencies": {
-    "gravatar": "^1.0.6",
-    "handlebars": ">=4.0.14",
-    "jsonresume-themeutils": "^1.4.3",
-    "markdown-it": "^6.0.1",
-    "markdown-it-abbr": "^1.0.3",
-    "moment": "^2.22.2",
-    "pug": "^2.0.4",
-    "resume-schema": "0.0.16",
-    "tarball-extract": "0.0.3",
-    "sshpk": ">=1.13.2",
-    "underscore": "^1.6.0"
+  "private": false,
+  "scripts": {
+    "build": "npx babel src/theme.jsx -o theme.js"
   },
   "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-clean": "0.5.x",
-    "grunt-contrib-copy": "0.4.x",
-    "grunt-contrib-less": "^2.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-exec": "^0.4.6",
-    "less": "^3.8.1"
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
