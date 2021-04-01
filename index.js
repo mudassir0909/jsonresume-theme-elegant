@@ -106,6 +106,14 @@ function render(resume) {
         });
     });
 
+    _(resume.certificates).forEach(c => {
+        const date = c.date;
+
+        if (date) {
+            c.date = utils.getFormattedDate(date, 'MMM DD, YYYY');
+        }
+    });
+
     _(resume.awards).forEach(a => {
         const date = a.date;
 
@@ -180,6 +188,7 @@ function getFloatingNavItems(resume) {
         {label: 'Projects Experience', target: 'projects-experience', icon: 'code', requires: 'projects'},
         {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
         {label: 'Education', target: 'education', icon: 'graduation-cap', requires: 'education'},
+        {label: 'Certificates', target: 'certificates', icon: 'profile', requires: 'certificates'},
         {label: 'Awards', target: 'awards', icon: 'trophy', requires: 'awards'},
         {label: 'Volunteer Work', target: 'volunteer-work', icon: 'child', requires: 'volunteer'},
         {label: 'Publications', target: 'publications', icon: 'newspaper', requires: 'publications'},
