@@ -1,15 +1,15 @@
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
-const { Foo } = require('./theme');
+const { ThemeElegant } = require('./theme');
 const fs = require('fs');
 const path = require('path');
 
 function render() {
   const reactElementString = ReactDOMServer.renderToString(
-    React.createElement(Foo),
+    React.createElement(ThemeElegant),
   );
   const componentjs = fs.readFileSync(path.join(__dirname, './theme.js')).toString();
-  return buildHtml(reactElementString, 'Foo', componentjs);
+  return buildHtml(reactElementString, 'ThemeElegant', componentjs);
 }
 
 function buildHtml(reactElementString, reactElementTag, componentjs) {

@@ -1,27 +1,19 @@
-const isBrowser= (function() {
+(function(exports){
+  // Since this code runs in both browser and node environment we need to resolve React separately
+  const React = isBrowser() ? window.React : require('react');
+
+  function ThemeElegant() {
+    return (
+      <h1>Welcome to theme elegant</h1>
+    );
+  }
+  exports.ThemeElegant = ThemeElegant;
+}(typeof exports === 'undefined' ? this : exports));
+
+function isBrowser() {
   try {
     return this === window;
   } catch (e) {
     return false;
   }
-})();
-
-(function(exports){
-  let React;
-  if (isBrowser) {
-    React = window.React;
-  } else {
-    React = require('react');
-  }
-
-  function Foo(props) {
-    const [click, setClick] = React.useState(0);
-
-    function handleClick() { setClick(click + 1); }
-
-    return (
-      <button onClick={handleClick}>Clicked: {click}</button>
-    );
-  }
-  exports.Foo = Foo;
-}(typeof exports === 'undefined' ? this : exports));
+}
