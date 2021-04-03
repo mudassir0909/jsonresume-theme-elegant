@@ -1,0 +1,26 @@
+unless _.isEmpty(resume.certificates)
+  .detail#certificates
+    .icon
+      i.fs-lg.icon-profile
+      span.mobile-title Certificates
+
+    .info
+      h4.title.text-uppercase Certificates
+
+      .content
+        ul.list-unstyled.clear-margin
+          each certificate in resume.certificates
+            li.card.card-nested
+              .content
+                p.clear-margin(itemprop="certificate")
+                  strong
+                    if certificate.url
+                      a(href=certificate.url, target="_blank")= certificate.name
+                      |,&nbsp;
+                    else
+                      |#{certificate.name + ', '}
+                  |#{certificate.issuer}
+
+                p.text-muted
+                  small
+                    |Issued on: #{certificate.date}
