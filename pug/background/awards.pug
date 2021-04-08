@@ -14,7 +14,7 @@ unless _.isEmpty(resume.awards)
               .content
                 p.clear-margin(itemprop="award")
                   strong= award.title + " "
-                  |#{award.awarder}
+                  |,&nbsp;#{award.awarder}
 
                 p.text-muted
                   small

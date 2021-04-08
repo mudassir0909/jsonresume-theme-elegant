@@ -18,12 +18,14 @@ unless _.isEmpty(resume.projects)
                     title="Currently Working",
                     data-placement="left"
                   )
-                strong=project.name
-                |,&nbsp;
-                if project.website
-                  a(href=project.website, target="_blank")= project.company
+                if project.url
+                  a(href=project.url, target="_blank")
+                    strong=project.name
                 else
-                  |#{project.company}
+                  strong=project.name
+                if project.entity
+                  span
+                    |,&nbsp;#{project.entity}
 
               p.text-muted
                 small
@@ -35,7 +37,7 @@ unless _.isEmpty(resume.projects)
                       i.icon-clock.mr-5
                       |#{project.duration}
 
-              .mop-wrapper.space-bottom!= project.summary
+              .mop-wrapper.space-bottom!= project.description
 
               unless _.isEmpty(project.highlights)
                 ul
