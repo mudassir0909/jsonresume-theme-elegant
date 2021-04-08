@@ -21,4 +21,4 @@ unless _.isEmpty(resume.skills)
                 unless _.isEmpty(skill.keywords)
                   .space-top.labels
                     each keyword in skill.keywords
-                      span.label.label-keyword= keyword
+                      span.label.label-keyword!= keyword
