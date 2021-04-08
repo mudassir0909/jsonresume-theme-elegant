@@ -279,6 +279,15 @@
 .label-keyword:last-child {
   margin-right: 0;
 }
+.label-keyword p {
+  margin: 0;
+}
+.label-keyword a {
+  color: white;
+}
+.label-keyword a:hover {
+  text-decoration: none;
+}
 .link-disguise {
   color: inherit;
 }

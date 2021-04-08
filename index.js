@@ -89,6 +89,8 @@ function render(resume) {
     _(resume.skills).forEach(skill_info => {
         const levels = ['Beginner', 'Intermediate', 'Advanced', 'Master'];
 
+        skill_info.keywords = _(skill_info.keywords)
+            .map(k => convertMarkdown(k));
         if (skill_info.level) {
             skill_info.skill_class = skill_info.level.toLowerCase();
             skill_info.level = capitalize(skill_info.level.trim());
@@ -104,6 +106,9 @@ function render(resume) {
                 education_info[type] = utils.getFormattedDate(date);
             }
         });
+
+        education_info.courses = _(education_info.courses)
+            .map(c => convertMarkdown(c));
     });
 
     _(resume.certificates).forEach(c => {

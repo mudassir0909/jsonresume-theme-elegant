@@ -32,4 +32,5 @@ unless _.isEmpty(resume.education)
                 unless _.isEmpty(education_info.courses)
                   .space-top.labels
                     each course in education_info.courses
-                      span.label.label-keyword= course
+                      span.label.label-keyword!= course
+
