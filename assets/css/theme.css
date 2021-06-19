@@ -714,12 +714,12 @@ body {
   color: #d31e40;
 }
 .link-stackoverflow {
-  color: #8e8e92;
+  color: #f48024;
 }
 .link-stackoverflow:hover,
 .link-stackoverflow:focus {
   text-decoration: none;
-  color: #747479;
+  color: #da670b;
 }
 .link-stackexchange {
   color: #62b0df;
