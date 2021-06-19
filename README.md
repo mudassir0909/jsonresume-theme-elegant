@@ -32,6 +32,7 @@ The profiles are shown in the order in which they are specified in the `basics.p
 * instagram
 * lastfm
 * linkedin
+* xing
 * medium
 * meetup
 * pinterest
