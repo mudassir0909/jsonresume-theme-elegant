@@ -17,7 +17,7 @@ unless _.isEmpty(resume.publications)
                   strong
                     if publication.url
                       a(href=publication.url, target="_blank")= publication.name
-                      |&nbsp;,&nbsp;
+                      |,&nbsp;
                     else
                       |#{publication.name + ', '}
                   |#{publication.publisher}
