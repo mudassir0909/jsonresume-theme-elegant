@@ -1001,4 +1001,7 @@ body {
   .pagebreak {
     page-break-before: always;
   }
+  .background-card {
+    border: none;
+  }
 }
