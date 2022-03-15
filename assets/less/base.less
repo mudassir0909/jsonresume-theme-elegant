@@ -24,7 +24,7 @@ body {
     .clearfix();
     min-height: 0;
     border-width: 1px 0 0 0;
-
+    page-break-inside: avoid;
     @media (max-width: @screen-phone) {
         padding: 5px 0;
     }
@@ -45,6 +45,7 @@ body {
 .background-details {
     .detail {
         display: table;
+        page-break-inside: avoid;
 
         .icon {
             min-width: 45px;

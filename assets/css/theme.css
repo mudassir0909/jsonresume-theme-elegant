@@ -356,6 +356,7 @@ body {
 .card-nested {
   min-height: 0;
   border-width: 1px 0 0 0;
+  page-break-inside: avoid;
 }
 .card-nested:before,
 .card-nested:after {
@@ -383,6 +384,7 @@ body {
 }
 .background-details .detail {
   display: table;
+  page-break-inside: avoid;
 }
 .background-details .detail .icon {
   min-width: 45px;
