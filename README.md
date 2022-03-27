@@ -46,6 +46,7 @@ The profiles are shown in the order in which they are specified in the `basics.p
 * twitter
 * vimeo
 * youtube
+* gemini
 
 ### Credits
 * Thank you [contributors](https://github.com/mudassir0909/jsonresume-theme-elegant/graphs/contributors) for your pull requests

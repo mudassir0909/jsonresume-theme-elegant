@@ -2,19 +2,20 @@
 
 @font-face {
   font-family: '@{icomoon-font-family}';
-  src:  url('@{icomoon-font-path}/@{icomoon-font-family}.eot?z1lat9');
-  src:  url('@{icomoon-font-path}/@{icomoon-font-family}.eot?z1lat9#iefix') format('embedded-opentype'),
-    url('@{icomoon-font-path}/@{icomoon-font-family}.ttf?z1lat9') format('truetype'),
-    url('@{icomoon-font-path}/@{icomoon-font-family}.woff?z1lat9') format('woff'),
-    url('@{icomoon-font-path}/@{icomoon-font-family}.svg?z1lat9#@{icomoon-font-family}') format('svg');
+  src:  url('@{icomoon-font-path}/@{icomoon-font-family}.eot?oxigej');
+  src:  url('@{icomoon-font-path}/@{icomoon-font-family}.eot?oxigej#iefix') format('embedded-opentype'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.ttf?oxigej') format('truetype'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.woff?oxigej') format('woff'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.svg?oxigej#@{icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: '@{icomoon-font-family}' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -26,6 +27,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-gemini {
+  &:before {
+    content: @icon-gemini; 
+  }
+}
+.icon-instagram {
+  &:before {
+    content: @icon-instagram; 
+  }
+}
+.icon-trophy {
+  &:before {
+    content: @icon-trophy; 
+  }
+}
+.icon-office {
+  &:before {
+    content: @icon-office; 
+  }
+}
+.icon-clock {
+  &:before {
+    content: @icon-clock; 
+  }
+}
+.icon-reddit {
+  &:before {
+    content: @icon-reddit; 
+  }
+}
 .icon-gitlab .path1 {
   &:before {
     content: @icon-gitlab-path1;  
@@ -289,31 +320,6 @@
 .icon-facebook {
   &:before {
     content: @icon-facebook; 
-  }
-}
-.icon-instagram {
-  &:before {
-    content: @icon-instagram; 
-  }
-}
-.icon-trophy {
-  &:before {
-    content: @icon-trophy; 
-  }
-}
-.icon-office {
-  &:before {
-    content: @icon-office; 
-  }
-}
-.icon-clock {
-  &:before {
-    content: @icon-clock; 
-  }
-}
-.icon-reddit {
-  &:before {
-    content: @icon-reddit; 
   }
 }
 .icon-profile {
